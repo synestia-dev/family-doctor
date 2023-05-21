@@ -1,0 +1,23 @@
+.button {
+    font-family: 'Inter';
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .default {
+    background-color: #EE2922;
+    color: #FFF;
+    &:hover {
+      background: #FFF;
+      color: #EE2922;
+    }
+  }
