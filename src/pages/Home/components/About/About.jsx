@@ -1,9 +1,9 @@
 import "./About.scss";
-import dentist from "../../assets/icons/about-icons/dentist.png";
-import gynecologist from "../../assets/icons/about-icons/gynecologist.png";
-import cardiologist from "../../assets/icons/about-icons/cardiologist.png";
-import health_treatment from "../../assets/icons/about-icons/health_treatment.png";
-import psychologist from "../../assets/icons/about-icons/psychologist.png";
+import dentist from "../../../../assets/icons/about-icons/dentist.png";
+import gynecologist from "../../../../assets/icons/about-icons/gynecologist.png";
+import cardiologist from "../../../../assets/icons/about-icons/cardiologist.png";
+import health_treatment from "../../../../assets/icons/about-icons/health_treatment.png";
+import psychologist from "../../../../assets/icons/about-icons/psychologist.png";
 
 const About = () => {
   return (

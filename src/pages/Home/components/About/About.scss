@@ -1,9 +1,9 @@
 .about {
   margin-bottom: 1.875rem;
   width: 100%;
-.vertical-line{
-  border: 1px solid rgba(238, 41, 34, 0.35);
-}
+  .vertical-line{
+    border: 1px solid rgba(238, 41, 34, 0.35);
+  }
 
   &__title {
     text-align: center;
@@ -24,6 +24,7 @@
       display: flex;
       width: 100%;
       align-items: center;
+      justify-content: center;
       background-color: #ffffff;
       color: #ee2922;
       border-radius: 0.75rem;
@@ -38,12 +39,17 @@
 
     &__catalogue {
       display: flex;
+
       justify-content: space-between;
       margin-bottom: 5.4rem;
       .catalogue__items {
         color: #ee2922;
         list-style-type: none;
-
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+        }
       }
 
       .catalogue__list{
@@ -54,9 +60,6 @@
         align-items: center;
 
 
-        &:not(:last-child) {
-          margin-bottom: 1.625rem;
-        }
         img {
           margin-right: 0.625rem;
         }

@@ -1,4 +1,4 @@
-import Button from "../Button/Button.jsx";
+import Button from "../../../../components/Button/Button.jsx";
 import "./Banner.scss";
 const Banner = () => {
   return (
@@ -15,8 +15,8 @@ const Banner = () => {
                 що мріяли і чого прагнемо.
               </p>
               <div className="info__btn">
-                <Button text="Обрати лікаря" className="choose-btn" />
-                <Button text="Дізнатися більше" className="more-btn" />
+                <Button text="Обрати лікаря" color="choose default" />
+                <Button text="Дізнатися більше" color="transparent" />
               </div>
             </div>
           </div>

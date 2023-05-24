@@ -1,0 +1,22 @@
+.item {
+  position: relative;
+  max-width: 370px;
+  background-color: #ffffff;
+  border-radius: 0.9rem;
+
+  &__text {
+    padding: 1rem 0.7rem;
+    color: #000000;
+  }
+
+  &__corner {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    background-color: #FFFFFF;
+    color: #473228;
+    border-radius: 0.9rem;
+    padding: 0.4rem  1rem;
+    font-size: 1rem;
+  }
+}
