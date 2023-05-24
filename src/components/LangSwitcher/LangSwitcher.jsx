@@ -21,7 +21,9 @@ const LangSwitcher = () => {
     { code: "en", label: "EN", flag: en },
     { code: "de", label: "DE", flag: de },
   ];
-  const selectedOptionIndex = languageOptions.findIndex(option => option.code === lang.code);
+  const selectedOptionIndex = languageOptions.findIndex(
+    (option) => option.code === lang.code
+  );
   if (selectedOptionIndex !== -1) {
     const selectedOption = languageOptions.splice(selectedOptionIndex, 1);
     languageOptions.unshift(selectedOption[0]);
