@@ -1,2 +1,38 @@
-.home{
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+
+  .horizontal-logo {
+    margin-bottom: 6.25rem;
+  }
+}
+
+.btn {
+}
+
+.reception-btn {
+  padding: 1.3125rem 1.1875rem;
+  text-transform: uppercase;
+  &:hover {
+    color: #ffffff;
+    background-color: #ee2922;
+    box-shadow: 0 12px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.articles-btn {
+  border: 1px solid #ee2922;
+  padding: 1.125rem 3.6875rem;
+  color: #ee2922;
+  background-color: #ffffff;
+  margin-bottom: 7.5rem;
+
+  &:hover {
+    color: #ffffff;
+    background-color: #ee2922;
+    box-shadow: 0 12px rgba(0, 0, 0, 0.16);
+  }
 }

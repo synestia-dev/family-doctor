@@ -1,6 +1,6 @@
 .button {
     font-family: 'Inter';
-    padding: 12px 20px;
+
     display: flex;
     align-items: center;
     text-align: center;
@@ -16,6 +16,8 @@
   .default {
     background-color: #EE2922;
     color: #FFF;
+    padding: 12px 20px;
+
     &:hover {
       background: #FFF;
       color: #EE2922;

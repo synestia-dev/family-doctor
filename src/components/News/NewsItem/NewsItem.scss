@@ -1,0 +1,22 @@
+.item {
+  max-width: 370px;
+  background-color: #FFFFFF;
+  border-radius: 0.9375rem;
+  margin-bottom: 1.875rem;
+  &:nth-child(n+4) {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  &__info {
+  }
+  &__text {
+    padding: 1.03125rem 0.75rem;
+    color: #000000;
+  }
+
+
+}

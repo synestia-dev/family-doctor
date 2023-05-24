@@ -2,7 +2,7 @@ import "./Header.scss";
 import Preheader from "./Preheader/Preheader";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
-import Button from '../Button/Button';
+import Button from "../Button/Button";
 const Header = () => {
   return (
     <>
@@ -38,7 +38,7 @@ const Header = () => {
                 <Link to="/directions">Фотогалерея</Link>
               </li>
             </ul>
-            <Button to="/" text="Запис на прийом"/>
+            <Button to="/" text="Запис на прийом" />
           </nav>
         </div>
       </div>
