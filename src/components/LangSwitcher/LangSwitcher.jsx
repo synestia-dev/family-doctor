@@ -1,18 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./LangSwitcher.scss";
 import Arrow from "../../assets/iconComponents/Arrow";
 import ua from "../../assets/ua.svg";
 import de from "../../assets/de.svg";
 import en from "../../assets/en.svg";
+import { useTranslation } from "react-i18next";
 const LangSwitcher = () => {
   const [lang, setLang] = useState({ code: "ua", label: "UA", flag: ua });
   const [isOpen, setIsOpen] = useState(false);
+  const { i18n } = useTranslation();
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("language");
+    if (storedLanguage) {
+      if (storedLanguage === "UA")
+        setLang({ code: "ua", label: "UA", flag: ua });
+      if (storedLanguage === "DE")
+        setLang({ code: "de", label: "DE", flag: de });
+      if (storedLanguage === "EN")
+        setLang({ code: "en", label: "EN", flag: en });
+      i18n.changeLanguage(storedLanguage);
+    } 
+  }, []);
 
   const handleLanguageChange = (language) => {
     setLang(language);
+    i18n.changeLanguage(language.label);
+    localStorage.setItem("language", language.label);
     setIsOpen(false);
   };
 

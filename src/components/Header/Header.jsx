@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
+import { useTranslation } from 'react-i18next';
 const Header = () => {
-  
+  const { t } = useTranslation();
   return (
     <>
       <Preheader />
@@ -21,10 +22,10 @@ const Header = () => {
             <div className="header__menu">
               <ul className="header__menu_list">
                 <li>
-                  <Link to="/directions">Напрямки</Link>
+                  <Link to="/directions">{t("Напрямки")}</Link>
                 </li>
                 <li>
-                  <Link to="/doctors">Лікарі</Link>
+                  <Link to="/doctors">{t('Лікарі')}</Link>
                 </li>
                 <li>
                   <Link to="/about">Про нас</Link>
