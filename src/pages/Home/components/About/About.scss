@@ -1,7 +1,8 @@
 .about {
-  margin-bottom: 1.875rem;
+  margin-bottom: 1.9rem;
   width: 100%;
-  .vertical-line{
+  font-weight: 600;
+  .vertical-line {
     border: 1px solid rgba(238, 41, 34, 0.35);
   }
 
@@ -15,10 +16,11 @@
   }
 
   .services {
+    font-size: 0.85rem;
     &__popular {
       display: flex;
-
-      margin-bottom: 5.625rem;
+      gap: 0.2rem;
+      margin-bottom: 5.6rem;
     }
     &__item {
       display: flex;
@@ -28,13 +30,8 @@
       background-color: #ffffff;
       color: #ee2922;
       border-radius: 0.75rem;
-      padding: 1.5rem 2.5625rem;
-      &:not(:last-child) {
-        margin-right: 0.125rem;
-      }
-      img {
-        margin-right: 1.0625rem;
-      }
+      padding: 1.5rem 2.6rem;
+      gap: 1rem;
     }
 
     &__catalogue {
@@ -45,24 +42,20 @@
       .catalogue__items {
         color: #ee2922;
         list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
         ul {
-          display: flex;
-          flex-direction: column;
-          gap: 1.6rem;
         }
       }
 
-      .catalogue__list{
-
+      .catalogue__list {
       }
       li {
         display: flex;
+
         align-items: center;
-
-
-        img {
-          margin-right: 0.625rem;
-        }
+        gap: 0.6rem
       }
     }
   }

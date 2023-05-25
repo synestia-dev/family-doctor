@@ -1,10 +1,130 @@
 import "./About.scss";
-import dentist from "../../../../assets/icons/about-icons/dentist.png";
-import gynecologist from "../../../../assets/icons/about-icons/gynecologist.png";
-import cardiologist from "../../../../assets/icons/about-icons/cardiologist.png";
-import health_treatment from "../../../../assets/icons/about-icons/health_treatment.png";
-import psychologist from "../../../../assets/icons/about-icons/psychologist.png";
+import DentistIcon from "../../../../assets/ iconComponents/DentistIcon.jsx";
+import GynecologistIcon from "../../../../assets/ iconComponents/GynecologistIcon.jsx";
+import PsychologistIcon from "../../../../assets/ iconComponents/PsychologistIcon.jsx";
+import TreatmentIcon from "../../../../assets/ iconComponents/TreatmentIcon.jsx";
+import CardiologistIcon from "../../../../assets/ iconComponents/CardiologistIcon.jsx";
+import TraumatologyIcon from "../../../../assets/ iconComponents/TraumatologyIcon.jsx";
+import StomatologyIcon from "../../../../assets/ iconComponents/StomatologyIcon.jsx";
+import PhysiotherapyIcon from "../../../../assets/ iconComponents/PhysiotherapyIcon.jsx";
+import OtolaryngologistIcon from "../../../../assets/ iconComponents/OtolaryngologistIcon.jsx";
+import OphthalmologyIcon from "../../../../assets/ iconComponents/OphthalmologyIcon.jsx";
+import NarcologyIcon from "../../../../assets/ iconComponents/NarcologyIcon.jsx";
+import DiagnosticIcon from "../../../../assets/ iconComponents/DiagnosticIcon.jsx";
+import EndoscopicIcon from "../../../../assets/ iconComponents/EndoscopicIcon.jsx";
+import ConsultationIcon from "../../../../assets/ iconComponents/ConsultationIcon.jsx";
+import CheckupIcon from "../../../../assets/ iconComponents/CheckupIcon.jsx";
+import UrologyIcon from "../../../../assets/ iconComponents/UrologyIcon.jsx";
+import HospitalIcon from "../../../../assets/ iconComponents/HospitalIcon.jsx";
+import LabaratoryIcon from "../../../../assets/ iconComponents/LaboratoryIcon.jsx";
+import GynecologyIcon from "../../../../assets/ iconComponents/GynecologyIcon.jsx";
+import DermatologyIcon from "../../../../assets/ iconComponents/DermatologyIcon.jsx";
 
+const POPULAR_SERVICES = [
+  {
+    index: 0,
+    title: "Стоматологія",
+    icon: <DentistIcon />,
+  },
+  {
+    index: 1,
+    title: "Гінеколог",
+    icon: <GynecologistIcon />,
+  },
+  {
+    index: 2,
+    title: "Психолог",
+    icon: <PsychologistIcon />,
+  },
+  {
+    index: 3,
+    title: "Реабилитолог",
+    icon: <TreatmentIcon />,
+  },
+  {
+    index: 4,
+    title: "Кардиолог",
+    icon: <CardiologistIcon />,
+  },
+];
+const ALL_SERVICES = [
+  {
+    index: 0,
+    title: "Стоматология",
+    icon: <StomatologyIcon />,
+  },
+  {
+    index: 1,
+    title: "Фізіотерапевтичні процедури",
+    icon: <PhysiotherapyIcon />,
+  },
+  {
+    index: 2,
+    title: "Діагностичні послуги",
+    icon: <DiagnosticIcon />,
+  },
+  {
+    index: 3,
+    title: "Отоларингологія",
+    icon: <OtolaryngologistIcon />,
+  },
+  {
+    index: 4,
+    title: "Офтальмологія",
+    icon: <OphthalmologyIcon />,
+  },
+  {
+    index: 5,
+    title: "Травматологія",
+    icon: <TraumatologyIcon />,
+  },
+  {
+    index: 6,
+    title: "Наркологія",
+    icon: <NarcologyIcon />,
+  },
+  {
+    index: 7,
+    title: "Ендоскопічні дослідження",
+    icon: <EndoscopicIcon />,
+  },
+  {
+    index: 8,
+    title: "Консультації лікарів",
+    icon: <ConsultationIcon />,
+  },
+
+  {
+    index: 9,
+    title: "Огляди лікарями",
+    icon: <CheckupIcon />,
+  },
+  {
+    index: 10,
+    title: "Урологія",
+    icon: <UrologyIcon />,
+  },
+  {
+    index: 11,
+    title: "Стаціонар",
+    icon: <HospitalIcon />,
+  },
+  {
+    index: 12,
+    title: "Лабораторні дослідження",
+    icon: <LabaratoryIcon />,
+  },
+  {
+    index: 13,
+    title: "Гінекологія",
+    icon: <GynecologyIcon />,
+  },
+  {
+    index: 14,
+    title: "Дерматологія, онкологія",
+    icon: <DermatologyIcon />,
+  },
+];
 const About = () => {
   return (
     <div className="about">
@@ -15,102 +135,42 @@ const About = () => {
         </div>
         <div className="services">
           <nav className="services__popular">
-            <li className="services__item">
-              <img src={dentist} alt="dentist" />
-              <span>Стоматологія</span>
-            </li>
-            <li className="services__item">
-              <img src={gynecologist} alt="gynecologist" />
-              <span>Гінеколог</span>
-            </li>
-            <li className="services__item">
-              <img src={psychologist} alt="psychologist" />
-              <span>Психолог</span>
-            </li>
-            <li className="services__item">
-              <img src={health_treatment} alt="health_treatment" />
-              <span>Реабилитолог</span>
-            </li>
-            <li className="services__item">
-              <img src={cardiologist} alt="cardiologist" />
-              <span>Кардиолог</span>
-            </li>
+            {POPULAR_SERVICES.map((service, index) => (
+              <li key={index} className="services__item">
+                {service.icon}
+                <span>{service.title}</span>
+              </li>
+            ))}
           </nav>
           <div className="services__catalogue">
-            <div className="catalogue__items">
-              <ul>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Стоматология</span>
+            <ul className="catalogue__items">
+              {ALL_SERVICES.slice(0, 5).map((service, index) => (
+                <li key={index}>
+                  {service.icon}
+                  <span>{service.title}</span>
                 </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Фізіотерапевтичні процедури</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Діагностичні послуги</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Отоларингологія</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Офтальмологія</span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+
             <hr className="vertical-line" />
-            <div className="catalogue__items">
-              <ul>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Стоматология</span>
+
+            <ul className="catalogue__items">
+              {ALL_SERVICES.slice(5, 10).map((service, index) => (
+                <li key={index}>
+                  {service.icon}
+                  <span>{service.title}</span>
                 </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Фізіотерапевтичні процедури</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Діагностичні послуги</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Отоларингологія</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Офтальмологія</span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
             <hr className="vertical-line" />
-            <div className="catalogue__items">
-              <ul>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Стоматология</span>
+            <ul className="catalogue__items">
+              {ALL_SERVICES.slice(10, 15).map((service, index) => (
+                <li key={index}>
+                  {service.icon}
+                  <span>{service.title}</span>
                 </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Фізіотерапевтичні процедури</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Діагностичні послуги</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Отоларингологія</span>
-                </li>
-                <li>
-                  <img src={dentist} alt="dentist" />
-                  <span>Офтальмологія</span>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

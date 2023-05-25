@@ -1,13 +1,18 @@
 import "./NewsItem.scss";
-import news from "../../../../../assets/icons/news.png";
-const NewsItem = () => {
+import PropTypes from "prop-types";
+const NewsItem = ({ date, image, text }) => {
   return (
     <div className="item">
-      <div className="item__corner">19.05.23</div>
-      <img src={news} alt={news} />
-      <p className="item__text">Вы страдаете от хронических головных болей?</p>
+      <div className="item__date">{date}</div>
+      <img src={image} alt={image} />
+      <p className="item__text">{text}</p>
     </div>
   );
+};
+NewsItem.propTypes = {
+  date: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default NewsItem;

@@ -7,16 +7,17 @@
   &__text {
     padding: 1rem 0.7rem;
     color: #000000;
+    font-weight: 500;
   }
 
-  &__corner {
+  &__date {
     position: absolute;
     top: 21px;
     right: 21px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     color: #473228;
     border-radius: 0.9rem;
-    padding: 0.4rem  1rem;
-    font-size: 1rem;
+    padding: 0.25rem 0.9rem;
+    font-size: 0.8rem;
   }
 }
