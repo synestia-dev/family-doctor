@@ -3,10 +3,12 @@
   background-color: #ffffff;
   border-radius: 1.25rem;
   max-width: 370px;
+
 }
 
 .advantage:hover {
   background-color: #ee2922;
+  transition: background-color 0.5s, color 0.5s;
   color: #ffffff;
 }
 

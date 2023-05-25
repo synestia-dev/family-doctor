@@ -32,6 +32,10 @@
       border-radius: 0.75rem;
       padding: 1.5rem 2.6rem;
       gap: 1rem;
+
+      &:hover {
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+      }
     }
 
     &__catalogue {
@@ -45,12 +49,8 @@
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
-        ul {
-        }
       }
 
-      .catalogue__list {
-      }
       li {
         display: flex;
 
