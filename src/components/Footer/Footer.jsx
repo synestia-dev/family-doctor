@@ -10,14 +10,14 @@ const Footer = () => {
         <div className="row">
           <div className="row__item">
             <h6 className="row__title">Время работы</h6>
-            <div className="">
+            <div className="schedule">
               <div className="">Пн-Пт:</div>
               <div className="">8:00-20:00</div>
               <div className="">Сб-Вс:</div>
               <div className="">9:00-15:00</div>
             </div>
-            <h6 className="">Адрес</h6>
-            <p className="">
+            <h6 className="address">Адрес</h6>
+            <p className="address__info">
               <img src={geo} alt="geo" />
               м. Запоріжжя, вул. Лікарняна, 18.
             </p>
@@ -53,18 +53,18 @@ const Footer = () => {
             <h6 className="row__title">Для клиентов</h6>
             <nav>
               <ul className="about__list">
-                <li className="list__item">
-                  <a href="" className="">
+                <li className="">
+                  <a href="#" className="">
                     Клиника
                   </a>
                 </li>
                 <li className="">
-                  <a href="" className="">
+                  <a href="#" className="">
                     Фотогалерея
                   </a>
                 </li>
                 <li className="">
-                  <a href="" className="">
+                  <a href="#" className="">
                     Блог
                   </a>
                 </li>
@@ -78,21 +78,23 @@ const Footer = () => {
           </div>
           <div className="row__item">
             <h6 className="row__title">Контакты</h6>
-            <a href="" className="">
+            <a href="" className="contact">
               <img src={phone} alt={phone} />
-              <span className="">
-                +38 (061) 764-87-03 приймальня ген директора
+              <span className="contact__item">
+                +38 (061) 764-87-03 <br /> приймальня ген директора
               </span>
             </a>
             <br />
-            <a href="tel:+" className="">
+            <a href="" className="contact">
               <img src={phone} alt={phone} />
-              <span className="">+38 (061) 764-87-08 відділ кадрів</span>
+              <p className="contact__item">
+                +38 (061) 764-87-08 <br /> відділ кадрів
+              </p>
             </a>
             <br />
-            <a href="" className="">
+            <a href="" className="contact">
               <img src={mail} alt={mail} />
-              <span className="">пааааа</span>
+              <span className="contact__item">Shyroke_likar@ukr.net</span>
             </a>
           </div>
         </div>
