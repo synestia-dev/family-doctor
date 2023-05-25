@@ -1,7 +1,7 @@
 .header {
   color: #241917;
   background: #f3f3f3;
-  padding-block: 18px 26px;
+  padding-block: 18px;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -9,23 +9,34 @@
   }
   &__logo {
     img {
-      height: 32px;
+      height: 45px;
     }
   }
   &__menu {
-    list-style-type: none;
     display: flex;
-    gap: 12px;
-    li {
-      a {
-        text-decoration: none;
-        color: #241917;
-        font-weight: 600;
-        font-size: 14px;
-        &:hover {
-          text-decoration: underline;
+    gap: 24px;
+    align-items: center;
+    &_list {
+      list-style-type: none;
+      display: flex;
+      gap: 12px;
+      li {
+        a {
+          text-decoration: none;
+          color: #241917;
+          font-weight: 600;
+          font-size: 14px;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
+    }
+    .separator {
+      width: 1px;
+      height: 25px;
+      background-color: #241917;
+      border-radius: 18px;
     }
   }
 }

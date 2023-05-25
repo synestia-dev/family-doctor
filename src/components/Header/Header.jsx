@@ -3,7 +3,10 @@ import Preheader from "./Preheader/Preheader";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
+
 const Header = () => {
+  
   return (
     <>
       <Preheader />
@@ -15,29 +18,33 @@ const Header = () => {
                 <img src={logo} alt="logo" />
               </Link>
             </div>
-            <ul className="header__menu">
-              <li>
-                <Link to="/directions">Напрямки</Link>
-              </li>
-              <li>
-                <Link to="/doctors">Лікарі</Link>
-              </li>
-              <li>
-                <Link to="/about">Про нас</Link>
-              </li>
-              <li>
-                <Link to="/for-companies">Для компаній</Link>
-              </li>
-              <li>
-                <Link to="/news">Новини</Link>
-              </li>
-              <li>
-                <Link to="/contacts">Контакти</Link>
-              </li>
-              <li>
-                <Link to="/directions">Фотогалерея</Link>
-              </li>
-            </ul>
+            <div className="header__menu">
+              <ul className="header__menu_list">
+                <li>
+                  <Link to="/directions">Напрямки</Link>
+                </li>
+                <li>
+                  <Link to="/doctors">Лікарі</Link>
+                </li>
+                <li>
+                  <Link to="/about">Про нас</Link>
+                </li>
+                <li>
+                  <Link to="/for-companies">Для компаній</Link>
+                </li>
+                <li>
+                  <Link to="/news">Новини</Link>
+                </li>
+                <li>
+                  <Link to="/contacts">Контакти</Link>
+                </li>
+                <li>
+                  <Link to="/directions">Фотогалерея</Link>
+                </li>
+              </ul>
+              <div className="separator"></div>
+              <LangSwitcher />
+            </div>
             <Button to="/" text="Запис на прийом" />
           </nav>
         </div>
