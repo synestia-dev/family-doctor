@@ -1,6 +1,6 @@
 import "./AdvantageItem.scss";
 import PropTypes from "prop-types";
-import FamilyIcon from "../../../../../assets/ iconComponents/FamilyIcon.jsx";
+import FamilyIcon from "../../../../../assets/iconComponents/FamilyIcon.jsx";
 const AdvantageItem = ({ title, text }) => {
   return (
     <div className="advantage">

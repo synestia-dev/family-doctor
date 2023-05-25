@@ -1,24 +1,24 @@
 import "./About.scss";
-import DentistIcon from "../../../../assets/ iconComponents/DentistIcon.jsx";
-import GynecologistIcon from "../../../../assets/ iconComponents/GynecologistIcon.jsx";
-import PsychologistIcon from "../../../../assets/ iconComponents/PsychologistIcon.jsx";
-import TreatmentIcon from "../../../../assets/ iconComponents/TreatmentIcon.jsx";
-import CardiologistIcon from "../../../../assets/ iconComponents/CardiologistIcon.jsx";
-import TraumatologyIcon from "../../../../assets/ iconComponents/TraumatologyIcon.jsx";
-import StomatologyIcon from "../../../../assets/ iconComponents/StomatologyIcon.jsx";
-import PhysiotherapyIcon from "../../../../assets/ iconComponents/PhysiotherapyIcon.jsx";
-import OtolaryngologistIcon from "../../../../assets/ iconComponents/OtolaryngologistIcon.jsx";
-import OphthalmologyIcon from "../../../../assets/ iconComponents/OphthalmologyIcon.jsx";
-import NarcologyIcon from "../../../../assets/ iconComponents/NarcologyIcon.jsx";
-import DiagnosticIcon from "../../../../assets/ iconComponents/DiagnosticIcon.jsx";
-import EndoscopicIcon from "../../../../assets/ iconComponents/EndoscopicIcon.jsx";
-import ConsultationIcon from "../../../../assets/ iconComponents/ConsultationIcon.jsx";
-import CheckupIcon from "../../../../assets/ iconComponents/CheckupIcon.jsx";
-import UrologyIcon from "../../../../assets/ iconComponents/UrologyIcon.jsx";
-import HospitalIcon from "../../../../assets/ iconComponents/HospitalIcon.jsx";
-import LabaratoryIcon from "../../../../assets/ iconComponents/LaboratoryIcon.jsx";
-import GynecologyIcon from "../../../../assets/ iconComponents/GynecologyIcon.jsx";
-import DermatologyIcon from "../../../../assets/ iconComponents/DermatologyIcon.jsx";
+import DentistIcon from "../../../../assets/iconComponents/DentistIcon.jsx";
+import GynecologistIcon from "../../../../assets/iconComponents/GynecologistIcon.jsx";
+import PsychologistIcon from "../../../../assets/iconComponents/PsychologistIcon.jsx";
+import TreatmentIcon from "../../../../assets/iconComponents/TreatmentIcon.jsx";
+import CardiologistIcon from "../../../../assets/iconComponents/CardiologistIcon.jsx";
+import TraumatologyIcon from "../../../../assets/iconComponents/TraumatologyIcon.jsx";
+import StomatologyIcon from "../../../../assets/iconComponents/StomatologyIcon.jsx";
+import PhysiotherapyIcon from "../../../../assets/iconComponents/PhysiotherapyIcon.jsx";
+import OtolaryngologistIcon from "../../../../assets/iconComponents/OtolaryngologistIcon.jsx";
+import OphthalmologyIcon from "../../../../assets/iconComponents/OphthalmologyIcon.jsx";
+import NarcologyIcon from "../../../../assets/iconComponents/NarcologyIcon.jsx";
+import DiagnosticIcon from "../../../../assets/iconComponents/DiagnosticIcon.jsx";
+import EndoscopicIcon from "../../../../assets/iconComponents/EndoscopicIcon.jsx";
+import ConsultationIcon from "../../../../assets/iconComponents/ConsultationIcon.jsx";
+import CheckupIcon from "../../../../assets/iconComponents/CheckupIcon.jsx";
+import UrologyIcon from "../../../../assets/iconComponents/UrologyIcon.jsx";
+import HospitalIcon from "../../../../assets/iconComponents/HospitalIcon.jsx";
+import LabaratoryIcon from "../../../../assets/iconComponents/LaboratoryIcon.jsx";
+import GynecologyIcon from "../../../../assets/iconComponents/GynecologyIcon.jsx";
+import DermatologyIcon from "../../../../assets/iconComponents/DermatologyIcon.jsx";
 
 const POPULAR_SERVICES = [
   {
