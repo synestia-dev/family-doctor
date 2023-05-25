@@ -45,7 +45,6 @@ const Header = () => {
               <div className="separator"></div>
               <LangSwitcher />
             </div>
-
             <Button to="/" text="Запис на прийом" />
           </nav>
         </div>

@@ -1,0 +1,62 @@
+.about {
+  margin-bottom: 1.9rem;
+  width: 100%;
+  font-weight: 600;
+  .vertical-line {
+    border: 1px solid rgba(238, 41, 34, 0.35);
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 4.5rem;
+
+    .title {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .services {
+    font-size: 0.85rem;
+    &__popular {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 5.6rem;
+    }
+    &__item {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      color: #ee2922;
+      border-radius: 0.75rem;
+      padding: 1.5rem 2.6rem;
+      gap: 1rem;
+    }
+
+    &__catalogue {
+      display: flex;
+
+      justify-content: space-between;
+      margin-bottom: 5.4rem;
+      .catalogue__items {
+        color: #ee2922;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        ul {
+        }
+      }
+
+      .catalogue__list {
+      }
+      li {
+        display: flex;
+
+        align-items: center;
+        gap: 0.6rem
+      }
+    }
+  }
+}
