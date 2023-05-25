@@ -11,10 +11,10 @@ const Footer = () => {
           <div className="row__item">
             <h6 className="row__title">Время работы</h6>
             <div className="schedule">
-              <div className="">Пн-Пт:</div>
-              <div className="">8:00-20:00</div>
-              <div className="">Сб-Вс:</div>
-              <div className="">9:00-15:00</div>
+              <div>Пн-Пт:</div>
+              <div>8:00-20:00</div>
+              <div>Сб-Вс:</div>
+              <div>9:00-15:00</div>
             </div>
             <h6 className="address">Адрес</h6>
             <p className="address__info">
@@ -26,22 +26,16 @@ const Footer = () => {
             <h6 className="row__title">О нас</h6>
             <nav>
               <ul className="about__list">
-                <li className="list__item">
-                  <a href="" className="">
-                    Клиника
-                  </a>
+                <li>
+                  <a href="#">Клиника</a>
                 </li>
-                <li className="">
-                  <a href="" className="">
-                    Фотогалерея
-                  </a>
+                <li>
+                  <a href="#">Фотогалерея</a>
                 </li>
-                <li className="">
-                  <a href="" className="">
-                    Блог
-                  </a>
+                <li>
+                  <a href="#">Блог</a>
                 </li>
-                <li className="">
+                <li>
                   <a href="" className="">
                     Наша команда
                   </a>
@@ -53,25 +47,17 @@ const Footer = () => {
             <h6 className="row__title">Для клиентов</h6>
             <nav>
               <ul className="about__list">
-                <li className="">
-                  <a href="#" className="">
-                    Клиника
-                  </a>
+                <li>
+                  <a href="#">Клиника</a>
+                </li>
+                <li>
+                  <a href="#">Фотогалерея</a>
+                </li>
+                <li>
+                  <a href="#">Блог</a>
                 </li>
                 <li className="">
-                  <a href="#" className="">
-                    Фотогалерея
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="">
-                    Блог
-                  </a>
-                </li>
-                <li className="">
-                  <a href="" className="">
-                    Наша команда
-                  </a>
+                  <a href="#">Наша команда</a>
                 </li>
               </ul>
             </nav>
