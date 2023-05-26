@@ -1,7 +1,8 @@
 import "./OurAdvantages.scss";
 
 import { ADVANTAGES_DATA } from "../../../../assets/dummy/dummy-data.jsx";
-import CardItem from "../../../../components/CardItem/CardItem.jsx";
+import AdvantageItem from "./AdvantageItem/AdvantageItem.jsx";
+// import FamilyIcon from "../../../../assets/iconComponents/FamilyIcon.jsx";
 const OurAdvantages = () => {
   return (
     <div className="advantages">
@@ -11,11 +12,10 @@ const OurAdvantages = () => {
         </h2>
         <div className="advantages__list">
           {ADVANTAGES_DATA.map((advantage, index) => (
-            <CardItem
+            <AdvantageItem
               title={advantage.title}
               text={advantage.text}
               key={index}
-              icon={advantage.icon}
             />
           ))}
         </div>
