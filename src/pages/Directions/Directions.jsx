@@ -3,12 +3,10 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Directions.scss";
 import { getRequest } from "../../api";
+import DirectionItem from "./components/DirectionItem/DirectionItem.jsx";
 // import { ALL_SERVICES } from "../../assets/dummy/dummy-data.jsx";
-import CardItem from "../../components/CardItem/CardItem.jsx";
-
 const Directions = () => {
   const [directionsData, setDirectionsData] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,11 +29,12 @@ const Directions = () => {
           <h2 className="directions__title">Наші напрямки</h2>
           <div className="directions__list">
             {directionsData.map((direction) => (
-              <CardItem
+              <DirectionItem
                 key={direction.id}
                 title={direction.attributes.title}
-                padding="specs"
-                icon={`${import.meta.env.VITE_API_URL}${direction.attributes.icon.data?.attributes.url}`}
+                icon={`${import.meta.env.VITE_API_URL}${
+                  direction.attributes.icon.data?.attributes.url
+                }`}
               />
             ))}
           </div>
@@ -45,5 +44,4 @@ const Directions = () => {
     </>
   );
 };
-
 export default Directions;

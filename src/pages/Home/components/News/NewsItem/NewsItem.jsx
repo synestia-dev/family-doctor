@@ -1,12 +1,15 @@
 import "./NewsItem.scss";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const NewsItem = ({ date, image, text }) => {
   return (
-    <div className="item">
-      <div className="item__date">{date}</div>
-      <img src={image} alt={image} />
-      <p className="item__text">{text}</p>
-    </div>
+    <Link to="/">
+      <div className="item">
+        <div className="item__date">{date}</div>
+        <img src={image} alt={image} />
+        <p className="item__text">{text}</p>
+      </div>
+    </Link>
   );
 };
 NewsItem.propTypes = {
