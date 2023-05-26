@@ -2,7 +2,7 @@
   position: relative;
   background-color: #ffffff;
   border-radius: 1.25rem;
-  max-width: 370px;
+  min-width: 370px;
 
 }
 
@@ -29,6 +29,14 @@
 
 .advantage__info {
   padding: 1.8rem 1.3rem;
+}
+
+.specs {
+  align-items: center;
+
+  .advantage__title {
+    margin-bottom: 0;
+  }
 }
 
 .advantage__title {
