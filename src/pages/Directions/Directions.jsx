@@ -12,8 +12,9 @@ const Directions = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest("directions");
+        const response = await getRequest("directions?populate=icon");
         if (response && response.data) {
+          console.log(response.data);
           return setDirectionsData(response.data);
         }
       } catch (error) {
@@ -34,7 +35,7 @@ const Directions = () => {
                 key={direction.id}
                 title={direction.attributes.title}
                 padding="specs"
-                // icon={direction.attributes.icon}
+                icon={`${import.meta.env.VITE_API_URL}${direction.attributes.icon.data?.attributes.url}`}
               />
             ))}
           </div>
