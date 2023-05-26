@@ -28,19 +28,19 @@ const Header = () => {
                   <Link to="/doctors">{t('Лікарі')}</Link>
                 </li>
                 <li>
-                  <Link to="/about">Про нас</Link>
+                  <Link to="/about">{t('Про нас')}</Link>
                 </li>
                 <li>
-                  <Link to="/for-companies">Для компаній</Link>
+                  <Link to="/for-companies">{t('Для компаній')}</Link>
                 </li>
                 <li>
-                  <Link to="/news">Новини</Link>
+                  <Link to="/news">{t('Новини')}</Link>
                 </li>
                 <li>
-                  <Link to="/contacts">Контакти</Link>
+                  <Link to="/contacts">{t('Контакти')}</Link>
                 </li>
                 <li>
-                  <Link to="/directions">Фотогалерея</Link>
+                  <Link to="/directions">{t('Фотогалерея')}</Link>
                 </li>
               </ul>
               <div className="separator"></div>
