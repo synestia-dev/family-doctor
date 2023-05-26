@@ -1,3 +1,20 @@
-.directions{
-    
-}
+
+  .directions {
+    background-color: #f8f8f8;
+    &__title {
+      text-align: center;
+      padding-block: 4rem 5rem;
+    }
+
+    &__list {
+      //display: grid;
+      //grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));;
+      //grid-gap: 4rem;
+      //justify-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      padding-bottom: 9.5rem;
+    }
+  }
