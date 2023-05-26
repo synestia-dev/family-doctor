@@ -11,7 +11,7 @@ const Directions = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest("directions?populate=icon");
+        const response = await getRequest("directions?populate=icon&sort=id");
         if (response && response.data) {
           console.log(response.data);
           return setDirectionsData(response.data);
