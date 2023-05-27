@@ -46,7 +46,6 @@
       justify-content: space-between;
       margin-bottom: 5.4rem;
       .catalogue__items {
-        color: #ee2922;
         list-style-type: none;
         display: flex;
         flex-direction: column;
@@ -54,10 +53,13 @@
       }
 
       li {
-        display: flex;
-
-        align-items: center;
-        gap: 0.6rem
+        a {
+          color: #ee2922;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+        }
       }
     }
   }

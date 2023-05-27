@@ -1,10 +1,29 @@
 import "./About.scss";
-import {
-  POPULAR_SERVICES,
-  ALL_SERVICES,
-} from "../../../../assets/dummy/dummy-data.jsx";
-
+import { useState, useEffect } from "react";
+import { getRequest } from "../../../../api";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { shuffle } from "../../../../helpers";
 const About = () => {
+  const { t } = useTranslation();
+  const [directionsData, setDirectionsData] = useState([]);
+  const [popularDirections, setPopularDirections] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getRequest("directions?populate=icon&sort=id");
+        if (response && response.data) {
+          console.log(response.data);
+          setDirectionsData(response.data);
+          setPopularDirections(shuffle(response.data.slice()).slice(0, 5));
+        }
+      } catch (error) {
+        console.log("Error fetching directions data:", error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className="about">
       <div className="container">
@@ -14,19 +33,31 @@ const About = () => {
         </div>
         <div className="services">
           <nav className="services__popular">
-            {POPULAR_SERVICES.map((service, index) => (
-              <li key={index} className="services__item">
-                {service.icon}
-                <span>{service.title}</span>
+            {popularDirections.map(({ attributes, id }) => (
+              <li key={id} className="services__item">
+                <img
+                  src={`${import.meta.env.VITE_API_URL}${
+                    attributes.icon.data?.attributes.url
+                  }`}
+                  alt="icon"
+                />
+                <span>{attributes.title}</span>
               </li>
             ))}
           </nav>
           <div className="services__catalogue">
             <ul className="catalogue__items">
-              {ALL_SERVICES.slice(0, 5).map((service, index) => (
-                <li key={index}>
-                  {service.icon}
-                  <span>{service.title}</span>
+              {directionsData.slice(0, 5).map(({ attributes, id }) => (
+                <li key={id}>
+                  <Link to="/">
+                    <img
+                      src={`${import.meta.env.VITE_API_URL}${
+                        attributes.icon.data?.attributes.url
+                      }`}
+                      alt="icon"
+                    />
+                    <span>{t(attributes.title)}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -34,19 +65,33 @@ const About = () => {
             <hr className="vertical-line" />
 
             <ul className="catalogue__items">
-              {ALL_SERVICES.slice(5, 10).map((service, index) => (
-                <li key={index}>
-                  {service.icon}
-                  <span>{service.title}</span>
+              {directionsData.slice(5, 10).map(({ attributes, id }) => (
+                <li key={id}>
+                  <Link to="/">
+                    <img
+                      src={`${import.meta.env.VITE_API_URL}${
+                        attributes.icon.data?.attributes.url
+                      }`}
+                      alt="icon"
+                    />
+                    <span>{t(attributes.title)}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
             <hr className="vertical-line" />
             <ul className="catalogue__items">
-              {ALL_SERVICES.slice(10, 15).map((service, index) => (
-                <li key={index}>
-                  {service.icon}
-                  <span>{service.title}</span>
+              {directionsData.slice(10, 15).map(({ attributes, id }) => (
+                <li key={id}>
+                  <Link to="/">
+                    <img
+                      src={`${import.meta.env.VITE_API_URL}${
+                        attributes.icon.data?.attributes.url
+                      }`}
+                      alt="icon"
+                    />
+                    <span>{t(attributes.title)}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
