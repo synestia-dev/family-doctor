@@ -1,0 +1,25 @@
+.person {
+  max-width: 170px;
+  &__image {
+    background-image: url("../../../../assets/icons/doctor.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 170px;
+    margin-bottom: 0.5rem;
+  }
+  &__info {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+  }
+  &__title {
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #8e8e8e;
+  }
+}
