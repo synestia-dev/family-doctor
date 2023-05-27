@@ -1,0 +1,35 @@
+.direction {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  min-width: 370px;
+
+  &__circle {
+    position: absolute;
+    top: -28px;
+    left: 18px;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    border: 1px solid #ee2922;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+
+  &__info {
+    padding: 1.8rem 1.3rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.direction:hover {
+  background-color: #ee2922;
+  transition: background-color 0.5s, color 0.5s;
+  color: #ffffff;
+}

@@ -3,16 +3,15 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Directions.scss";
 import { getRequest } from "../../api";
-// import { ALL_SERVICES } from "../../assets/dummy/dummy-data.jsx";
-import CardItem from "../../components/CardItem/CardItem.jsx";
-
+import DirectionItem from "./components/DirectionItem/DirectionItem.jsx";
+import { useTranslation } from "react-i18next";
 const Directions = () => {
+  const { t } = useTranslation()
   const [directionsData, setDirectionsData] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest("directions?populate=icon");
+        const response = await getRequest("directions?populate=icon&sort=id");
         if (response && response.data) {
           console.log(response.data);
           return setDirectionsData(response.data);
@@ -28,14 +27,15 @@ const Directions = () => {
       <Header />
       <section className="directions">
         <div className="container">
-          <h2 className="directions__title">Наші напрямки</h2>
+          <h2 className="directions__title">{t('Наші напрямки')}</h2>
           <div className="directions__list">
             {directionsData.map((direction) => (
-              <CardItem
+              <DirectionItem
                 key={direction.id}
                 title={direction.attributes.title}
-                padding="specs"
-                icon={`${import.meta.env.VITE_API_URL}${direction.attributes.icon.data?.attributes.url}`}
+                icon={`${import.meta.env.VITE_API_URL}${
+                  direction.attributes.icon.data?.attributes.url
+                }`}
               />
             ))}
           </div>
@@ -45,5 +45,4 @@ const Directions = () => {
     </>
   );
 };
-
 export default Directions;
