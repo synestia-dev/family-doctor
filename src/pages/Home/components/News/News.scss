@@ -1,7 +1,11 @@
 .news {
   width: 100%;
-  margin-bottom: 3.8rem;
-
+  margin-bottom: 120px;
+  margin-top: 100px;
+  .button {
+    width: 240px;
+    margin: 0 auto;
+  }
   &__title {
     margin-bottom: 2rem;
     text-align: center;
@@ -9,7 +13,23 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .news {
+    .button {
+      width: 100%;
+    }
+
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      > div {
+        width: 100%;
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import "./News.scss";
 import NewsItem from "./NewsItem/NewsItem.jsx";
+import Button from "../../../../components/Button/Button";
 import { NEWS_DATA } from "../../../../assets/dummy/dummy-data.jsx";
 const News = () => {
   return (
@@ -16,6 +17,7 @@ const News = () => {
             />
           ))}
         </div>
+        <Button to="" text="Усі наші статті" color="articles" />
       </div>
     </div>
   );

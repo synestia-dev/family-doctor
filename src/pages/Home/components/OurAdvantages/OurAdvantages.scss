@@ -3,7 +3,6 @@
   width: 100%;
   margin-bottom: 6.3rem;
 
-
   &__title {
     margin-bottom: 4.4rem;
     text-align: center;
@@ -11,10 +10,26 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));;
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
     justify-items: center;
   }
 }
-
-
+@media (max-width: 1080px) {
+  .advantages {
+    &__list {
+      column-gap: 30px;
+      row-gap: 60px;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .advantages {
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      > div{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,8 +1,6 @@
 import "./OurAdvantages.scss";
-
 import { ADVANTAGES_DATA } from "../../../../assets/dummy/dummy-data.jsx";
 import AdvantageItem from "./AdvantageItem/AdvantageItem.jsx";
-// import FamilyIcon from "../../../../assets/iconComponents/FamilyIcon.jsx";
 const OurAdvantages = () => {
   return (
     <div className="advantages">
