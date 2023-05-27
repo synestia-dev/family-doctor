@@ -28,8 +28,8 @@ const About = () => {
     <div className="about">
       <div className="container">
         <div className="about__title">
-          <h2 className="title">Які медичні послуги ми пропонуємо?</h2>
-          <p className="text">Найбільш відвідувані послуги:</p>
+          <h2 className="title">{t('Які медичні послуги ми пропонуємо?')}</h2>
+          <p className="text">{t('Найбільш відвідувані послуги:')}</p>
         </div>
         <div className="services">
           <nav className="services__popular">
@@ -41,7 +41,7 @@ const About = () => {
                   }`}
                   alt="icon"
                 />
-                <span>{attributes.title}</span>
+                <span>{t(attributes.title)}</span>
               </li>
             ))}
           </nav>
