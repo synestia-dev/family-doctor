@@ -14,13 +14,14 @@ const Home = () => {
       <section className="home">
         <Banner />
         <About />
-        <Button to="" text="Записатись на прийом" color="sign-up default" />
         <OurAdvantages />
-        <img
-          src={horizontalLogo}
-          alt={horizontalLogo}
-          className="horizontal-logo"
-        />
+        <div className="container">
+          <img
+            src={horizontalLogo}
+            alt={horizontalLogo}
+            className="horizontal-logo"
+          />
+        </div>
         <News />
         <Button to="" text="Усі наші статті" color="articles" />
       </section>

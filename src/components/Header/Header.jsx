@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 const Header = () => {
   const { t } = useTranslation();
   return (
@@ -25,28 +25,28 @@ const Header = () => {
                   <Link to="/directions">{t("Напрямки")}</Link>
                 </li>
                 <li>
-                  <Link to="/doctors">{t('Лікарі')}</Link>
+                  <Link to="/doctors">{t("Лікарі")}</Link>
                 </li>
                 <li>
-                  <Link to="/about">{t('Про нас')}</Link>
+                  <Link to="/about">{t("Про нас")}</Link>
                 </li>
                 <li>
-                  <Link to="/for-companies">{t('Для компаній')}</Link>
+                  <Link to="/for-companies">{t("Для компаній")}</Link>
                 </li>
                 <li>
-                  <Link to="/news">{t('Новини')}</Link>
+                  <Link to="/news">{t("Новини")}</Link>
                 </li>
                 <li>
-                  <Link to="/contacts">{t('Контакти')}</Link>
+                  <Link to="/contacts">{t("Контакти")}</Link>
                 </li>
                 <li>
-                  <Link to="/directions">{t('Фотогалерея')}</Link>
+                  <Link to="/directions">{t("Фотогалерея")}</Link>
                 </li>
               </ul>
               <div className="separator"></div>
               <LangSwitcher />
             </div>
-            <Button to="/" text="Запис на прийом" color="choose default"/>
+            <Button to="/" text="Запис на прийом" color="choose default" />
           </nav>
         </div>
       </div>

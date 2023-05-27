@@ -4,6 +4,7 @@ import { getRequest } from "../../../../api";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { shuffle } from "../../../../helpers";
+import Button from "../../../../components/Button/Button";
 const About = () => {
   const { t } = useTranslation();
   const [directionsData, setDirectionsData] = useState([]);
@@ -16,7 +17,7 @@ const About = () => {
         if (response && response.data) {
           console.log(response.data);
           setDirectionsData(response.data);
-          setPopularDirections(shuffle(response.data.slice()).slice(0, 5));
+          setPopularDirections(shuffle(response.data.slice()).slice(0, 4));
         }
       } catch (error) {
         console.log("Error fetching directions data:", error);
@@ -28,13 +29,14 @@ const About = () => {
     <div className="about">
       <div className="container">
         <div className="about__title">
-          <h2 className="title">{t('Які медичні послуги ми пропонуємо?')}</h2>
-          <p className="text">{t('Найбільш відвідувані послуги:')}</p>
+          <h2 className="title">{t("Які медичні послуги ми пропонуємо?")}</h2>
+          <p className="text">{t("Найбільш відвідувані послуги:")}</p>
+          <p className="text-mob">{t("Усі послуги:")}</p>
         </div>
         <div className="services">
-          <nav className="services__popular">
+          <div className="services__popular">
             {popularDirections.map(({ attributes, id }) => (
-              <li key={id} className="services__item">
+              <Link to="/" key={id} className="services__item">
                 <img
                   src={`${import.meta.env.VITE_API_URL}${
                     attributes.icon.data?.attributes.url
@@ -42,61 +44,26 @@ const About = () => {
                   alt="icon"
                 />
                 <span>{t(attributes.title)}</span>
-              </li>
+              </Link>
             ))}
-          </nav>
+          </div>
           <div className="services__catalogue">
-            <ul className="catalogue__items">
-              {directionsData.slice(0, 5).map(({ attributes, id }) => (
-                <li key={id}>
-                  <Link to="/">
-                    <img
-                      src={`${import.meta.env.VITE_API_URL}${
-                        attributes.icon.data?.attributes.url
-                      }`}
-                      alt="icon"
-                    />
-                    <span>{t(attributes.title)}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <hr className="vertical-line" />
-
-            <ul className="catalogue__items">
-              {directionsData.slice(5, 10).map(({ attributes, id }) => (
-                <li key={id}>
-                  <Link to="/">
-                    <img
-                      src={`${import.meta.env.VITE_API_URL}${
-                        attributes.icon.data?.attributes.url
-                      }`}
-                      alt="icon"
-                    />
-                    <span>{t(attributes.title)}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <hr className="vertical-line" />
-            <ul className="catalogue__items">
-              {directionsData.slice(10, 15).map(({ attributes, id }) => (
-                <li key={id}>
-                  <Link to="/">
-                    <img
-                      src={`${import.meta.env.VITE_API_URL}${
-                        attributes.icon.data?.attributes.url
-                      }`}
-                      alt="icon"
-                    />
-                    <span>{t(attributes.title)}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {directionsData.map(({ attributes, id }) => (
+              <div className="services__catalogue_item" key={id}>
+                <Link to="/">
+                  <img
+                    src={`${import.meta.env.VITE_API_URL}${
+                      attributes.icon.data?.attributes.url
+                    }`}
+                    alt="icon"
+                  />
+                  <span>{t(attributes.title)}</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
+        <Button to="/" text="Записатись на прийом" color="sign-up default" />
       </div>
     </div>
   );
