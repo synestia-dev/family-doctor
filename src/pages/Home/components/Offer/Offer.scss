@@ -1,4 +1,4 @@
-.about {
+.offer {
   margin-bottom: 1.75rem;
   width: 100%;
   font-weight: 600;
@@ -79,7 +79,7 @@
   }
 }
 @media (max-width: 1080px) {
-  .about {
+  .offer {
     &__title {
       margin-bottom: 3.125rem;
     }
@@ -100,7 +100,7 @@
   }
 }
 @media (max-width: 991px) {
-  .about {
+  .offer {
     .services {
       &__catalogue {
         &_item {
@@ -120,7 +120,7 @@
   }
 }
 @media (max-width: 660px) {
-  .about {
+  .offer {
     .services {
       &__catalogue {
         &_item {
@@ -135,7 +135,7 @@
   }
 }
 @media screen and (max-width: 425px) {
-  .about {
+  .offer {
     .button {
       width: 100%;
     }

@@ -37,10 +37,10 @@ const Header = () => {
                   <Link to="/news">{t("Новини")}</Link>
                 </li>
                 <li>
-                  <Link to="/contacts">{t("Контакти")}</Link>
+                  <Link to="/contact">{t("Контакти")}</Link>
                 </li>
                 <li>
-                  <Link to="/directions">{t("Фотогалерея")}</Link>
+                  <Link to="/photogallery">{t("Фотогалерея")}</Link>
                 </li>
               </ul>
               <div className="separator"></div>

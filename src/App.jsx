@@ -1,16 +1,28 @@
 import "./index.css";
-
 import { Routes, Route } from "react-router-dom";
-
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home/Home";
 import Directions from "./pages/Directions/Directions";
-import Doctors from "./pages/Doctors/Doctors.jsx";
+import Doctors from "./pages/Doctors/Doctors";
+import Doctor from "./pages/Doctor/Doctor";
+import About from "./pages/About/About";
+import ForCompanies from "./pages/ForCompanies/ForCompanies";
+import News from "./pages/News/News";
+import OneNews from "./pages/OneNews/OneNews";
+import Contact from "./pages/Contact/Contact";
 function App() {
   return (
     <Routes>
+      <Route path="*" element={<ErrorPage />} />
       <Route path="/" element={<Home />} />
       <Route path="/directions" element={<Directions />} />
       <Route path="/doctors" element={<Doctors />} />
+      <Route path="/doctors/:id" element={<Doctor />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/for-companies" element={<ForCompanies />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/news/:id" element={<OneNews />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }

@@ -2,17 +2,17 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Banner from "../../pages/Home/components/Banner/Banner.jsx";
 import "./Home.scss";
-import About from "../../pages/Home/components/About/About.jsx";
+import Offer from "./components/Offer/Offer.jsx";
 import OurAdvantages from "../../pages/Home/components/OurAdvantages/OurAdvantages.jsx";
 import horizontalLogo from "../../assets/icons/horizontal-logo.svg";
-import News from "../../pages/Home/components/News/News.jsx";
+import NewsList from "../../components/NewsList/NewsList.jsx";
 const Home = () => {
   return (
     <>
       <Header />
       <section className="home">
         <Banner />
-        <About />
+        <Offer />
         <OurAdvantages />
         <div className="container">
           <img
@@ -21,7 +21,7 @@ const Home = () => {
             className="horizontal-logo"
           />
         </div>
-        <News />
+        <NewsList />
       </section>
       <Footer />
     </>

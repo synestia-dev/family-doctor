@@ -1,13 +1,13 @@
-import "./News.scss";
+import "./NewsList.scss";
 import NewsItem from "./NewsItem/NewsItem.jsx";
-import Button from "../../../../components/Button/Button";
-import { NEWS_DATA } from "../../../../assets/dummy/dummy-data.jsx";
-const News = () => {
+import Button from "../Button/Button";
+import { NEWS_DATA } from "../../assets/dummy/dummy-data.jsx";
+const NewsList = () => {
   return (
-    <div className="news">
+    <div className="newsList">
       <div className="container">
-        <h2 className="news__title">Новини</h2>
-        <div className="news__list">
+        <h2 className="newsList__title">Новини</h2>
+        <div className="newsList__list">
           {NEWS_DATA.map((newsItem, index) => (
             <NewsItem
               key={index}
@@ -23,4 +23,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default NewsList;

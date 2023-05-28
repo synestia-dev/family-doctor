@@ -10,7 +10,6 @@ const Doctors = () => {
         <div className="container">
           <DoctorsList />
           <DoctorsList />
-
           <DoctorsList />
         </div>
       </section>

@@ -1,11 +1,11 @@
-import "./About.scss";
+import "./Offer.scss";
 import { useState, useEffect } from "react";
 import { getRequest } from "../../../../api";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { shuffle } from "../../../../helpers";
 import Button from "../../../../components/Button/Button";
-const About = () => {
+const Offer = () => {
   const { t } = useTranslation();
   const [directionsData, setDirectionsData] = useState([]);
   const [popularDirections, setPopularDirections] = useState([]);
@@ -26,9 +26,9 @@ const About = () => {
     fetchData();
   }, []);
   return (
-    <div className="about">
+    <div className="offer">
       <div className="container">
-        <div className="about__title">
+        <div className="offer__title">
           <h2 className="title">{t("Які медичні послуги ми пропонуємо?")}</h2>
           <p className="text">{t("Найбільш відвідувані послуги:")}</p>
           <p className="text-mob">{t("Усі послуги:")}</p>
@@ -59,4 +59,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Offer;
