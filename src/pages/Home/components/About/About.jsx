@@ -37,12 +37,7 @@ const About = () => {
           <div className="services__popular">
             {popularDirections.map(({ attributes, id }) => (
               <Link to="/" key={id} className="services__item">
-                <img
-                  src={`${import.meta.env.VITE_API_URL}${
-                    attributes.icon.data?.attributes.url
-                  }`}
-                  alt="icon"
-                />
+                <img src={attributes.icon.data?.attributes.url} alt="icon" />
                 <span>{t(attributes.title)}</span>
               </Link>
             ))}
@@ -51,12 +46,7 @@ const About = () => {
             {directionsData.map(({ attributes, id }) => (
               <div className="services__catalogue_item" key={id}>
                 <Link to="/">
-                  <img
-                    src={`${import.meta.env.VITE_API_URL}${
-                      attributes.icon.data?.attributes.url
-                    }`}
-                    alt="icon"
-                  />
+                  <img src={attributes.icon.data?.attributes.url} alt="icon" />
                   <span>{t(attributes.title)}</span>
                 </Link>
               </div>
