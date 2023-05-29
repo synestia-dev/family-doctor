@@ -1,11 +1,12 @@
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
+
 const DoctorsItem = ({ attributes }) => {
   return (
     <div className="person">
       <img
         className="person__image"
-        src={attributes?.photo?.data.attributes?.url}
+        src={attributes?.photo?.data[0].attributes?.url}
         alt="icon"
       />
       <div className="person__info">
@@ -18,19 +19,19 @@ const DoctorsItem = ({ attributes }) => {
   );
 };
 
-DoctorsItem.propTypes = {
-  attributes: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    surname: PropTypes.string.isRequired,
-    patronymic: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    photo: PropTypes.shape({
-      data: PropTypes.shape({
-        attributes: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }),
-  }).isRequired,
-};
+// DoctorsItem.propTypes = {
+//   attributes: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     surname: PropTypes.string.isRequired,
+//     patronymic: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     photo: PropTypes.shape({
+//       data: PropTypes.shape({
+//         attributes: PropTypes.shape({
+//           url: PropTypes.string.isRequired,
+//         }).isRequired,
+//       }).isRequired,
+//     }),
+//   }).isRequired,
+// };
 export default DoctorsItem;

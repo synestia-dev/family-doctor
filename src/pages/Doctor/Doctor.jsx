@@ -34,36 +34,6 @@ const Doctor = () => {
 
     fetchData();
   }, [id]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await getRequest(`doctors/${id}/?populate=photo`);
-  //       if (response && response.data) {
-  //         console.log(response.data);
-  //         setDoctorData(response.data);
-  //       }
-  //     } catch (error) {
-  //       console.log("Error fetching doctor data:", error);
-  //     }
-  //   };
-  //
-  //   fetchData();
-  // }, [id]);
-  //
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await getRequest("directions?populate=icon&sort=id");
-  //       if (response && response.data) {
-  //         console.log(response.data);
-  //         setSpecializations(response.data);
-  //       }
-  //     } catch (error) {
-  //       console.log("Error fetching directions data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
 
   return (
     <>
