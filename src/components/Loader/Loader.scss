@@ -1,0 +1,55 @@
+.loader {
+    width: 100px;
+    height: 100px;
+  }
+  #drawFirst {
+    stroke-dasharray: 52;
+    stroke-dashoffset: 52;
+    animation: drawFirst 4s linear infinite;
+  }
+  #drawSecond {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 190;
+    animation: drawSecond 4s linear infinite;
+  }
+  
+  @keyframes drawFirst {
+    0% {
+      stroke-dashoffset: 52;
+      fill: transparent;
+    }
+    45% {
+      fill: transparent;
+    }
+    50% {
+      fill: #2f9734;
+      stroke-dashoffset: 0;
+    }
+    60% {
+      fill: #2f9734;
+    }
+    100% {
+      fill: transparent;
+      stroke-dashoffset: 52;
+    }
+  }
+  @keyframes drawSecond {
+    0% {
+      fill: transparent;
+      stroke-dashoffset: 190;
+    }
+    45% {
+      fill: transparent;
+    }
+    50% {
+      fill: #ee2922;
+      stroke-dashoffset: 0;
+    }
+    65% {
+      fill: #ee2922;
+    }
+    100% {
+      fill: transparent;
+      stroke-dashoffset: 190;
+    }
+  }
