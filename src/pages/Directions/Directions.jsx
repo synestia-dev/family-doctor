@@ -5,9 +5,12 @@ import "./Directions.scss";
 import { getRequest } from "../../api";
 import DirectionItem from "./components/DirectionItem/DirectionItem.jsx";
 import { useTranslation } from "react-i18next";
+import Loader from "../../components/Loader/Loader.jsx";
 const Directions = () => {
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(true);
   const [directionsData, setDirectionsData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,6 +21,8 @@ const Directions = () => {
         }
       } catch (error) {
         console.log("Error fetching directions data:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchData();
@@ -28,14 +33,22 @@ const Directions = () => {
       <section className="directions">
         <div className="container">
           <h2 className="directions__title">{t("Наші напрямки")}</h2>
-          <div className="directions__list">
-            {directionsData.map((direction) => (
-              <DirectionItem
-                key={direction.id}
-                title={direction.attributes.title}
-                icon={direction.attributes.icon.data?.attributes.url}
-              />
-            ))}
+          <div className="directions__content">
+            {isLoading ? (
+              <div className="loader">
+                <Loader />
+              </div>
+            ) : (
+              <div className="directions__list">
+                {directionsData.map((direction) => (
+                  <DirectionItem
+                    key={direction.id}
+                    title={direction.attributes.title}
+                    icon={direction.attributes.icon.data?.attributes.url}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
