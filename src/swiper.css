@@ -1,0 +1,25 @@
+.swiper {
+  height: 500px;
+  border-radius: 15px;
+}
+.swiper-slide img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.swiper-pagination {
+  z-index: 2;
+  bottom: 12px !important;
+}
+
+.swiper-pagination-bullet {
+  background: #ffe7e7 !important;
+  width: 15px;
+  height: 15px;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #ee2922 !important;
+  border-radius: 22px !important;
+  width: 30px;
+}
