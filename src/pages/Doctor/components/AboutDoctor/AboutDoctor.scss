@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2.5rem;
+  gap: 12.5rem;
+
+  &__desc {
+    display: flex;
+    flex: 1.5;
+    gap: 1rem;
+    flex-direction: column;
+
+    &__text {
+      color: #535353;
+    }
+  }
+
+  &__image {
+    background-image: url("../../../../assets/icons/doctor-image.jpg");
+    height: 320px;
+    width: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: 1;
+    background-position: right;
+
+  }
+}
