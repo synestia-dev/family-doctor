@@ -1,11 +1,11 @@
 .person {
   max-width: 170px;
+
+
   &__image {
-    background-image: url("../../../../assets/icons/doctor.png");
-    background-repeat: no-repeat;
-    background-position: center;
     height: 170px;
     margin-bottom: 0.5rem;
+    border-radius: 50%;
   }
   &__info {
     gap: 0.5rem;

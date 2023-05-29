@@ -1,14 +1,36 @@
 import "./DoctorsItem.scss";
-const DoctorsItem = () => {
+import PropTypes from "prop-types";
+const DoctorsItem = ({ attributes }) => {
   return (
     <div className="person">
-      <div className="person__image" />
+      <img
+        className="person__image"
+        src={attributes?.photo?.data.attributes?.url}
+        alt="icon"
+      />
       <div className="person__info">
-        <h4 className="person__title">Іващенко Владислав Валерійович</h4>
-        <p className="person__text">головний лікар напрямку Стоматологія</p>
+        <h4 className="person__title">
+          {attributes.name} {attributes.surname} {attributes.patronymic}
+        </h4>
+        <p className="person__text">{attributes.description}</p>
       </div>
     </div>
   );
 };
 
+DoctorsItem.propTypes = {
+  attributes: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    surname: PropTypes.string.isRequired,
+    patronymic: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    photo: PropTypes.shape({
+      data: PropTypes.shape({
+        attributes: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }),
+  }).isRequired,
+};
 export default DoctorsItem;

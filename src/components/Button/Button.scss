@@ -11,7 +11,7 @@
   transition: all 0.2s ease-in-out;
   justify-content: center;
   &:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 .default {
@@ -22,6 +22,7 @@
   &:hover {
     background: #fff;
     color: #ee2922;
+    transition: 0.3s ease-in;
   }
 }
 
@@ -31,6 +32,7 @@
     border: 1px solid #ee2922;
     background: rgba(238, 41, 34, 0.59);
     color: #ffffff;
+    transition: 0.3s ease-in;
   }
 }
 
@@ -39,6 +41,7 @@
   border: 1px solid #ffffff;
   padding: 16px 24px;
   &:hover {
+    transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.14);
   }
 }
@@ -51,6 +54,7 @@
     box-shadow: 0 4px 4px rgba(238, 41, 34, 0.2);
     background-color: #ee2922;
     color: #ffffff;
+    transition: 0.3s ease-in;
   }
 }
 
@@ -63,6 +67,7 @@
     filter: drop-shadow(0px 12px 20px rgba(0, 0, 0, 0.18));
     background-color: #ee2922;
     color: #ffffff;
+    transition: 0.3s ease-in;
   }
 }
 @media screen and (max-width: 425px){
