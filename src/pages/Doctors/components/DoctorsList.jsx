@@ -8,7 +8,7 @@ const DoctorsList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest("doctors");
+        const response = await getRequest("doctors?populate=photo");
         if (response && response.data) {
           console.log(response.data);
           return setDoctorsData(response.data);

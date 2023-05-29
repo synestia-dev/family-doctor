@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Doctor.scss";
 import { useEffect, useState } from "react";
 import { getRequest } from "../../api/index.js";
-import AboutDoctor from "./components/AboutDoctor/AboutDoctor.jsx";
-import DoctorSpecialization from "./components/DoctorSpecialization/DoctorSpecialization.jsx";
 
 const Doctor = () => {
   const { id } = useParams();
@@ -13,7 +11,7 @@ const Doctor = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest(`doctors/${id}`);
+        const response = await getRequest(`doctors/${id}/?populate=photo`);
         if (response && response.data) {
           console.log(response.data);
           setDoctorData(response.data);
@@ -25,14 +23,55 @@ const Doctor = () => {
 
     fetchData();
   }, [id]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await getRequest("doctors/?populate=photo");
+  //       if (response && response.data) {
+  //         console.log(response.data);
+  //         setSpecializations(response.data);
+  //       }
+  //     } catch (error) {
+  //       console.log("Error fetching directions data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
+  console.log(`dataaaa ${doctorData.attributes?.photo.data[0].attributes.url}`);
   return (
     <>
       <Header />
       <section className="doctor">
         <div className="container">
-          <AboutDoctor doctorData={doctorData.attributes} />
-          <DoctorSpecialization />
+          {/*<AboutDoctor doctorData={doctorData.attributes} />*/}
+          <div className="doctor__info">
+            <div className="doctor__desc">
+              <h2>
+                {doctorData.attributes?.name} {doctorData.attributes?.surname}{" "}
+                {doctorData.attributes?.patronymic}
+              </h2>
+              <p className="doctor__text">
+                {doctorData.attributes?.description}
+              </p>
+            </div>
+            <img
+              className="doctor__image"
+              src={doctorData?.attributes?.photo?.data[0].attributes?.url}
+              alt="Image"
+            />
+          </div>
+          <div className="specialization">
+            <h3 className="specialization__title">Медична спеціалізація</h3>
+            <div className="specialization__list">
+              {/*{specializations.map(({ attributes, id }) => (*/}
+              {/*  <Link to="/" key={id} className="specialization__list_item">*/}
+              {/*    <img src={attributes.icon.data?.attributes.url} alt="icon" />*/}
+              {/*    <span>{t(attributes.title)}</span>*/}
+              {/*  </Link>*/}
+              {/*))}*/}
+            </div>
+          </div>
         </div>
       </section>
       <Footer />
