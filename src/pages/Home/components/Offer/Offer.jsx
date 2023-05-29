@@ -46,7 +46,7 @@ const Offer = () => {
             {directionsData.map(({ attributes, id }) => (
               <div className="services__catalogue_item" key={id}>
                 <Link to="/">
-                  <img src={attributes.icon.data?.attributes.url} alt="icon" />
+                  <img src={attributes.icon.data.attributes.url} alt="icon" />
                   <span>{t(attributes.title)}</span>
                 </Link>
               </div>

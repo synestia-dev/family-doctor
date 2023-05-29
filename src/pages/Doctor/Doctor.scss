@@ -14,7 +14,7 @@
 
   &__desc {
     display: flex;
-    flex: 1.5;
+    flex: 2;
     gap: 1rem;
     flex-direction: column;
   }
@@ -24,13 +24,10 @@
   }
 
   &__image {
-    //background-image: url(`${doctorData?.attributes?.photo?.data?.attributes?.url}`);
     height: 320px;
     width: 320px;
-    background-size: contain;
-    background-repeat: no-repeat;
     flex: 1;
-    background-position: right;
+    border-radius: 50%;
   }
 
   .specialization {
@@ -40,7 +37,6 @@
     box-shadow: 0 0.3rem 1.25rem rgba(89, 89, 89, 0.06);
     padding: 2.5rem;
     margin-bottom: 14rem;
-
     &__title {
       font-size: 2rem;
       font-weight: 500;
@@ -62,7 +58,7 @@
         border-radius: 0.625rem;
         background-color: #fff;
         box-shadow: 0 0 1rem rgba(66, 65, 65, 0.13);
-        transition: background-color 0.3s;
+        transition: background-color 0.3s ease-in;
         gap: 0.625rem;
         font-weight: 600;
         &:hover {
@@ -72,6 +68,7 @@
 
           img {
             filter: brightness(0) invert(1) grayscale(1);
+            transition: 0.3s ease-in;
           }
         }
       }

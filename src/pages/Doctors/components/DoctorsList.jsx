@@ -8,17 +8,19 @@ const DoctorsList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getRequest("doctors?populate=photo");
+        const response = await getRequest(`doctors/?populate=photo`);
         if (response && response.data) {
           console.log(response.data);
-          return setDoctorsData(response.data);
+          setDoctorsData(response.data);
         }
       } catch (error) {
-        console.log("Error fetching directions data:", error);
+        console.log("Error fetching doctor data:", error);
       }
     };
+
     fetchData();
   }, []);
+
   return (
     <>
       <section className="list">
