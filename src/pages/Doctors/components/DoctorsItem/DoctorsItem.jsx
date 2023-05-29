@@ -19,19 +19,19 @@ const DoctorsItem = ({ attributes }) => {
   );
 };
 
-// DoctorsItem.propTypes = {
-//   attributes: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     surname: PropTypes.string.isRequired,
-//     patronymic: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     photo: PropTypes.shape({
-//       data: PropTypes.shape({
-//         attributes: PropTypes.shape({
-//           url: PropTypes.string.isRequired,
-//         }).isRequired,
-//       }).isRequired,
-//     }),
-//   }).isRequired,
-// };
+DoctorsItem.propTypes = {
+  attributes: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    surname: PropTypes.string.isRequired,
+    patronymic: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    photo: PropTypes.shape({
+      data: PropTypes.shape({
+        attributes: PropTypes.shape({
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }),
+  }).isRequired,
+};
 export default DoctorsItem;
