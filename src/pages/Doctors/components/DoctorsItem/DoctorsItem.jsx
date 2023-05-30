@@ -13,7 +13,7 @@ const DoctorsItem = ({ attributes }) => {
         <h4 className="person__title">
           {attributes.name} {attributes.surname} {attributes.patronymic}
         </h4>
-        <p className="person__text">{attributes.description}</p>
+        <p className="person__text">{attributes.position}</p>
       </div>
     </div>
   );
@@ -24,7 +24,7 @@ DoctorsItem.propTypes = {
     name: PropTypes.string.isRequired,
     surname: PropTypes.string.isRequired,
     patronymic: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
     photo: PropTypes.shape({
       data: PropTypes.shape({
         attributes: PropTypes.shape({
