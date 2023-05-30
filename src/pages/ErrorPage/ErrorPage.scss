@@ -1,6 +1,6 @@
 .error {
-  height: 80vh;
-  padding-top: 48px;
+  min-height: 80vh;
+  padding-block: 48px;
   &__inner {
     display: flex;
     align-items: center;
