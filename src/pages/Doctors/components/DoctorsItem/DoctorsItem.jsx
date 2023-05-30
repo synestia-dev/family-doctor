@@ -1,11 +1,12 @@
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
+
 const DoctorsItem = ({ attributes }) => {
   return (
     <div className="person">
       <img
         className="person__image"
-        src={attributes?.photo?.data.attributes?.url}
+        src={attributes?.photo?.data[0].attributes?.url}
         alt="icon"
       />
       <div className="person__info">
