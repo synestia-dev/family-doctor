@@ -73,7 +73,7 @@ const Doctor = () => {
           <div className="doctor__info">
             <div className="doctor__desc">
               <h2>
-                {doctorData.attributes?.name} {doctorData.attributes?.surname}{" "}
+                {doctorData.attributes?.surname} {doctorData.attributes?.name}{" "}
                 {doctorData.attributes?.patronymic}
               </h2>
               <p className="doctor__text">

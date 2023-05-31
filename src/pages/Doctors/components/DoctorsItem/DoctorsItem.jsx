@@ -1,10 +1,10 @@
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
 const DoctorsItem = ({ itemData }) => {
-  // console.log(name);
+
   const positionText = itemData.head
-    ? "завідувач відділення " + itemData.position
-    : itemData.position + (itemData.childrens ? " дитячий" : "");
+    ? "завідувач відділення, " + itemData.position
+    : itemData.position + (itemData.childrens ? ", дитячий" : "");
   return (
     <div className="person">
       <img
@@ -14,7 +14,7 @@ const DoctorsItem = ({ itemData }) => {
       />
       <div className="person__info">
         <h4 className="person__title">
-          {itemData.name} {itemData.surname} {itemData.patronymic}
+        {itemData.surname} {itemData.name} {itemData.patronymic}
         </h4>
         <p className="person__text">{positionText}</p>
       </div>
