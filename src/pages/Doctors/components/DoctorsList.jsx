@@ -1,34 +1,18 @@
 import "./DoctorsList.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import DoctorsItem from "./DoctorsItem/DoctorsItem.jsx";
-import { useEffect, useState } from "react";
-import { getRequest } from "../../../api/index.js";
-const DoctorsList = () => {
-  const [doctorsData, setDoctorsData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await getRequest(`doctors/?populate=photo`);
-        if (response && response.data) {
-          console.log(response.data);
-          setDoctorsData(response.data);
-        }
-      } catch (error) {
-        console.log("Error fetching doctor data:", error);
-      }
-    };
+import PropTypes from "prop-types";
 
-    fetchData();
-  }, []);
-
+const DoctorsList = ({ title, doctorsList }) => {
+  const { id } = useParams();
   return (
     <>
       <section className="list">
-        <h3>Стоматологія</h3>
+        <h3>{title}</h3>
         <div className="list__items">
-          {doctorsData.map(({ attributes, id }) => (
-            <Link to={`/doctors/${id}`} key={id}>
-              <DoctorsItem attributes={attributes} id={id} />
+          {doctorsList.map((item, index) => (
+            <Link to={`/doctors/${id}`} key={index}>
+              <DoctorsItem itemData={item.attributes} />
             </Link>
           ))}
         </div>
@@ -36,5 +20,27 @@ const DoctorsList = () => {
     </>
   );
 };
-
+DoctorsList.propTypes = {
+  title: PropTypes.string.isRequired,
+  doctorsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      attributes: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        surname: PropTypes.string.isRequired,
+        patronymic: PropTypes.string.isRequired,
+        photo: PropTypes.shape({
+          data: PropTypes.arrayOf(
+            PropTypes.shape({
+              attributes: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+              }).isRequired,
+            })
+          ).isRequired,
+        }).isRequired,
+        position: PropTypes.string.isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
+};
 export default DoctorsList;

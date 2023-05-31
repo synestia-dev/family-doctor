@@ -16,7 +16,7 @@ const Doctor = () => {
     const fetchData = async () => {
       try {
         const response1 = await getRequest(`doctors/${id}/?populate=photo`);
-        const response2 = await getRequest("directions?populate=icon&sort=id");
+        const response2 = await getRequest(`directions?populate=icon&sort=id`);
 
         if (response1 && response1.data) {
           console.log(response1.data);
