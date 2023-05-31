@@ -18,7 +18,7 @@ const Doctor = () => {
     const fetchData = async () => {
       try {
         const response1 = await getRequest(`doctors/${id}/?populate=photo`);
-        const response2 = await getRequest("directions?populate=icon&sort=id");
+        const response2 = await getRequest(`directions?populate=icon&sort=id`);
 
         if (response1 && response1.data) {
           console.log(response1.data);
@@ -51,9 +51,8 @@ const Doctor = () => {
               <div className="doctor__info">
                 <div className="doctor__desc">
                   <h2>
-                    {doctorData.attributes?.name}{" "}
-                    {doctorData.attributes?.surname}{" "}
-                    {doctorData.attributes?.patronymic}
+                    {doctorData.attributes?.surname} {doctorData.attributes?.name}{" "}
+                {doctorData.attributes?.patronymic}
                   </h2>
                   <p className="doctor__text">
                     {doctorData.attributes?.description}

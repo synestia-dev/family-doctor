@@ -1,37 +1,48 @@
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
 
-const DoctorsItem = ({ attributes }) => {
+const DoctorsItem = ({ itemData }) => {
+
+  const positionText = itemData.head
+    ? "завідувач відділення, " + itemData.position
+    : itemData.position + (itemData.childrens ? ", дитячий" : "");
+
   return (
     <div className="person">
       <img
         className="person__image"
-        src={attributes?.photo?.data[0].attributes?.url}
+
+        src={itemData.photo.data[0].attributes.url}
+
         alt="icon"
       />
       <div className="person__info">
         <h4 className="person__title">
-          {attributes.name} {attributes.surname} {attributes.patronymic}
+        {itemData.surname} {itemData.name} {itemData.patronymic}
         </h4>
-        <p className="person__text">{attributes.position}</p>
+        <p className="person__text">{positionText}</p>
       </div>
     </div>
   );
 };
-
 DoctorsItem.propTypes = {
-  attributes: PropTypes.shape({
+  itemData: PropTypes.shape({
+    photo: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          attributes: PropTypes.shape({
+            url: PropTypes.string.isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
     name: PropTypes.string.isRequired,
     surname: PropTypes.string.isRequired,
     patronymic: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
-    photo: PropTypes.shape({
-      data: PropTypes.shape({
-        attributes: PropTypes.shape({
-          url: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }),
+    head: PropTypes.bool.isRequired,
+    childrens: PropTypes.bool.isRequired,
   }).isRequired,
 };
+
 export default DoctorsItem;
