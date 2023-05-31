@@ -12,6 +12,9 @@ import about1 from "../../assets/about1.jpg";
 import about2 from "../../assets/about2.jpg";
 import staff from "../../assets/staff.jpeg";
 import apple from "../../assets/apple.svg";
+import friends1 from "../../assets/friends1.png";
+import friends2 from "../../assets/friends2.png";
+import friends3 from "../../assets/friends3.png";
 const About = () => {
   const { t } = useTranslation();
   return (
@@ -55,8 +58,6 @@ const About = () => {
               modules={[Pagination]}
               pagination={{ clickable: true }}
               slidesPerView={1}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide>
                 <img src={about1} alt="about1" />
@@ -115,6 +116,91 @@ const About = () => {
               <span>головний лікар напрямку &quot;Стоматологія&quot;</span>
             </div>
           </div>
+        </div>
+        <h2>{t("Наші друзі")}</h2>
+        <div className="about__friends">
+          <div className="container">
+            <div className="about__friends_inner">
+              <div>
+                <img src={friends1} alt="friends1" />
+              </div>
+              <div>
+                <img src={friends2} alt="friends1" />
+              </div>
+              <div>
+                <img src={friends3} alt="friends1" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>{t("Відгуки наших клієнтів")}</h2>
+        <div className="about__feedbacks">
+          <Swiper slidesPerView={1.5} spaceBetween={20} width={1020} className="feedback-slider">
+            <SwiperSlide>
+              <div className="feedback">
+                <div className="feedback__head">
+                  <h6>Максим П.</h6>
+                  <img src={apple} alt="apple" />
+                </div>
+                <p>
+                  Я являюсь клиентом Сімейного Лікара в течение последних 17
+                  лет. Все, что касалось моего медицинского обслуживания, было
+                  превосходным. Персонал знает меня лично, и я знаю их, врачи
+                  действительно заботятся обо мне и моей семье. Я могу
+                  настоятельно рекомендовать стабильную среду для здоровья,
+                  обеспечиваемую Сімейним лікарем
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="feedback">
+                <div className="feedback__head">
+                  <h6>Максим П.</h6>
+                  <img src={apple} alt="apple" />
+                </div>
+                <p>
+                  Я являюсь клиентом Сімейного Лікара в течение последних 17
+                  лет. Все, что касалось моего медицинского обслуживания, было
+                  превосходным. Персонал знает меня лично, и я знаю их, врачи
+                  действительно заботятся обо мне и моей семье. Я могу
+                  настоятельно рекомендовать стабильную среду для здоровья,
+                  обеспечиваемую Сімейним лікарем
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="feedback">
+                <div className="feedback__head">
+                  <h6>Максим П.</h6>
+                  <img src={apple} alt="apple" />
+                </div>
+                <p>
+                  Я являюсь клиентом Сімейного Лікара в течение последних 17
+                  лет. Все, что касалось моего медицинского обслуживания, было
+                  превосходным. Персонал знает меня лично, и я знаю их, врачи
+                  действительно заботятся обо мне и моей семье. Я могу
+                  настоятельно рекомендовать стабильную среду для здоровья,
+                  обеспечиваемую Сімейним лікарем
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="feedback">
+                <div className="feedback__head">
+                  <h6>Максим П.</h6>
+                  <img src={apple} alt="apple" />
+                </div>
+                <p>
+                  Я являюсь клиентом Сімейного Лікара в течение последних 17
+                  лет. Все, что касалось моего медицинского обслуживания, было
+                  превосходным. Персонал знает меня лично, и я знаю их, врачи
+                  действительно заботятся обо мне и моей семье. Я могу
+                  настоятельно рекомендовать стабильную среду для здоровья,
+                  обеспечиваемую Сімейним лікарем
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
       <Footer />

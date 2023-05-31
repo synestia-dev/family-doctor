@@ -1,15 +1,19 @@
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
+
 const DoctorsItem = ({ itemData }) => {
 
   const positionText = itemData.head
     ? "завідувач відділення, " + itemData.position
     : itemData.position + (itemData.childrens ? ", дитячий" : "");
+
   return (
     <div className="person">
       <img
         className="person__image"
+
         src={itemData.photo.data[0].attributes.url}
+
         alt="icon"
       />
       <div className="person__info">

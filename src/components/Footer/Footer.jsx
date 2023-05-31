@@ -48,23 +48,23 @@ const Footer = () => {
           </div>
           <div className="row__item">
             <h6 className="row__title">Контакти</h6>
-            <a href="" className="contact">
+            <a href="" className="contacts">
               <img src={phone} alt={phone} />
-              <span className="contact__item">
+              <span className="contacts__item">
                 +38 (061) 764-87-03 <br /> приймальня ген директора
               </span>
             </a>
             <br />
-            <a href="" className="contact">
+            <a href="" className="contacts">
               <img src={phone} alt={phone} />
-              <p className="contact__item">
+              <p className="contacts__item">
                 +38 (061) 764-87-08 <br /> відділ кадрів
               </p>
             </a>
             <br />
-            <a href="" className="contact">
+            <a href="" className="contacts">
               <img src={mail} alt={mail} />
-              <span className="contact__item">Shyroke_likar@ukr.net</span>
+              <span className="contacts__item">Shyroke_likar@ukr.net</span>
             </a>
           </div>
           <div className="row__item">

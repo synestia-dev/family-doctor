@@ -1,20 +1,22 @@
 
   .directions {
+    min-height: 80vh;
     background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
     &__title {
       text-align: center;
       padding-block: 4rem 2rem;
     }
-
     &__content {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
       .loader {
         margin-bottom: 3rem;
 
       }
     }
+
     &__list {
 
 

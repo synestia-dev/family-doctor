@@ -1,4 +1,5 @@
 .doctor {
+  min-height: 80vh;
   background: #F8F8F8;
   display: flex;
   flex-direction: column;
@@ -56,11 +57,11 @@
         align-items: center;
         flex-basis: calc(33.33% - 1.25rem);
         padding: 1.25rem 1.8rem;
-        border-radius: 0.625rem;
+        border-radius: 0.6rem;
         background-color: #fff;
         box-shadow: 0 0 1rem rgba(66, 65, 65, 0.13);
         transition: background-color 0.3s ease-in;
-        gap: 0.625rem;
+        gap: 0.6rem;
         font-weight: 600;
         &:hover {
           background-color: #ee2922;

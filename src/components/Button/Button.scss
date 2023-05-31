@@ -70,8 +70,20 @@
     transition: 0.3s ease-in;
   }
 }
-@media screen and (max-width: 425px){
-  .button{
+
+.back-to {
+  padding: 1.25rem 2.7rem;
+  border: 1px solid #2babe3;
+  color: #2babe3;
+}
+
+.back-to:hover {
+  text-decoration: underline #2babe3;
+}
+
+
+@media screen and (max-width: 425px) {
+  .button {
     width: 100%;
   }
 }
