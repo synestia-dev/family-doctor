@@ -59,7 +59,7 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Doctors.scss";
-import DoctorsList from "./components/DoctorsList.jsx";
+import DoctorsList from "./components/DoctorsList/DoctorsList.jsx";
 import { useEffect, useState } from "react";
 import { getRequest } from "../../api/index.js";
 import Loader from "../../components/Loader/Loader.jsx";
@@ -82,7 +82,13 @@ const Doctors = () => {
       );
       if (response && response.data) {
         console.log(response.data);
-        setDoctorsDirectionData((prevData) => [...prevData, ...response.data]);
+        setDoctorsDirectionData((prevData) => {
+          const newData = prevData.filter(
+            (existingItem) =>
+              !response.data.some((item) => item.id === existingItem.id)
+          );
+          return [...newData, ...response.data];
+        });
         setPage((prevPage) => prevPage + 1);
       }
       if (!response.data || response.data.length === 0) {
@@ -95,6 +101,7 @@ const Doctors = () => {
     }
   };
 
+  // console.log(doctorsDirectionsData);
   return (
     <>
       <Header />
