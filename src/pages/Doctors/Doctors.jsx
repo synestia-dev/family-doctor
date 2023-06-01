@@ -1,4 +1,4 @@
-// import Header from "../../components/Header/Header";
+// import Menu from "../../components/Menu/Menu";
 // import Footer from "../../components/Footer/Footer";
 // import "./Doctors.scss";
 // import DoctorsList from "./components/DoctorsList.jsx";
@@ -32,7 +32,7 @@
 //
 //   return (
 //     <>
-//       <Header />
+//       <Menu />
 //       <section className="doctors">
 //         <div className="container">
 //           {isLoading ? (

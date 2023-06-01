@@ -7,6 +7,9 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__burger {
+    display: none;
+  }
   &__logo {
     img {
       height: 45px;
@@ -42,8 +45,23 @@
 }
 @media screen and (max-width: 1080px){
   .header{
+    background: #ffffff;
+      position: relative;
     &__menu{
       display: none;
     }
+    &__burger {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      background: #EE2922;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .btn-remove {
+    display: none;
   }
 }
