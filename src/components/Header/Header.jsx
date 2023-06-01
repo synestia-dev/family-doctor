@@ -6,8 +6,17 @@ import Button from "../Button/Button";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
 import { useTranslation } from "react-i18next";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+
+import { useState } from "react";
+import Menu from "./Menu/Menu.jsx";
+import { useLocation } from "react-router-dom";
 const Header = () => {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleMenuClick = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
     <>
       <Preheader />
@@ -46,9 +55,21 @@ const Header = () => {
               <div className="separator"></div>
               <LangSwitcher />
             </div>
-            <Button to="/" text="Запис на прийом" color="choose default" />
+            <button className="header__burger" onClick={handleMenuClick}>
+              {isOpen ? (
+                <RxCross1 size={15} color={"#F8F8F8"} />
+              ) : (
+                <RxHamburgerMenu size={10} color={"#F8F8F8"} />
+              )}
+            </button>
+            <Button
+              to="/"
+              text="Запис на прийом"
+              color="choose default remove"
+            />
           </nav>
         </div>
+        {isOpen && <Menu />}
       </div>
     </>
   );

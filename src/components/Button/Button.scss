@@ -77,10 +77,17 @@
   color: #2babe3;
 }
 
+
 .back-to:hover {
   text-decoration: underline #2babe3;
 }
 
+@media (max-width: 1080px) {
+  .remove {
+    display: none;
+  }
+
+}
 
 @media screen and (max-width: 425px) {
   .button {
