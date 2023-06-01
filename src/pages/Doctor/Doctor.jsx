@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Doctor.scss";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { getRequest } from "../../api/index.js";
 import { useTranslation } from "react-i18next";
 import Loader from "../../components/Loader/Loader.jsx";
@@ -39,6 +39,10 @@ const Doctor = () => {
     fetchData();
   }, [id]);
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />
@@ -50,10 +54,11 @@ const Doctor = () => {
             <>
               <div className="doctor__info">
                 <div className="doctor__desc">
-                  <h2>
-                    {doctorData.attributes?.surname} {doctorData.attributes?.name}{" "}
-                {doctorData.attributes?.patronymic}
-                  </h2>
+                  <h1 className="doctor__fullname">
+                    {doctorData.attributes?.surname}{" "}
+                    {doctorData.attributes?.name}{" "}
+                    {doctorData.attributes?.patronymic}
+                  </h1>
                   <p className="doctor__text">
                     {doctorData.attributes?.description}
                   </p>

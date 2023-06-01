@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import "./DoctorsList.scss";
 import { Link } from "react-router-dom";
 import DoctorsItem from "./DoctorsItem/DoctorsItem.jsx";
 import PropTypes from "prop-types";
 
 const DoctorsList = ({ title, doctorsList }) => {
+  useEffect(() => {});
   return (
     <>
       <section className="list">

@@ -13,10 +13,10 @@ const OneNews = () => {
         <div className="container">
           <div className="oneNews__content">
             <img src={photoNews} alt={photoNews} className="oneNews__image" />
-            <h2>
+            <h1>
               Ви страждаєте від хронічного головного болю?
               <br /> Фізіотерапевт також може вирішити цю проблему
-            </h2>
+            </h1>
             <p className="oneNews__text">
               Постійний біль голови — це дуже неприємне відчуття, якого ми
               хочемо уникнути, наскільки це можливо. Але, на жаль, цей украй
