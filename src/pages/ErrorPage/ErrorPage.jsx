@@ -12,7 +12,7 @@ const ErrorPage = () => {
           <div className="error__inner">
             <img src={errorImg} alt="404" />
             <div>
-              <h2>404 Error</h2>
+              <h1>404 Error</h1>
               <h3>Оооой! Лікаря немає поруч</h3>
               <p>
                 Ми намагалися, але не змогли знайти сторінку, яку ви шукаєте{" "}
@@ -20,7 +20,7 @@ const ErrorPage = () => {
                 Наступного разу ми зробимо краще
               </p>
             </div>
-            <Button to="/" text="Повернутися" color="choose default"/>
+            <Button to="/" text="Повернутися" color="choose default" />
           </div>
         </div>
       </section>

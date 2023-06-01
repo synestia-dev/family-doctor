@@ -32,7 +32,7 @@ const Directions = () => {
       <Header />
       <section className="directions">
         <div className="container">
-          <h2 className="directions__title">{t("Наші напрямки")}</h2>
+          <h1 className="directions__title">{t("Наші напрямки")}</h1>
           <div className="directions__content">
             {isLoading ? (
               <div className="loader">
