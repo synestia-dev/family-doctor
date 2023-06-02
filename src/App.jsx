@@ -10,6 +10,7 @@ import ForCompanies from "./pages/ForCompanies/ForCompanies";
 import News from "./pages/News/News";
 import OneNews from "./pages/OneNews/OneNews";
 import Contact from "./pages/Contact/Contact";
+import Form from "./pages/Form/Form.jsx";
 function App() {
   return (
     <Routes>
@@ -23,6 +24,7 @@ function App() {
       <Route path="/news" element={<News />} />
       <Route path="/news/:id" element={<OneNews />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/form" element={<Form />} />
     </Routes>
   );
 }
