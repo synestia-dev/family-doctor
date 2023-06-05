@@ -10,12 +10,15 @@ import ForCompanies from "./pages/ForCompanies/ForCompanies";
 import News from "./pages/News/News";
 import OneNews from "./pages/OneNews/OneNews";
 import Contact from "./pages/Contact/Contact";
+import OneDirection from "./pages/OneDirection/OneDirection.jsx";
 function App() {
   return (
     <Routes>
       <Route path="*" element={<ErrorPage />} />
       <Route path="/" element={<Home />} />
       <Route path="/directions" element={<Directions />} />
+      {/*add id to direction path*/}
+      <Route path="/direction" element={<OneDirection />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/doctors/:id" element={<Doctor />} />
       <Route path="/about" element={<About />} />
