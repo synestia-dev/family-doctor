@@ -1,0 +1,96 @@
+.baner {
+  background-image: url("../../../assets/icons/form-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 595px;
+  display: flex;
+  position: relative;
+
+  &__inner {
+    //height: 100%;
+    //top: 60px;
+    //left: calc(50% - 1030px/2);
+    margin-top: 60px;
+    background: #ffffff;
+    border-radius: 30px;
+
+    max-width: 64rem;
+    padding: 100px 115px;
+    display: flex;
+    flex-direction: column;
+
+    &__info {
+      background-color: red;
+    }
+  }
+  //&__info {
+  //  display: flex;
+  //  flex-direction: column;
+  //  gap: 1.25rem;
+  //  text-align: center;
+  //  justify-content: center;
+  //  align-items: center;
+  //  margin-bottom: 40px;
+  //  h2 {
+  //    font-style: normal;
+  //    font-weight: 200;
+  //    font-size: 40px;
+  //    line-height: 48px;
+  //
+  //    color: #000000;
+  //  }
+  //  p {
+  //    font-style: normal;
+  //    font-weight: 300;
+  //    font-size: 20px;
+  //    line-height: 24px;
+  //    text-align: center;
+  //  }
+  //}
+
+  &__btn {
+    padding: 20px 43px;
+    background-color: #2babe3;
+  }
+  &__field {
+    margin-bottom: 20px;
+
+    label {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #d4edf9;
+      background-color: #f5f8f9;
+    }
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    button[type="submit"] {
+      background-color: #2196f3;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #1769aa;
+      }
+    }
+  }
+}
