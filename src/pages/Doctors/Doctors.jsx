@@ -78,7 +78,7 @@ const Doctors = () => {
   const fetchData = async () => {
     try {
       const response = await getRequest(
-        `specializations?populate=doctors&populate=doctors.photo&pagination[page]=${page}&pagination[pageSize]=2`
+        `specializations?populate=doctors&populate=doctors.photo&pagination[start]=${page}&pagination[limit]=2`
       );
       if (response && response.data) {
         console.log(response.data);
