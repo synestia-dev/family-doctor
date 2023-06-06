@@ -48,12 +48,18 @@
     height: 602px;
     border-radius: 5px;
   }
-  .close {
-    position: fixed;
+  .cross {
     right: 550px;
-    top: 160px;
+    top: 150px;
+    position: absolute;
+
   }
-  .arrow {
-    margin-inline: 350px;
+  .arrow-left {
+    position: absolute;
+    left: 50px;
+  }
+  .arrow-right {
+    position: absolute;
+    right: 50px;
   }
 }

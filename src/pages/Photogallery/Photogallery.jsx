@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import "./Photogallery.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -9,22 +9,9 @@ import photogalleryItem4 from "../../assets/icons/photogallery-item4.png";
 import arrowLeft from "../../assets/icons/arrow-icon.svg";
 import arrowRight from "../../assets/icons/arrow-icon-right.svg";
 import { RxCross1 } from "react-icons/rx";
-
 const Photogallery = () => {
-  const images = [
-    photogalleryItem,
-    photogalleryItem2,
-    photogalleryItem3,
-    photogalleryItem4,
-    photogalleryItem,
-    photogalleryItem2,
-    photogalleryItem3,
-    photogalleryItem4,
-  ];
-
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const overlayRef = useRef(null);
 
   const handleImageClick = (image, index) => {
     setSelectedImage(image);
@@ -35,20 +22,31 @@ const Photogallery = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+    setSelectedImage(images[currentIndex - 1]);
   };
 
   const handleNextImage = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+    setSelectedImage(images[currentIndex + 1]);
   };
 
-  const closeOverlay = (e) => {
-    if (e.target === overlayRef.current) {
-      setSelectedImage(null);
-      setCurrentIndex(0);
-    }
+  const closeOverlay = () => {
+    setSelectedImage(null);
+    setCurrentIndex(0);
   };
+
+  const images = [
+    photogalleryItem,
+    photogalleryItem2,
+    photogalleryItem3,
+    photogalleryItem4,
+    photogalleryItem,
+    photogalleryItem2,
+    photogalleryItem3,
+    photogalleryItem4,
+  ];
 
   return (
     <>
@@ -72,30 +70,35 @@ const Photogallery = () => {
       <Footer />
 
       {selectedImage && (
-        <>
-          <div className="overlay" onClick={closeOverlay} ref={overlayRef}>
-            <div className="close" onClick={() => setSelectedImage(null)}>
-              <RxCross1 size={20} color={"#F8F8F8"} />
-            </div>
-            <img
-              src={arrowLeft}
-              alt="left"
-              className="arrow arrow--left"
-              onClick={handlePreviousImage}
-            />
-            <img
-              src={selectedImage}
-              alt={selectedImage}
-              className="overlay__image"
-            />
-            <img
-              src={arrowRight}
-              alt="right"
-              className="arrow arrow--right"
-              onClick={handleNextImage}
-            />
+        <div className="overlay">
+          <div className="cross" onClick={closeOverlay}>
+            <RxCross1 size={15} color={"#F8F8F8"} />
           </div>
-        </>
+          <img
+            src={arrowLeft}
+            alt="left"
+            className="arrow-left"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePreviousImage();
+            }}
+          />
+          <img
+            src={selectedImage}
+            alt={selectedImage}
+            className="overlay__image"
+          />
+
+          <img
+            src={arrowRight}
+            alt="rigth"
+            className="arrow-right"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNextImage();
+            }}
+          />
+        </div>
       )}
     </>
   );
