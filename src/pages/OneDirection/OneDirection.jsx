@@ -5,9 +5,12 @@ import { useTranslation } from "react-i18next";
 import single from "../../assets/icons/single-spec-image.png";
 import icon from "../../assets/icons/single-list-icon.svg";
 import doctor from "../../assets/icons/single-spec-direc.png";
+import { useLayoutEffect } from "react";
 const OneDirection = () => {
   const { t } = useTranslation();
-
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />

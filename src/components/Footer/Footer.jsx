@@ -40,10 +40,10 @@ const Footer = () => {
                   <Link to="/about">Клініка</Link>
                 </li>
                 <li>
-                  <Link to="/gallery">Фотогалерея</Link>
+                  <Link to="/photogallery">Фотогалерея</Link>
                 </li>
                 <li>
-                  <Link to="/news">Блог</Link>
+                  <Link to="/news">Новини</Link>
                 </li>
                 <li>
                   <Link to="/doctors" className="">
@@ -71,9 +71,7 @@ const Footer = () => {
             <br />
             <a href="mailto:Shyroke_likar@ukr.net" className="contacts">
               <img src={mail} alt={mail} />
-              <a className="contacts__item" href="mailto:Shyroke_likar@ukr.net">
-                Shyroke_likar@ukr.net
-              </a>
+              Shyroke_likar@ukr.net
             </a>
           </div>
           <div className="row__item">

@@ -4,8 +4,12 @@ import Header from "../../components/Header/Header";
 import { useParams } from "react-router-dom";
 import photoNews from "../../assets/icons/news-photo.png";
 import Button from "../../components/Button/Button.jsx";
+import { useLayoutEffect } from "react";
 const OneNews = () => {
   const { id } = useParams();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />

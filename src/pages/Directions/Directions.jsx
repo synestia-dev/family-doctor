@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Directions.scss";
@@ -26,6 +26,10 @@ const Directions = () => {
       }
     };
     fetchData();
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
   return (
     <>
