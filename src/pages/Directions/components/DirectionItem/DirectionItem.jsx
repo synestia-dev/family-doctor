@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const DirectionItem = ({ title, icon }) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   return (
     <Link to="/direction">
       <div className="direction">
