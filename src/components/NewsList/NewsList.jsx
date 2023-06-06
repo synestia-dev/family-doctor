@@ -17,7 +17,7 @@ const NewsList = () => {
             />
           ))}
         </div>
-        <Button to="" text="Усі наші статті" color="articles" />
+        <Button to="/news" text="Усі наші статті" color="articles" />
       </div>
     </div>
   );

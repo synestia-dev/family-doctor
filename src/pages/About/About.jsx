@@ -15,8 +15,12 @@ import apple from "../../assets/apple.svg";
 import friends1 from "../../assets/friends1.png";
 import friends2 from "../../assets/friends2.png";
 import friends3 from "../../assets/friends3.png";
+import { useLayoutEffect } from "react";
 const About = () => {
   const { t } = useTranslation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
@@ -135,7 +139,12 @@ const About = () => {
         </div>
         <h2>{t("Відгуки наших клієнтів")}</h2>
         <div className="about__feedbacks">
-          <Swiper slidesPerView={1.5} spaceBetween={20} width={1020} className="feedback-slider">
+          <Swiper
+            slidesPerView={1.5}
+            spaceBetween={20}
+            width={1020}
+            className="feedback-slider"
+          >
             <SwiperSlide>
               <div className="feedback">
                 <div className="feedback__head">

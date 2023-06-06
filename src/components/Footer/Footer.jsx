@@ -5,6 +5,7 @@ import phone from "../../assets/icons/phone.svg";
 import mail from "../../assets/icons/mail.svg";
 import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,7 +23,13 @@ const Footer = () => {
             <h6 className="address">Адрес</h6>
             <p className="address__info">
               <img src={geo} alt="geo" />
-              м. Запоріжжя, вул. Лікарняна, 18.
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=%D0%BC.+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F%2C+%D0%B2%D1%83%D0%BB.+%D0%9B%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F%D0%BD%D0%B0%2C+18."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                м. Запоріжжя, вул. Лікарняна, 18.
+              </a>
             </p>
           </div>
           <div className="row__item">
@@ -30,41 +37,43 @@ const Footer = () => {
             <nav>
               <ul className="about__list">
                 <li>
-                  <a href="#">Клініка</a>
+                  <Link to="/about">Клініка</Link>
                 </li>
                 <li>
-                  <a href="#">Фотогалерея</a>
+                  <Link to="/gallery">Фотогалерея</Link>
                 </li>
                 <li>
-                  <a href="#">Блог</a>
+                  <Link to="/news">Блог</Link>
                 </li>
                 <li>
-                  <a href="" className="">
+                  <Link to="/doctors" className="">
                     Наша команда
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
           </div>
           <div className="row__item">
             <h6 className="row__title">Контакти</h6>
-            <a href="" className="contacts">
+            <a href="tel:+380617648703" className="contacts">
               <img src={phone} alt={phone} />
               <span className="contacts__item">
                 +38 (061) 764-87-03 <br /> приймальня ген директора
               </span>
             </a>
             <br />
-            <a href="" className="contacts">
+            <a href="tel:+380617648708" className="contacts">
               <img src={phone} alt={phone} />
               <p className="contacts__item">
                 +38 (061) 764-87-08 <br /> відділ кадрів
               </p>
             </a>
             <br />
-            <a href="" className="contacts">
+            <a href="mailto:Shyroke_likar@ukr.net" className="contacts">
               <img src={mail} alt={mail} />
-              <span className="contacts__item">Shyroke_likar@ukr.net</span>
+              <a className="contacts__item" href="mailto:Shyroke_likar@ukr.net">
+                Shyroke_likar@ukr.net
+              </a>
             </a>
           </div>
           <div className="row__item">
@@ -72,16 +81,24 @@ const Footer = () => {
             <nav>
               <ul className="socials">
                 <li>
-                  <RiInstagramFill size={22} />
+                  <a href="https://www.instagram.com">
+                    <RiInstagramFill size={22} />
+                  </a>
                 </li>
                 <li>
-                  <BsTelegram size={21} />
+                  <a href="https://t.me">
+                    <BsTelegram size={21} />
+                  </a>
                 </li>
                 <li>
-                  <BsInstagram size={22} />
+                  <a href="https://www.instagram.com">
+                    <BsInstagram size={22} />
+                  </a>
                 </li>
                 <li>
-                  <BsFacebook size={21} />
+                  <a href="https://www.facebook.com">
+                    <BsFacebook size={21} />
+                  </a>
                 </li>
               </ul>
             </nav>

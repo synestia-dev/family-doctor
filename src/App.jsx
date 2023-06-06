@@ -12,6 +12,7 @@ import OneNews from "./pages/OneNews/OneNews";
 import Contact from "./pages/Contact/Contact";
 import OneDirection from "./pages/OneDirection/OneDirection.jsx";
 import Form from "./pages/Form/Form.jsx";
+import Photogallery from "./pages/Photogallery/Photogallery.jsx";
 function App() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ function App() {
       <Route path="/for-companies" element={<ForCompanies />} />
       <Route path="/news" element={<News />} />
       <Route path="/news/:id" element={<OneNews />} />
+      <Route path="/photogallery" element={<Photogallery />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/form" element={<Form />} />
     </Routes>

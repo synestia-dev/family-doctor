@@ -4,7 +4,7 @@ import LangSwitcher from "../../LangSwitcher/LangSwitcher";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../../Button/Button.jsx";
-import geo from "../../../assets/icons/geo.svg";
+
 import Geo from "../../../assets/iconComponents/Geo.jsx";
 const Menu = () => {
   const { t } = useTranslation();

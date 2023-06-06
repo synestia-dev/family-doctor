@@ -53,7 +53,11 @@ const Offer = () => {
             ))}
           </div>
         </div>
-        <Button to="/" text="Записатись на прийом" color="sign-up default" />
+        <Button
+          to="/form"
+          text="Записатись на прийом"
+          color="sign-up default"
+        />
       </div>
     </div>
   );
