@@ -18,7 +18,7 @@ const Menu = () => {
             <ul className="menu__list">
               <li>
                 <Link
-                  to="/"
+                  to="/directions"
                   className={
                     location.pathname === "/directions" ? `location` : ``
                   }
