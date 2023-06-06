@@ -4,11 +4,16 @@ import Footer from "../../components/Footer/Footer";
 import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
 import formDetails from "../../assets/icons/formDetails.png";
+import { useLayoutEffect } from "react";
 const Form = () => {
   const { t } = useTranslation();
   const handleFormSubmit = (e) => {
     e.preventDefault();
   };
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />

@@ -63,7 +63,7 @@ const Header = () => {
               )}
             </button>
             <Button
-              to="/"
+              to="/form"
               text="Запис на прийом"
               color="choose default remove"
             />

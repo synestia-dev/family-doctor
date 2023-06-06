@@ -16,8 +16,17 @@ const Banner = () => {
                 )}
               </p>
               <div className="info__btn">
-                <Button text="Обрати лікаря" color="choose default" />
-                <Button text="Дізнатися більше" color="transparent" />
+                <Button
+                  text="Обрати лікаря"
+                  color="choose default"
+                  to="/doctors"
+                />
+
+                <Button
+                  text="Дізнатися більше"
+                  color="transparent"
+                  to="/about"
+                />
               </div>
             </div>
           </div>

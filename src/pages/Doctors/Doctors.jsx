@@ -1,66 +1,8 @@
-// import Menu from "../../components/Menu/Menu";
-// import Footer from "../../components/Footer/Footer";
-// import "./Doctors.scss";
-// import DoctorsList from "./components/DoctorsList.jsx";
-// import { useEffect, useState } from "react";
-// import { getRequest } from "../../api/index.js";
-// import Loader from "../../components/Loader/Loader.jsx";
-//
-// const Doctors = () => {
-//   const [doctorsDirectionsData, setDoctorsDirectionData] = useState([]);
-//   const [isLoading, setIsLoading] = useState(true);
-//
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await getRequest(
-//           `specializations?populate=doctors&populate=doctors.photo`
-//         );
-//         if (response && response.data) {
-//           console.log(response.data);
-//           setDoctorsDirectionData(response.data);
-//         }
-//       } catch (error) {
-//         console.log("Error fetching directions doctors data:", error);
-//       } finally {
-//         setIsLoading(false);
-//       }
-//     };
-//
-//     fetchData();
-//   }, []);
-//
-//   return (
-//     <>
-//       <Menu />
-//       <section className="doctors">
-//         <div className="container">
-//           {isLoading ? (
-//             <Loader />
-//           ) : (
-//             <>
-//               {doctorsDirectionsData.map(({ attributes, id }) => (
-//                 <DoctorsList
-//                   key={id}
-//                   title={attributes.title}
-//                   doctorsList={attributes.doctors.data}
-//                 />
-//               ))}
-//             </>
-//           )}
-//         </div>
-//       </section>
-//       <Footer />
-//     </>
-//   );
-// };
-// export default Doctors;
-
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Doctors.scss";
 import DoctorsList from "./components/DoctorsList/DoctorsList.jsx";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { getRequest } from "../../api/index.js";
 import Loader from "../../components/Loader/Loader.jsx";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -73,6 +15,10 @@ const Doctors = () => {
 
   useEffect(() => {
     fetchData();
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   const fetchData = async () => {
@@ -115,6 +61,7 @@ const Doctors = () => {
               next={fetchData}
               hasMore={hasMoreData}
               loader={false}
+              scrollThreshold={0.6}
             >
               {doctorsDirectionsData.map(
                 ({ attributes, id }, index) =>
