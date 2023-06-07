@@ -81,7 +81,7 @@ const OneNews = () => {
             </p>
           </div>
         </div>
-        <Button text="Назад до всіх статей" color="back-to" />
+        <Button to="/news" text="Назад до всіх статей" color="back-to" />
       </section>
       <Footer />
     </>

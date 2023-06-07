@@ -8,8 +8,12 @@ import map from "../../assets/map.png";
 import metro from "../../assets/metro.svg";
 import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
+import { useLayoutEffect } from "react";
 const Contact = () => {
   const { t } = useTranslation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
