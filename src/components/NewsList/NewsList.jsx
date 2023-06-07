@@ -1,7 +1,7 @@
 import "./NewsList.scss";
 import NewsItem from "./NewsItem/NewsItem.jsx";
-import Button from "../Button/Button";
 import { NEWS_DATA } from "../../assets/dummy/dummy-data.jsx";
+import { Link } from "react-router-dom";
 const NewsList = () => {
   return (
     <div className="newsList">
@@ -10,14 +10,13 @@ const NewsList = () => {
         <div className="newsList__list">
           {NEWS_DATA.map((newsItem, index) => (
             <NewsItem
-              key={index}
+              id={newsItem.index}
               date={newsItem.date}
               image={newsItem.image}
               text={newsItem.text}
             />
           ))}
         </div>
-        <Button to="/news" text="Усі наші статті" color="articles" />
       </div>
     </div>
   );

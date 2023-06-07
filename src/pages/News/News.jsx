@@ -10,7 +10,9 @@ const News = () => {
   return (
     <>
       <Header />
-      <NewsList />
+      <section className="news">
+        <NewsList />
+      </section>
       <Footer />
     </>
   );

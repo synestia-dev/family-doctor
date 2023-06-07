@@ -6,7 +6,12 @@ import Offer from "./components/Offer/Offer.jsx";
 import OurAdvantages from "../../pages/Home/components/OurAdvantages/OurAdvantages.jsx";
 import horizontalLogo from "../../assets/icons/horizontal-logo.svg";
 import NewsList from "../../components/NewsList/NewsList.jsx";
+import Button from "../../components/Button/Button.jsx";
+import { useLayoutEffect } from "react";
 const Home = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
@@ -21,7 +26,9 @@ const Home = () => {
             className="horizontal-logo"
           />
         </div>
+
         <NewsList />
+        <Button to="/news" text="Усі наші статті" color="articles" />
       </section>
       <Footer />
     </>

@@ -36,7 +36,7 @@ const Offer = () => {
         <div className="services">
           <div className="services__popular">
             {popularDirections.map(({ attributes, id }) => (
-              <Link to="/" key={id} className="services__item">
+              <Link to={`/direction/${id}`} key={id} className="services__item">
                 <img src={attributes.icon.data?.attributes.url} alt="icon" />
                 <span>{t(attributes.title)}</span>
               </Link>
@@ -45,7 +45,7 @@ const Offer = () => {
           <div className="services__catalogue">
             {directionsData.map(({ attributes, id }) => (
               <div className="services__catalogue_item" key={id}>
-                <Link to="/">
+                <Link to={`/direction/${id}`}>
                   <img src={attributes.icon.data.attributes.url} alt="icon" />
                   <span>{t(attributes.title)}</span>
                 </Link>

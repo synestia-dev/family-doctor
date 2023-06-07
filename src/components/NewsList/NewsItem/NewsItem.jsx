@@ -1,9 +1,9 @@
 import "./NewsItem.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-const NewsItem = ({ date, image, text }) => {
+const NewsItem = ({ date, image, text, id }) => {
   return (
-    <Link to="/" className="item">
+    <Link to={`/news/${id}`} className="item">
       <div className="item__date">{date}</div>
       <img src={image} alt={image} />
       <p className="item__text">{text}</p>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import "./Photogallery.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -20,29 +20,27 @@ const images = [
   photogalleryItem4,
 ];
 const Photogallery = () => {
-
   const [openedModal, setOpenedModal] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
-  const handleImageClick = (i) =>{
+  const handleImageClick = (i) => {
     setOpenedModal(true);
     setCurrentImage(i);
-  }
+  };
   const prevImage = () => {
-    if(currentImage === 0){
-      setCurrentImage(images.length -1)
-    } else{
-      setCurrentImage(prev => prev-1)
+    if (currentImage === 0) {
+      setCurrentImage(images.length - 1);
+    } else {
+      setCurrentImage((prev) => prev - 1);
     }
-
-  }
+  };
   const nextImage = () => {
-    if(currentImage === images.length -1){
-      setCurrentImage(0)
-    } else{
-      setCurrentImage(prev => prev+1)
+    if (currentImage === images.length - 1) {
+      setCurrentImage(0);
+    } else {
+      setCurrentImage((prev) => prev + 1);
     }
-  }
+  };
 
   useEffect(() => {
     if (openedModal) {
@@ -54,6 +52,10 @@ const Photogallery = () => {
       document.body.classList.remove("no-scroll");
     };
   }, [openedModal]);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -85,7 +87,10 @@ const Photogallery = () => {
             onClick={() => prevImage()}
           />
           <div className="overlay__inner">
-            <div className="cross" onClick={() => setOpenedModal(prev => !prev)}>
+            <div
+              className="cross"
+              onClick={() => setOpenedModal((prev) => !prev)}
+            >
               <RxCross1 size={36} color={"#F8F8F8"} />
             </div>
 
