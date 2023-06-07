@@ -27,7 +27,7 @@ const Home = () => {
           />
         </div>
 
-        <NewsList />
+        <NewsList count={6} />
         <Button to="/news" text="Усі наші статті" color="articles" />
       </section>
       <Footer />
