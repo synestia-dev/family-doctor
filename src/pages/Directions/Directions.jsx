@@ -47,6 +47,7 @@ const Directions = () => {
                 {directionsData.map((direction) => (
                   <DirectionItem
                     key={direction.id}
+                    id={direction.id}
                     title={direction.attributes.title}
                     icon={direction.attributes.icon.data?.attributes.url}
                   />

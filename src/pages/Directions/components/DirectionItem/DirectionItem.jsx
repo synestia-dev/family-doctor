@@ -2,10 +2,11 @@ import "./DirectionItem.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-const DirectionItem = ({ title, icon }) => {
+const DirectionItem = ({ title, icon, id }) => {
+  // console.log(key);
   const { t } = useTranslation();
   return (
-    <Link to="/direction">
+    <Link to={`/directions/${id}`}>
       <div className="direction">
         <div className="direction__circle">
           <img src={icon} alt="icon" />
@@ -21,6 +22,7 @@ const DirectionItem = ({ title, icon }) => {
 DirectionItem.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,
+  key: PropTypes.number,
 };
 
 export default DirectionItem;
