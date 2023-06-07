@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "fslightbox": "^3.4.1",
-    "fslightbox-react": "^1.7.4",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.1",
