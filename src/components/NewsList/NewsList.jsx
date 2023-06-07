@@ -1,11 +1,12 @@
 import "./NewsList.scss";
 import NewsItem from "./NewsItem/NewsItem.jsx";
-import { NEWS_DATA } from "../../assets/dummy/dummy-data.jsx";
 import { useEffect, useState } from "react";
 import { getRequest } from "../../api/index.js";
+import Loader from "../Loader/Loader.jsx";
 
 const NewsList = ({ count }) => {
   const [newsData, setNewsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -16,6 +17,8 @@ const NewsList = ({ count }) => {
         }
       } catch (error) {
         console.log("Error fetching directions data:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchData();
@@ -26,17 +29,23 @@ const NewsList = ({ count }) => {
     <div className="newsList">
       <div className="container">
         <h2 className="newsList__title">Новини</h2>
-        <div className="newsList__list">
-          {displayedNews?.map((newsItem, index) => (
-            <NewsItem
-              key={index}
-              id={newsItem.id}
-              date={newsItem.attributes?.date}
-              image={newsItem.attributes?.image?.data[0].attributes?.url}
-              title={newsItem.attributes.title}
-            />
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="loader">
+            <Loader />
+          </div>
+        ) : (
+          <div className="newsList__list">
+            {displayedNews?.map((newsItem, index) => (
+              <NewsItem
+                key={index}
+                id={newsItem.id}
+                date={newsItem.attributes?.date}
+                image={newsItem.attributes?.image?.data[0].attributes?.url}
+                title={newsItem.attributes.title}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
