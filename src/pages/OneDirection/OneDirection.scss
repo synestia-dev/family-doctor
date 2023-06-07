@@ -23,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 193px;
     padding-bottom: 70px;
 
     &_desc {
@@ -41,9 +40,10 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 17.5px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 15.5px;
+    width: 460px;
 
     &_item {
       display: flex;
@@ -51,6 +51,10 @@
       align-items: center;
       padding: 0;
       gap: 5px;
+
+      &:nth-child(1) {
+        grid-column: 1;
+      }
 
       span {
         font-family: "Inter";
@@ -126,6 +130,7 @@
         line-height: 16px;
         text-align: center;
       }
+
     }
   }
 }
