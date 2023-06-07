@@ -14,6 +14,7 @@ import OneDirection from "./pages/OneDirection/OneDirection.jsx";
 import Form from "./pages/Form/Form.jsx";
 import Photogallery from "./pages/Photogallery/Photogallery.jsx";
 function App() {
+  
   return (
     <Routes>
       <Route path="*" element={<ErrorPage />} />
