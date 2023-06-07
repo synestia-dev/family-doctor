@@ -1,0 +1,143 @@
+.offer {
+  margin-bottom: 1.75rem;
+  width: 100%;
+  font-weight: 600;
+  .vertical-line {
+    border: 1px solid rgba(238, 41, 34, 0.35);
+  }
+  .button {
+    width: 240px;
+    margin: 0 auto;
+  }
+  .text-mob {
+    display: none;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 4.5rem;
+
+    .title {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .services {
+    font-size: 0.85rem;
+    &__popular {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 5.625rem;
+    }
+    &__item {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      color: #ee2922;
+      border-radius: 0.75rem;
+      padding: 1.5rem 3rem;
+      gap: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease-in;
+      text-decoration: none;
+      &:hover {
+        box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.16);
+      }
+    }
+
+    &__catalogue {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 5.4rem;
+      &_item {
+        flex: 33.3%;
+        border-right: 1px solid #ee2922;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          text-decoration: none;
+          margin-bottom: 26px;
+          font-size: 14px;
+          color: #ee2922;
+          justify-content: center;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &:nth-child(3n) {
+          border-right: none;
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .offer {
+    &__title {
+      margin-bottom: 3.125rem;
+    }
+    .text {
+      display: none;
+    }
+    .text-mob {
+      display: block;
+    }
+    .services {
+      &__popular {
+        display: none;
+      }
+      &__catalogue {
+        margin-bottom: 4.375rem;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .offer {
+    .services {
+      &__catalogue {
+        &_item {
+          flex: 50%;
+          &:nth-child(3n) {
+            border-right: 1px solid #ee2922;
+          }
+          &:last-child {
+            border-right: 1px solid #ee2922;
+          }
+          &:nth-child(2n) {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 660px) {
+  .offer {
+    .services {
+      &__catalogue {
+        &_item {
+          flex: 100%;
+          border-right: none;
+          &:nth-child(3n) {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .offer {
+    .button {
+      width: 100%;
+    }
+  }
+}

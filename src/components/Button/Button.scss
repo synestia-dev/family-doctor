@@ -1,0 +1,99 @@
+.button {
+  font-family: "Inter";
+  border: 1px transparent;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  justify-content: center;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+  }
+}
+.default {
+  background-color: #ee2922;
+  color: #fff;
+  padding: 12px 20px;
+
+  &:hover {
+    background: #fff;
+    color: #ee2922;
+    transition: 0.3s ease-in;
+  }
+}
+
+.choose {
+  border: 1px solid #ee2922;
+  padding: 16px 24px;
+  gap: 10px;
+
+  &:hover {
+    border: 1px solid #ee2922;
+    background: rgba(238, 41, 34, 0.59);
+    color: #ffffff;
+    transition: 0.3s ease-in;
+  }
+}
+
+.transparent {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 16px 24px;
+  &:hover {
+    transition: 0.3s ease-in;
+    background: rgba(255, 255, 255, 0.14);
+  }
+}
+
+.sign-up {
+  text-transform: uppercase;
+  padding: 19px 21px;
+  border-radius: 9px;
+  &:hover {
+    box-shadow: 0 4px 4px rgba(238, 41, 34, 0.2);
+    background-color: #ee2922;
+    color: #ffffff;
+    transition: 0.3s ease-in;
+  }
+}
+
+.articles {
+  padding: 19px 59px;
+  color: #ee2922;
+  border: 1px solid #ee2922;
+  font-size: 1rem;
+  &:hover {
+    filter: drop-shadow(0px 12px 20px rgba(0, 0, 0, 0.18));
+    background-color: #ee2922;
+    color: #ffffff;
+    transition: 0.3s ease-in;
+  }
+}
+
+.back-to {
+  padding: 1.25rem 2.7rem;
+  border: 1px solid #2babe3;
+  color: #2babe3;
+}
+
+
+.back-to:hover {
+  text-decoration: underline #2babe3;
+}
+
+@media (max-width: 1080px) {
+  .remove {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .button {
+    width: 100%;
+  }
+}
