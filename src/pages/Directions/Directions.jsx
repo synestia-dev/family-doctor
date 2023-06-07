@@ -45,11 +45,13 @@ const Directions = () => {
             ) : (
               <div className="directions__list">
                 {directionsData.map((direction) => (
-                  <DirectionItem
-                    key={direction.id}
-                    title={direction.attributes.title}
-                    icon={direction.attributes.icon.data?.attributes.url}
-                  />
+                  <div key={direction.id}>
+                    <DirectionItem
+                      id={direction.id}
+                      title={direction.attributes.title}
+                      icon={direction.attributes.icon.data?.attributes.url}
+                    />
+                  </div>
                 ))}
               </div>
             )}

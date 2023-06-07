@@ -1,6 +1,7 @@
 .oneDirection {
   background: #f8f8f8;
-  padding-bottom: 208px;
+  padding-bottom: 100px;
+
   &__title {
     text-align: center;
     font-family: "Inter";
@@ -9,14 +10,12 @@
     font-size: 40px;
     line-height: 48px;
     padding-block: 66px;
-
     color: #241917;
   }
 
   &__inner {
     display: flex;
     flex-direction: column;
-
     padding-inline: 10px;
   }
 
@@ -33,15 +32,17 @@
       padding: 0;
       gap: 40px;
     }
+
     &--swapped {
       flex-direction: row-reverse;
     }
   }
+
   &__list {
     display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 60px;
-    row-gap: 17.5px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 15.5px;
     width: 460px;
 
     &_item {
@@ -54,13 +55,13 @@
       &:nth-child(1) {
         grid-column: 1;
       }
+
       span {
         font-family: "Inter";
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 19px;
-
         color: #ee2922;
       }
     }
@@ -73,9 +74,11 @@
     &__list {
       display: flex;
       flex-direction: row;
-      gap: 52px;
-      justify-content: center;
+      gap: 60px;
+      justify-content: flex-start;
+      overflow: auto;
     }
+
     h3 {
       font-family: "Inter";
       font-style: normal;
@@ -83,30 +86,37 @@
       font-size: 24px;
       line-height: 29px;
       /* identical to box height */
-
       text-transform: capitalize;
-
       color: #241917;
       margin-bottom: 60px;
     }
+
     &__item {
-      max-width: 200px;
+      width: 200px;
       display: flex;
       flex-direction: column;
+      a {
+        text-decoration: none;
+        color: #000000;
+        p {
+          color: #8e8e8e;
+        }
+      }
 
       &_image {
         height: 200px;
-        width: 100%;
+        width: 200px;
         margin-bottom: 0.5rem;
         border-radius: 50%;
       }
+
       &_info {
         gap: 0.5rem;
         display: flex;
         flex-direction: column;
-
         text-align: center;
       }
+
       &_title {
         font-weight: 600;
         font-size: 13px;
@@ -116,12 +126,11 @@
       }
       &_text {
         font-weight: 400;
-        font-size: 13px;
+        font-size: 133px;
         line-height: 16px;
         text-align: center;
-
-        color: #8e8e8e;
       }
+
     }
   }
 }

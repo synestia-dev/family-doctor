@@ -19,7 +19,7 @@ function App() {
       <Route path="*" element={<ErrorPage />} />
       <Route path="/" element={<Home />} />
       <Route path="/directions" element={<Directions />} />
-      <Route path="/direction/:id" element={<OneDirection />} />
+      <Route path="/directions/:id" element={<OneDirection />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/doctors/:id" element={<Doctor />} />
       <Route path="/about" element={<About />} />
