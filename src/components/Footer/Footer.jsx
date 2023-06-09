@@ -6,7 +6,6 @@ import mail from "../../assets/icons/mail.svg";
 import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <div className="footer">
@@ -20,17 +19,22 @@ const Footer = () => {
               <div>Сб-Нд:</div>
               <div>9:00-15:00</div>
             </div>
-            <h6 className="address">Адрес</h6>
-            <p className="address__info">
-              <img src={geo} alt="geo" />
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=%D0%BC.+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F%2C+%D0%B2%D1%83%D0%BB.+%D0%9B%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F%D0%BD%D0%B0%2C+18."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                м. Запоріжжя, вул. Лікарняна, 18.
+            <h6 className="address ">Адреса</h6>
+            <div className="address__inner">
+              <p className="address__info">
+                <img src={geo} alt="geo" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=%D0%BC.+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F%2C+%D0%B2%D1%83%D0%BB.+%D0%9B%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F%D0%BD%D0%B0%2C+18."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  м. Запоріжжя, вул. Лікарняна, 18.
+                </a>
+              </p>
+              <a href="/contacts/#map" className="address__info_map">
+                Показать на карте
               </a>
-            </p>
+            </div>
           </div>
           <div className="row__item">
             <h6 className="row__title">Про нас</h6>
@@ -60,6 +64,7 @@ const Footer = () => {
               <span className="contacts__item">
                 +38 (061) 764-87-03 <br /> приймальня ген директора
               </span>
+              <span className="contacts__item_mobile">+38 (061) 764-87-03</span>
             </a>
             <br />
             <a href="tel:+380617648708" className="contacts">
@@ -67,6 +72,9 @@ const Footer = () => {
               <p className="contacts__item">
                 +38 (061) 764-87-08 <br /> відділ кадрів
               </p>
+              <span className="contacts__item_mobile">
+                +38 (061) 764-87-08{" "}
+              </span>
             </a>
             <br />
             <a href="mailto:Shyroke_likar@ukr.net" className="contacts">
@@ -74,27 +82,43 @@ const Footer = () => {
               Shyroke_likar@ukr.net
             </a>
           </div>
-          <div className="row__item">
+          <div className="row__item social_item">
             <h6 className="row__title">Соціальні мережі</h6>
             <nav>
               <ul className="socials">
                 <li>
-                  <a href="https://www.instagram.com">
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <RiInstagramFill size={22} />
                   </a>
                 </li>
                 <li>
-                  <a href="https://t.me">
+                  <a
+                    href="https://t.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <BsTelegram size={21} />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com">
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <BsInstagram size={22} />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com">
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <BsFacebook size={21} />
                   </a>
                 </li>
@@ -102,8 +126,11 @@ const Footer = () => {
             </nav>
           </div>
         </div>
-
-        <img src={footerLogo} alt={footerLogo} className="horizontal-logo" />
+        <div className="footer-logo">
+          <div className="line line-left"></div>
+          <img src={footerLogo} alt={footerLogo} className="" />
+          <div className="line line-right"></div>
+        </div>
       </div>
     </div>
   );
