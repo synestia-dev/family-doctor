@@ -6,4 +6,17 @@
   gap: 3rem;
   padding-block: 4rem 5rem;
   min-height: 80vh;
+  @media (max-width: 1080px) {
+    padding-block: 3rem 4rem;
+  }
+
+  @media (max-width: 850px) {
+    padding-block: 3rem 4rem;
+  }
+  @media (max-width: 768px) {
+    padding-block: 2.5rem 3.5rem;
+  }
+  @media (max-width: 550px) {
+    padding-block: 2rem 3rem;
+  }
 }
