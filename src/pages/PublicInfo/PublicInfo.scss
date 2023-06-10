@@ -1,0 +1,30 @@
+.publicInfo {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 4rem 12rem;
+  background: #f3f3f3;
+
+  &__content {
+    h1 {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 48px;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #222222;
+    }
+    width: 47rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 6.25rem;
+    gap: 1.9rem;
+
+  }
+}

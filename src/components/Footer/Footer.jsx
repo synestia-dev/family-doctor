@@ -6,6 +6,7 @@ import mail from "../../assets/icons/mail.svg";
 import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button.jsx";
 const Footer = () => {
   return (
     <div className="footer">
@@ -83,7 +84,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="row__item social_item">
-            <h6 className="row__title">Соціальні мережі</h6>
+            <h6 className="row__title socials__title">Соціальні мережі</h6>
             <nav>
               <ul className="socials">
                 <li>
@@ -123,6 +124,15 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
+              <div className="public">
+                <h6 className="row__title public__title">
+                  Доступ до публічної <br />
+                  інформації
+                </h6>
+                <div>
+                  <Button text="Читати" color="read" to="/public-info" />
+                </div>
+              </div>
             </nav>
           </div>
         </div>
