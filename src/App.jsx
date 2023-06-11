@@ -13,8 +13,8 @@ import Contact from "./pages/Contact/Contact";
 import OneDirection from "./pages/OneDirection/OneDirection.jsx";
 import Form from "./pages/Form/Form.jsx";
 import Photogallery from "./pages/Photogallery/Photogallery.jsx";
+import PublicInfo from "./pages/PublicInfo/PublicInfo.jsx";
 function App() {
-  
   return (
     <Routes>
       <Route path="*" element={<ErrorPage />} />
@@ -30,6 +30,7 @@ function App() {
       <Route path="/photogallery" element={<Photogallery />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/form" element={<Form />} />
+      <Route path="/public-info" element={<PublicInfo />} />
     </Routes>
   );
 }

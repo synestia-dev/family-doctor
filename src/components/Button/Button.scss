@@ -80,6 +80,33 @@
   color: #2babe3;
 }
 
+.read {
+  width: 102px;
+  height: 24px;
+
+  opacity: 0.8;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: capitalize;
+  &:hover {
+    transition: 0.3s ease-in;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  @media screen and (max-width: 500px) {
+    width: 82px;
+    height: 20px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 460px) {
+    width: 102px !important;
+    height: 24px;
+    font-size: 15px;
+  }
+}
+
 
 .back-to:hover {
   text-decoration: underline #2babe3;
