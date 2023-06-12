@@ -3,7 +3,9 @@
   background: #f8f8f8;
   display: flex;
   flex-direction: column;
-
+  .fullname {
+    display: none;
+  }
   &__info {
     display: flex;
     flex-direction: row;
@@ -95,6 +97,7 @@
         color: #ee2922;
       }
     }
+
   }
   @media (max-width: 1250px) {
     span {
@@ -177,7 +180,6 @@
     &__image {
       height: 290px;
       width: 290px;
-      flex: 1;
     }
     .specialization {
       padding: 2rem;
@@ -203,9 +205,8 @@
       padding: 2rem 0 2rem;
     }
     &__image {
-      height: 290px;
-      width: 290px;
-      flex: 1;
+      height: 270px;
+      width: 270px;
     }
     .specialization {
       margin-bottom: 5.5rem;
