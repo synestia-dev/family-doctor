@@ -138,7 +138,7 @@ const Footer = () => {
         </div>
         <div className="footer-logo">
           <div className="line line-left"></div>
-          <img src={footerLogo} alt={footerLogo} className="" />
+          <img src={footerLogo} alt={footerLogo} />
           <div className="line line-right"></div>
         </div>
       </div>
