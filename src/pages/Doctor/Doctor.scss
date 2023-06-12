@@ -66,10 +66,11 @@
         background-color: #fff;
         box-shadow: 0 0 1rem rgba(66, 65, 65, 0.13);
         transition: background-color 0.3s ease-in;
-        gap: 0.6rem;
         height: 60px;
         font-weight: 600;
-
+        span {
+          text-align: center;
+        }
         &:hover {
           background-color: #ee2922;
           transition: background-color 0.3s ease-in, color 0.3s ease-in;
@@ -80,6 +81,13 @@
             transition: 0.3s ease-in;
           }
         }
+        div {
+          display: flex;
+          justify-items: center;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+        }
       }
 
       a {
@@ -88,6 +96,11 @@
       }
     }
   }
+  @media (max-width: 1250px) {
+    span {
+      width: min-content;
+    }
+    }
   @media (max-width: 1100px) {
     &__info {
       padding: 4rem 2.5rem;
@@ -132,14 +145,12 @@
     .specialization {
       margin-bottom: 10rem;
       &__list {
-
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
   }
   @media only screen and (max-width: 768px) {
-    background: #FFFFFF;
+    background: #ffffff;
     .specialization {
       margin-bottom: 4rem;
       &__title {
@@ -150,6 +161,9 @@
         font-weight: 300;
         font-size: 15px;
         line-height: 18px;
+      }
+      &__list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
     }
   }
@@ -172,7 +186,6 @@
         font-weight: 300;
         font-size: 23px;
         line-height: 25px;
-
       }
       &__list_item {
         display: flex;
@@ -200,7 +213,6 @@
       &__title {
         font-size: 18px;
         line-height: 22px;
-
       }
     }
     .fullname {

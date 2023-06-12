@@ -80,11 +80,13 @@ const Doctor = () => {
                 <div className="specialization__list">
                   {specializations.map(({ attributes, id }) => (
                     <Link to="/" key={id} className="specialization__list_item">
-                      <img
-                        src={attributes.icon.data?.attributes.url}
-                        alt="icon"
-                      />
-                      <span>{t(attributes.title)}</span>
+                      <div>
+                        <img
+                          src={attributes.icon.data?.attributes.url}
+                          alt="icon"
+                        />
+                        <span>{t(attributes.title)}</span>
+                      </div>
                     </Link>
                   ))}
                 </div>
