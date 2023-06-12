@@ -52,6 +52,11 @@ const Doctor = () => {
             <Loader />
           ) : (
             <>
+              {" "}
+              <h1 className="fullname">
+                {doctorData.attributes?.surname} {doctorData.attributes?.name}{" "}
+                {doctorData.attributes?.patronymic}
+              </h1>
               <div className="doctor__info">
                 <div className="doctor__desc">
                   <h1 className="doctor__fullname">
@@ -75,11 +80,13 @@ const Doctor = () => {
                 <div className="specialization__list">
                   {specializations.map(({ attributes, id }) => (
                     <Link to="/" key={id} className="specialization__list_item">
-                      <img
-                        src={attributes.icon.data?.attributes.url}
-                        alt="icon"
-                      />
-                      <span>{t(attributes.title)}</span>
+                      <div>
+                        <img
+                          src={attributes.icon.data?.attributes.url}
+                          alt="icon"
+                        />
+                        <span>{t(attributes.title)}</span>
+                      </div>
                     </Link>
                   ))}
                 </div>

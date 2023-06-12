@@ -1,16 +1,18 @@
 .doctor {
   min-height: 80vh;
-  background: #F8F8F8;
+  background: #f8f8f8;
   display: flex;
   flex-direction: column;
-
+  .fullname {
+    display: none;
+  }
   &__info {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 5rem 2.5rem;
-    gap: 12.5rem;
+    gap: 15rem;
   }
 
   &__desc {
@@ -22,14 +24,13 @@
 
   &__fullname {
     font-weight: 600;
-    font-size: 2.2rem;
-    line-height: 2.7rem;
-    text-transform: capitalize
+    font-size: 36px;
+    line-height: 44px;
+    text-transform: capitalize;
   }
 
   &__text {
     color: #535353;
-
   }
 
   &__image {
@@ -54,22 +55,24 @@
     }
 
     &__list {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.25rem;
 
       &_item {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-basis: calc(33.33% - 1.25rem);
         padding: 1.25rem 1.8rem;
         border-radius: 0.6rem;
         background-color: #fff;
         box-shadow: 0 0 1rem rgba(66, 65, 65, 0.13);
         transition: background-color 0.3s ease-in;
-        gap: 0.6rem;
+        height: 60px;
         font-weight: 600;
+        span {
+          text-align: center;
+        }
         &:hover {
           background-color: #ee2922;
           transition: background-color 0.3s ease-in, color 0.3s ease-in;
@@ -80,12 +83,141 @@
             transition: 0.3s ease-in;
           }
         }
+        div {
+          display: flex;
+          justify-items: center;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+        }
       }
 
       a {
         text-decoration: none;
         color: #ee2922;
       }
+    }
+
+  }
+  @media (max-width: 1250px) {
+    span {
+      width: min-content;
+    }
+    }
+  @media (max-width: 1100px) {
+    &__info {
+      padding: 4rem 2.5rem;
+      gap: 8rem;
+    }
+
+    .specialization__list {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .fullname {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .fullname {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 44px;
+      margin-top: 2.5rem;
+      display: block;
+    }
+    &__info {
+      flex-direction: column;
+      padding: 2rem 0 3rem;
+      gap: 2rem;
+    }
+    &__fullname {
+      display: none;
+    }
+    &__desc {
+      gap: 1rem;
+      &:nth-child(1) {
+        order: 1;
+      }
+    }
+
+    &__text {
+      text-align: justify;
+    }
+
+    .specialization {
+      margin-bottom: 10rem;
+      &__list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    background: #ffffff;
+    .specialization {
+      margin-bottom: 4rem;
+      &__title {
+        font-size: 24px;
+        line-height: 29px;
+      }
+      &__text {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+      }
+      &__list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    &__text {
+      text-align: justify;
+      font-weight: 00;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    &__image {
+      height: 290px;
+      width: 290px;
+    }
+    .specialization {
+      padding: 2rem;
+      margin-bottom: 4.5rem;
+      &__title {
+        font-weight: 300;
+        font-size: 23px;
+        line-height: 25px;
+      }
+      &__list_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+      }
+    }
+    .fullname {
+      margin-top: 1.5rem;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    &__info {
+      padding: 2rem 0 2rem;
+    }
+    &__image {
+      height: 270px;
+      width: 270px;
+    }
+    .specialization {
+      margin-bottom: 5.5rem;
+      padding: 1.8rem;
+      &__title {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    .fullname {
+      margin-top: 1rem;
     }
   }
 }
