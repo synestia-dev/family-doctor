@@ -52,6 +52,11 @@ const Doctor = () => {
             <Loader />
           ) : (
             <>
+              {" "}
+              <h1 className="fullname">
+                {doctorData.attributes?.surname} {doctorData.attributes?.name}{" "}
+                {doctorData.attributes?.patronymic}
+              </h1>
               <div className="doctor__info">
                 <div className="doctor__desc">
                   <h1 className="doctor__fullname">
