@@ -8,18 +8,33 @@ import LangSwitcher from '../LangSwitcher/LangSwitcher'
 import { useTranslation } from 'react-i18next'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Menu from './Menu/Menu.jsx'
 
 import { ReactComponent as PhoneIcon } from './../../assets/icons/phone.svg'
 import { ReactComponent as MailIcon } from './../../assets/icons/mail.svg'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
+
+import ua from '../../assets/ua.svg'
 
 const Header = () => {
 	const { t } = useTranslation()
 	const [isOpen, setIsOpen] = useState(false)
 	const handleMenuClick = () => {
 		setIsOpen(prev => !prev)
+		!isOpen
+			? (document.body.style.overflow = 'hidden')
+			: (document.body.style.overflow = 'scroll')
 	}
+
+	const DesktopMatches = useMediaQuery('(min-width:1080px)')
+	useEffect(() => {
+		DesktopMatches && isOpen && handleMenuClick()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [DesktopMatches])
+
+	const [lang, setLang] = useState({ code: 'ua', label: 'UA', flag: ua })
+
 	return (
 		<>
 			<Preheader />
@@ -56,10 +71,13 @@ const Header = () => {
 								</li>
 							</ul>
 							<div className='separator'></div>
-							<LangSwitcher />
+							<LangSwitcher lang={lang} setLang={setLang} />
 						</div>
 						<div className='header__navigation'>
-							<div className='header__navigation_icons'>
+							<div
+								className={
+									'header__navigation_icons ' + (isOpen ? 'hidden' : '')
+								}>
 								<Link to='tel:+38(068)188-81-03'>
 									<PhoneIcon />
 								</Link>
@@ -83,7 +101,13 @@ const Header = () => {
 						/>
 					</nav>
 				</div>
-				{isOpen && <Menu />}
+				{isOpen && (
+					<Menu
+						handleMenuClick={handleMenuClick}
+						lang={lang}
+						setLang={setLang}
+					/>
+				)}
 			</div>
 		</>
 	)
