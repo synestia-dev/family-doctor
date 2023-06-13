@@ -89,8 +89,8 @@
         min-width: 100vw !important;
       }
       input[type="date"] {
-
-        -webkit-appearance: textfield;
+        padding: 10px;
+        -webkit-appearance: none;
         -moz-appearance: textfield;
       }
 
