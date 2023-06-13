@@ -60,6 +60,23 @@
     transition: 0.3s ease-in;
   }
 }
+.submit {
+  padding: 20px 43px;
+  gap: 10px;
+  width: 200px !important;
+  background: #2babe3;
+  border-radius: 15px;
+  align-items: center;
+  //padding: 20px 55px;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  margin: 0 auto;
+}
 
 .articles {
   padding: 19px 59px;

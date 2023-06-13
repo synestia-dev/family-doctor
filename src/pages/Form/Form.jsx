@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
 import formDetails from "../../assets/icons/formDetails.png";
 import { useLayoutEffect } from "react";
+import Button from "../../components/Button/Button.jsx";
 const Form = () => {
   const { t } = useTranslation();
   const handleFormSubmit = (e) => {
@@ -49,7 +50,7 @@ const Form = () => {
 
               <div className="form__block_field">
                 <label htmlFor="date">{t("Переважний термін")}</label>
-                <input type="date" id="date" />
+                <input type="date" id="date" readOnly />
               </div>
 
               <div className="form__block_check">
@@ -65,11 +66,12 @@ const Form = () => {
                 </label>{" "}
               </div>
             </div>
-            <input
-              type="submit"
-              className="form__sumbit"
-              value={t("Відправити")}
-            />
+            <Button text="Відправити" color="submit" />
+            {/*<input*/}
+            {/*  type="submit"*/}
+            {/*  className="form__sumbit"*/}
+            {/*  value={t("Відправити")}*/}
+            {/*/>*/}
           </div>
           <div className="form__details">
             <div className="form__details_item">

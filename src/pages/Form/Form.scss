@@ -81,6 +81,11 @@
       input[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
         -webkit-appearance: none;
+        appearance: none;
+        /* Add the following properties */
+        background-color: transparent;
+        border: none;
+        outline: none;
       }
     }
 
@@ -119,23 +124,23 @@
       }
     }
   }
-  &__sumbit {
-    display: flex;
-    justify-content: center;
-
-    background: #2babe3;
-    border-radius: 15px;
-    align-items: center;
-    padding: 20px 55px;
-    border: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: #ffffff;
-    margin: 0 auto;
-  }
+  //&__sumbit {
+  //  display: flex;
+  //  justify-content: center;
+  //
+  //  background: #2babe3;
+  //  border-radius: 15px;
+  //  align-items: center;
+  //  padding: 20px 55px;
+  //  border: none;
+  //  font-family: "Inter";
+  //  font-style: normal;
+  //  font-weight: 600;
+  //  font-size: 16px;
+  //  line-height: 19px;
+  //  color: #ffffff;
+  //  margin: 0 auto;
+  //}
 
   &__banner {
     background-image: url("../../assets/icons/form-background.png");
