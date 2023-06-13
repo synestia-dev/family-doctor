@@ -214,17 +214,7 @@
       .socials__title {
         display: none;
       }
-      .public {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        &__title {
-            text-align: center;
-        }
-        div {
-          margin-inline: 2.8rem;
-        }
-      }
+
     }
   }
   @media only screen and (max-width: 660px) {
@@ -237,6 +227,11 @@
       }
       .schedule {
         margin-bottom: 2.5rem;
+      }
+      .public {
+        &__title {
+          margin-bottom: 0.7rem;
+        }
       }
     }
   }
@@ -258,9 +253,6 @@
       .public {
         &__title {
           margin-bottom: 0.6rem;
-        }
-        div {
-          margin-inline: 2.2rem;
         }
       }
     }
