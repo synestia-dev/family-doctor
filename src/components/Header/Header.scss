@@ -1,67 +1,83 @@
 .header {
-  color: #241917;
-  background: #f3f3f3;
-  padding-block: 18px;
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &__burger {
-    display: none;
-  }
-  &__logo {
-    img {
-      height: 45px;
-    }
-  }
-  &__menu {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    &_list {
-      list-style-type: none;
-      display: flex;
-      gap: 12px;
-      li {
-        a {
-          text-decoration: none;
-          color: #241917;
-          font-weight: 600;
-          font-size: 14px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-    .separator {
-      width: 1px;
-      height: 25px;
-      background-color: #241917;
-      border-radius: 18px;
-    }
-  }
+	color: #241917;
+	background: #f8f8f8;
+	padding-block: 18px;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__navigation {
+		display: none;
+	}
+
+	&__logo {
+		img {
+			height: 45px;
+		}
+	}
+	&__menu {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		&_list {
+			list-style-type: none;
+			display: flex;
+			gap: 12px;
+			li {
+				a {
+					text-decoration: none;
+					color: #241917;
+					font-weight: 600;
+					font-size: 14px;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.separator {
+			width: 1px;
+			height: 25px;
+			background-color: #241917;
+			border-radius: 18px;
+		}
+	}
 }
-@media screen and (max-width: 1080px){
-  .header{
-    background: #ffffff;
-      position: relative;
-    &__menu{
-      display: none;
-    }
-    &__burger {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-      background: #EE2922;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  .btn-remove {
-    display: none;
-  }
+@media screen and (max-width: 1080px) {
+	.header {
+		background: #ffffff;
+		position: relative;
+		padding: 33px 0 31.7px 0;
+		&__menu {
+			display: none;
+		}
+		&__burger {
+			width: 38px;
+			height: 38px;
+			border-radius: 5px;
+			background: #ee2922;
+			border: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&__navigation {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			gap: 47.42px;
+			&_icons {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 22px;
+				svg > path {
+					fill: #473228;
+				}
+			}
+		}
+	}
+	.btn-remove {
+		display: none;
+	}
 }
