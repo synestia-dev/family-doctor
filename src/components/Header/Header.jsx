@@ -51,22 +51,22 @@ const Header = () => {
 								<li>
 									<Link to='/directions'>{t('Напрямки')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/doctors'>{t('Лікарі')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/about'>{t('Про нас')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/for-companies'>{t('Для компаній')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/news'>{t('Новини')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/contact'>{t('Контакти')}</Link>
 								</li>
-								<li onClick={handleMenuClick}>
+								<li>
 									<Link to='/photogallery'>{t('Фотогалерея')}</Link>
 								</li>
 							</ul>
