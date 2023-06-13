@@ -25,8 +25,7 @@ const Form = () => {
             <div className="form__info">
               <h2>Бланк броні</h2>
               <p>
-                {t(`Нам потрібно буде отримати вашу основну інформацію та контактні
-                    дані для запису на прийом до лікаря.
+                {t(`Нам потрібно буде отримати вашу основну інформацію та контактні дані для запису на прийом до лікаря.
                     Як тільки ми отримаємо ваші дані, зв'яжемося з вами надалі.`)}
               </p>
             </div>
@@ -57,8 +56,8 @@ const Form = () => {
                 <input type="checkbox" name="privacy" className="checkbox" />
                 <label htmlFor="">
                   Я згоден на відправку комерційного повідомлення Сімейному
-                  Лікарю, sro <br /> електронною поштою / смс. Детальні умови
-                  обробки персональних даних доступні{" "}
+                  Лікарю, sro електронною поштою / смс. Детальні умови обробки
+                  персональних даних доступні{" "}
                   <a href="" target="_blank" className="">
                     здесь
                   </a>
@@ -73,9 +72,9 @@ const Form = () => {
             />
           </div>
           <div className="form__details">
-            <div>
+            <div className="form__details_item">
               <img src={formDetails} alt="details" />
-              <div className="desciption">
+              <div className="description">
                 <div className="description__title">
                   <h2>Як записатись на прийом?</h2>
                   <p>
@@ -113,9 +112,9 @@ const Form = () => {
             </div>
 
             {/*second*/}
-            <div>
+            <div className="form__details_item">
               <img src={formDetails} alt="details" />
-              <div className="desciption">
+              <div className="description">
                 <div className="description__title2">
                   <h2>Зробіть замовлення через нашу стійку реєстрації</h2>
                   <p>
