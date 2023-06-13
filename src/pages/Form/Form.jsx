@@ -50,7 +50,7 @@ const Form = () => {
 
               <div className="form__block_field">
                 <label htmlFor="date">{t("Переважний термін")}</label>
-                <input type="date" id="date" readOnly />
+                <input type="date" id="date" />
               </div>
 
               <div className="form__block_check">
