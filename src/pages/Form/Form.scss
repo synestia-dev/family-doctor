@@ -82,16 +82,13 @@
         display: none;
         -webkit-appearance: none;
         appearance: none;
-        /* Add the following properties */
-        background-color: transparent;
+
         border: none;
         outline: none;
         min-width: 100vw !important;
       }
       input[type="date"] {
         padding: 10px;
-        -webkit-appearance: none;
-        -moz-appearance: textfield;
       }
 
     }
