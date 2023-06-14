@@ -14,10 +14,12 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await getRequest("directions?populate=icon&sort=id");
-        if (response && response.data) {
-          console.log(response.data);
-          setDirectionsData(response.data);
-          setPopularDirections(shuffle(response.data.slice()).slice(0, 4));
+        if (response?.data) {
+          const sortedData = [...response.data].sort(
+            (a, b) => a.attributes.title?.localeCompare(b.attributes.title) || 0
+          );
+          setDirectionsData(sortedData);
+          setPopularDirections(shuffle(sortedData.slice()).slice(0, 4));
         }
       } catch (error) {
         console.log("Error fetching directions data:", error);

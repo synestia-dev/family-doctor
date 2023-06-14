@@ -16,8 +16,11 @@ const Directions = () => {
       try {
         const response = await getRequest("directions?populate=icon&sort=id");
         if (response && response.data) {
-          console.log(response.data);
-          return setDirectionsData(response.data);
+          const sortedData = [...response.data].sort((a, b) =>
+            a.attributes.title.localeCompare(b.attributes.title)
+          );
+          console.log(sortedData);
+          setDirectionsData(sortedData);
         }
       } catch (error) {
         console.log("Error fetching directions data:", error);
