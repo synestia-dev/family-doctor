@@ -1,40 +1,58 @@
 .advantage {
-  position: relative;
-  background-color: #ffffff;
-  border-radius: 1.25rem;
-  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 1.25rem;
+	transition: background-color 0.3s ease-in, color 0.3s ease-in;
+	width: 100%;
 }
 
 .advantage:hover {
-  background-color: #ee2922;
-  color: #ffffff;
-  transition: 0.3s ease-in;
+	background-color: #ee2922;
+	color: #ffffff;
+	transition: 0.3s ease-in;
 }
 
 .advantage__circle {
-  position: absolute;
-  top: -28px;
-  left: 18px;
-  height: 56px;
-  width: 56px;
-  border-radius: 50%;
-  border: 1px solid #ee2922;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  z-index: 1;
+	position: absolute;
+	top: -28px;
+	left: 18px;
+	height: 56px;
+	width: 56px;
+	border-radius: 50%;
+	border: 1px solid #ee2922;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	z-index: 1;
 }
 .advantage__info {
-  padding: 1.8rem 1.3rem;
+	padding: 2.5rem 4rem;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+	& > h5 {
+		margin-bottom: 0;
+		font-size: 1.5rem;
+	}
 }
 .advantage__title {
-  text-align: center;
-  margin-bottom: 1.3rem;
-  font-size: 1rem;
-  font-weight: 600;
+	text-align: center;
+	margin-bottom: 1.3rem;
+	font-size: 1rem;
+	font-weight: 600;
 }
 .advantage__text {
-  text-align: center;
-  font-weight: 400;
+	text-align: center;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+	.advantage__info {
+		& > h5 {
+			margin-bottom: 0;
+			font-size: 1.25rem;
+		}
+	}
 }
