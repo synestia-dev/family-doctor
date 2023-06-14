@@ -34,19 +34,19 @@
 	color: #ffffff;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 840px) {
 	.direction {
+		background-color: #fff;
 		transition: background-color 0.5s, color 0.5s;
-		background-color: #f8f8f8;
 		display: flex;
 		align-items: center;
 		min-width: auto;
 		color: #ee2922;
 		&__circle {
+			background-color: #fff;
 			position: relative;
 			top: auto;
 			left: auto;
-			background-color: #f8f8f8;
 			width: 40px;
 			height: 40px;
 			& > img {
@@ -55,7 +55,7 @@
 		}
 		&__info {
 			padding-left: 12px;
-			padding-block: 12px;
+			padding-block: 0px;
 		}
 		&__title {
 			font-size: 14px;
@@ -68,15 +68,6 @@
 	.direction:hover {
 		background-color: transparent;
 		color: #ee2922;
-	}
-}
-
-@media screen and (max-width: 1080px) {
-	.direction {
-		background-color: #fff;
-		&__circle {
-			background-color: #fff;
-		}
 	}
 }
 

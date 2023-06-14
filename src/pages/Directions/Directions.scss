@@ -1,5 +1,4 @@
 .directions {
-	min-height: 80vh;
 	background-color: #f8f8f8;
 	display: flex;
 	justify-content: center;
@@ -35,8 +34,9 @@
 	}
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 840px) {
 	.directions {
+		background-color: #fff;
 		.container {
 			& > h1 {
 				padding-top: 14px;
@@ -50,16 +50,10 @@
 		&__list {
 			display: grid;
 			grid-template-columns: auto fit-content(100%);
-			gap: 0;
+			row-gap: 17px;
 			column-gap: 37px;
 			position: relative;
 			margin-top: 0px;
-			// & > div:nth-child(even) {
-			// 	margin-left: 37px;
-			// }
-			// & > div:nth-child(odd) {
-			// 	margin-right: 37px;
-			// }
 			& > div {
 				display: flex;
 				align-items: center;
@@ -67,19 +61,13 @@
 			&:before {
 				content: '';
 				position: absolute;
-				top: 3%;
-				height: 94%;
+				top: 0;
+				height: 100%;
 				width: 1px;
 				left: calc(50% - 15px);
 				background-color: #ee2922;
 			}
 		}
-	}
-}
-
-@media screen and (max-width: 1080px) {
-	.directions {
-		background-color: #fff;
 	}
 }
 
