@@ -15,7 +15,7 @@ import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 const Map = ({ location, zoom }) => {
   const containerStyle = {
     width: "100%",
-    height: "400px",
+    height: window.innerWidth <= 400 ? "350px" : "400px",
   };
 
   const center = {
