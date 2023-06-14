@@ -1,41 +1,104 @@
+.directions {
+	min-height: 80vh;
+	background-color: #f8f8f8;
+	display: flex;
+	justify-content: center;
+	&__title {
+		text-align: center;
+		//font-size: 2rem;
+		padding-block: 4rem 2rem;
+		line-height: 2.5rem;
+		font-weight: 500;
+	}
+	&__content {
+		display: flex;
+		justify-content: center;
+		.loader {
+			margin-bottom: 3rem;
+		}
+	}
 
-  .directions {
-    min-height: 80vh;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    &__title {
-      text-align: center;
-      //font-size: 2rem;
-      padding-block: 4rem 2rem;
-      line-height: 2.5rem;
-      font-weight: 500;
-    }
-    &__content {
-      display: flex;
-      justify-content: center;
-      .loader {
-        margin-bottom: 3rem;
+	&__list {
+		// display: grid;
+		// grid-template-columns: repeat(3, minmax(370px, 1fr));
+		//grid-gap: 4rem;
+		//justify-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 3rem;
+		margin-block: 4rem 9.5rem;
+		a {
+			text-decoration: none;
+			color: #241917;
+		}
+	}
+}
 
-      }
-    }
+@media screen and (max-width: 1260px) {
+	.directions {
+		.container {
+			& > h1 {
+				padding-top: 14px;
+				padding-bottom: 30px;
+			}
+		}
+		&__title {
+			font-size: 32px;
+			line-height: 39px;
+		}
+		&__list {
+			display: grid;
+			grid-template-columns: auto fit-content(100%);
+			gap: 0;
+			column-gap: 37px;
+			position: relative;
+			margin-top: 0px;
+			// & > div:nth-child(even) {
+			// 	margin-left: 37px;
+			// }
+			// & > div:nth-child(odd) {
+			// 	margin-right: 37px;
+			// }
+			& > div {
+				display: flex;
+				align-items: center;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				top: 3%;
+				height: 94%;
+				width: 1px;
+				left: calc(50% - 15px);
+				background-color: #ee2922;
+			}
+		}
+	}
+}
 
-    &__list {
+@media screen and (max-width: 1080px) {
+	.directions {
+		background-color: #fff;
+	}
+}
 
-
-      //display: grid;
-      //grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));;
-      //grid-gap: 4rem;
-      //justify-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
-      padding-bottom: 9.5rem;
-      padding-block: 4rem 9.5rem;
-      a {
-        text-decoration: none;
-        color: #241917;
-      }
-    }
-  }
+@media screen and (max-width: 460px) {
+	.directions {
+		.container {
+			width: 100%;
+		}
+		&__list {
+			width: 100%;
+			grid-template-columns: 1fr;
+			gap: 10px;
+			margin-bottom: 109px;
+			&:before {
+				content: none;
+			}
+			& > div > a {
+				width: 100%;
+			}
+		}
+	}
+}
