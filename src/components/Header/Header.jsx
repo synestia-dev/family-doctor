@@ -42,7 +42,7 @@ const Header = () => {
 				<div className='container'>
 					<nav className='header__inner'>
 						<div className='header__logo'>
-							<Link to='/'>
+							<Link to='/' onClick={handleMenuClick}>
 								<img src={logo} alt='logo' />
 							</Link>
 						</div>
