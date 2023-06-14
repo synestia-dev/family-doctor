@@ -9,6 +9,7 @@ import photogalleryItem4 from "../../assets/icons/photogallery-item4.png";
 import arrowLeft from "../../assets/icons/arrow-icon.svg";
 import arrowRight from "../../assets/icons/arrow-icon-right.svg";
 import { RxCross1 } from "react-icons/rx";
+import { useMediaQuery } from "../../../hooks/useMediaQuery.jsx";
 const images = [
   photogalleryItem,
   photogalleryItem2,
@@ -22,6 +23,8 @@ const images = [
 const Photogallery = () => {
   const [openedModal, setOpenedModal] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+  const matches768 = useMediaQuery("(max-width: 768px)");
+  const matches500 = useMediaQuery("(max-width: 500px)");
 
   const handleImageClick = (i) => {
     setOpenedModal(true);
@@ -56,6 +59,7 @@ const Photogallery = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const crossSize = matches500 ? 24 : matches768 ? 30 : 36;
 
   return (
     <>
@@ -91,7 +95,7 @@ const Photogallery = () => {
               className="cross"
               onClick={() => setOpenedModal((prev) => !prev)}
             >
-              <RxCross1 size={36} color={"#F8F8F8"} />
+              <RxCross1 size={crossSize} color={"#F8F8F8"} />
             </div>
 
             <img
