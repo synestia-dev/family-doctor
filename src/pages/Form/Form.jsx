@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
 import formDetails from "../../assets/icons/formDetails.png";
 import { useLayoutEffect } from "react";
+import Button from "../../components/Button/Button.jsx";
 const Form = () => {
   const { t } = useTranslation();
   const handleFormSubmit = (e) => {
@@ -65,11 +66,12 @@ const Form = () => {
                 </label>{" "}
               </div>
             </div>
-            <input
-              type="submit"
-              className="form__sumbit"
-              value={t("Відправити")}
-            />
+            <Button text="Відправити" color="submit" />
+            {/*<input*/}
+            {/*  type="submit"*/}
+            {/*  className="form__sumbit"*/}
+            {/*  value={t("Відправити")}*/}
+            {/*/>*/}
           </div>
           <div className="form__details">
             <div className="form__details_item">
