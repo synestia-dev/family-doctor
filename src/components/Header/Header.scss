@@ -112,3 +112,30 @@
 		}
 	}
 }
+@media screen and (max-width: 340px) {
+	.header {
+		padding: 22px 0 22.7px 0;
+		&__logo img {
+			height: 32px;
+			width: 130px;
+		}
+		&__navigation {
+			grid-template-columns: 1fr auto;
+			gap: 10px;
+			&_icons {
+				gap: 10px;
+				svg {
+					width: 20px;
+				}
+			}
+		}
+		&__burger {
+			width: 25px;
+			height: 25px;
+			& > svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
