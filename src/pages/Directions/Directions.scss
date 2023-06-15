@@ -1,6 +1,7 @@
 .directions {
 	background-color: #f8f8f8;
 	display: flex;
+	min-height: 80vh;
 	justify-content: center;
 	&__title {
 		text-align: center;
