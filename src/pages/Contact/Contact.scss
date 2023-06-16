@@ -1,6 +1,4 @@
 .contact {
-
-
 	min-height: 80vh;
 	padding-block: 64px 124px;
 	background-color: #f8f8f8;
@@ -295,9 +293,6 @@
 	.contact {
 		padding-top: 11px;
 		background-color: #fff;
-		& > div > h1 {
-			display: none;
-		}
 		&__workhours {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);

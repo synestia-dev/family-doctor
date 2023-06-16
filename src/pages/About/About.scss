@@ -452,9 +452,6 @@
 
 @media screen and (max-width: 500px) {
 	.about {
-		h1 {
-			display: none;
-		}
 		&__desc {
 			display: flex;
 			flex-direction: column;
