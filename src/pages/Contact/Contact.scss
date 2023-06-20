@@ -2,6 +2,9 @@
 	min-height: 80vh;
 	padding-block: 64px 124px;
 	background-color: #f8f8f8;
+	a {
+		text-decoration: none;
+	}
 	h1 {
 		font-family: 'Inter';
 		font-style: normal;
@@ -48,7 +51,7 @@
 			flex: 1;
 		}
 		&_hours {
-			display: flex;
+			grid-template-columns: repeat(2, fit-content(100%));
 			gap: 10px;
 			& > div {
 				display: flex;
@@ -165,7 +168,6 @@
 	}
 	&__map {
 		margin-bottom: 140px;
-
 	}
 	&__bank {
 		max-width: 746px;
@@ -311,7 +313,12 @@
 			}
 			&_hours {
 				display: grid;
+				grid-template-columns: 1fr;
 				margin-bottom: 30px;
+				& > div {
+					display: grid;
+					grid-template-columns: 57.2px 1fr;
+				}
 			}
 			&_transport {
 				.mobile {
@@ -418,15 +425,20 @@
 			margin-bottom: 50px;
 			gap: 30px;
 			&_info {
-				& > div > h2 {
-					font-size: 25px;
-					line-height: 29px;
+				& > div {
+					& > h2 {
+						font-size: 25px;
+						line-height: 29px;
+					}
 				}
 			}
 			&_hours {
-				& > div > span {
-					font-size: 18px;
-					line-height: 22px;
+				& > div {
+					grid-template-columns: 66px 1fr;
+					& > span {
+						font-size: 18px;
+						line-height: 22px;
+					}
 				}
 			}
 			&_transport {
