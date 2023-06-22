@@ -7,22 +7,29 @@ import { BsFacebook, BsInstagram, BsTelegram } from 'react-icons/bs'
 import { RiInstagramFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import Button from '../Button/Button.jsx'
+import { useTranslation } from 'react-i18next'
 const Footer = () => {
+	const { t } = useTranslation()
+
+	console.log(t('Пн-Пт:'))
+
 	return (
 		<div className='footer'>
 			<div className='container'>
 				<div className='row'>
 					<div className='row__item'>
-						<h6 className='row__title'>Час роботи</h6>
+						<h6 className='row__title'>{t('Час роботи')}</h6>
 						<div className='schedule'>
-							<div>Пн-Пт:</div>
+							<div>
+								{t('Пн')}-{t('Пт')}:
+							</div>
 							<div>8:00-20:00</div>
-							<div>Сб:</div>
+							<div>{t('Сб')}:</div>
 							<div>9:00-13:00</div>
-							<div>Нд:</div>
-							<div>Вихідний</div>
+							<div>{t('Нд')}:</div>
+							<div>{t('Вихідний')}</div>
 						</div>
-						<h6 className='address '>Адреса</h6>
+						<h6 className='address '>{t('Адреса')}</h6>
 						<div className='address__inner'>
 							<p className='address__info'>
 								<img src={geo} alt='geo' />
@@ -30,37 +37,37 @@ const Footer = () => {
 									href='https://www.google.com/maps/search/?api=1&query=%D0%BC.+%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F%2C+%D0%B2%D1%83%D0%BB.+%D0%9B%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F%D0%BD%D0%B0%2C+18.'
 									target='_blank'
 									rel='noopener noreferrer'>
-									місто Запоріжжя, вулиця Лікарняна 18, 69089.
+									{t('місто Запоріжжя, вулиця Лікарняна 18, 69089.')}
 								</a>
 							</p>
 							<a href='/contacts/#map' className='address__info_map'>
-								Показать на карте
+								{t('Показать на карте')}
 							</a>
 						</div>
 					</div>
 					<div className='row__item'>
-						<h6 className='row__title'>Про нас</h6>
+						<h6 className='row__title'>{t('Про нас')}</h6>
 						<nav>
 							<ul className='about__list'>
 								<li>
-									<Link to='/about'>Клініка</Link>
+									<Link to='/about'>{t('Клініка')}</Link>
 								</li>
 								<li>
-									<Link to='/photogallery'>Фотогалерея</Link>
+									<Link to='/photogallery'>{t('Фотогалерея')}</Link>
 								</li>
 								<li>
-									<Link to='/news'>Новини</Link>
+									<Link to='/news'>{t('Новини')}</Link>
 								</li>
 								<li>
 									<Link to='/doctors' className=''>
-										Наша команда
+										{t('Наша команда')}
 									</Link>
 								</li>
 							</ul>
 						</nav>
 					</div>
 					<div className='row__item'>
-						<h6 className='row__title'>Контакти</h6>
+						<h6 className='row__title'>{t('Контакти')}</h6>
 						<a href='tel:+380731888103' className='contacts'>
 							<img src={phone} alt={phone} />
 							<p className='contacts__item'>+38 (073) 188-81-03</p>
@@ -85,7 +92,9 @@ const Footer = () => {
 						</a>
 					</div>
 					<div className='row__item social_item'>
-						<h6 className='row__title socials__title'>Соціальні мережі</h6>
+						<h6 className='row__title socials__title'>
+							{t('Соціальні мережі')}
+						</h6>
 						<nav>
 							<ul className='socials'>
 								<li>
@@ -123,8 +132,8 @@ const Footer = () => {
 							</ul>
 							<div className='public'>
 								<h6 className='row__title public__title'>
-									Доступ до публічної <br />
-									інформації
+									{t('Доступ до публічної')} <br />
+									{t('інформації')}
 								</h6>
 								<div>
 									<Button text='Читати' color='read' to='/public-info' />
