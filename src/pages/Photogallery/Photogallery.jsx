@@ -10,6 +10,7 @@ import arrowLeft from "../../assets/icons/arrow-icon.svg";
 import arrowRight from "../../assets/icons/arrow-icon-right.svg";
 import { RxCross1 } from "react-icons/rx";
 import { useMediaQuery } from "../../../hooks/useMediaQuery.jsx";
+import { useTranslation } from "react-i18next";
 const images = [
   photogalleryItem,
   photogalleryItem2,
@@ -25,6 +26,7 @@ const Photogallery = () => {
   const [currentImage, setCurrentImage] = useState(null);
   const matches768 = useMediaQuery("(max-width: 768px)");
   const matches500 = useMediaQuery("(max-width: 500px)");
+  const { t } = useTranslation();
 
   const handleImageClick = (i) => {
     setOpenedModal(true);
@@ -66,7 +68,7 @@ const Photogallery = () => {
       <Header />
       <div className="photogallery">
         <div className="container">
-          <h2 className="photogallery__title">Фотогалерея</h2>
+          <h2 className="photogallery__title">{t("Фотогалерея")}</h2>
           <div className="photogallery__list">
             {images.map((item, index) => (
               <div
