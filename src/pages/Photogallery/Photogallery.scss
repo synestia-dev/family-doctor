@@ -120,6 +120,12 @@
       max-width: 630px;
       height: 460px;
     }
+    .arrow-left {
+     width: 15px;
+    }
+    .arrow-right {
+      width: 15px;
+    }
   }
 }
 @media (max-width: 760px) {
@@ -161,6 +167,12 @@
     }
     .cross {
       margin-bottom: -10px;
+    }
+    .arrow-left {
+      width: 17px;
+    }
+    .arrow-right {
+      width: 17px;
     }
   }
 }
