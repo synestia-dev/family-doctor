@@ -9,7 +9,7 @@ import photogalleryItem4 from "../../assets/icons/photogallery-item4.png";
 import arrowLeft from "../../assets/icons/arrow-icon.svg";
 import arrowRight from "../../assets/icons/arrow-icon-right.svg";
 import { RxCross1 } from "react-icons/rx";
-import { useMediaQuery } from "../../../hooks/useMediaQuery.jsx";
+import { useMediaQuery } from "../../hooks/useMediaQuery.jsx";
 import { useTranslation } from "react-i18next";
 const images = [
   photogalleryItem,
