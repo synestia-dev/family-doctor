@@ -101,7 +101,7 @@ const OneDirection = () => {
 							))}
 						</div>
 					</div>
-					{doctorsData?.attributes?.doctors?.data?.length && (
+					{doctorsData?.attributes?.doctors?.data?.length ? (
 						<div className='ourDirections'>
 							<div className='container'>
 								<h3>Наші спеціалісти</h3>
@@ -112,14 +112,7 @@ const OneDirection = () => {
 												<Link
 													to={`/doctors/${doctor.id}`}
 													className='ourDirections__item_link'>
-													<img
-														className='ourDirections__item_image'
-														src={
-															doctor?.attributes?.photo?.data[0]?.attributes
-																?.url
-														}
-														alt='icon'
-													/>
+														<div className='ourDirections__item_image' style={{backgroundImage: `url(${doctor?.attributes?.photo?.data[0]?.attributes?.url})`}}></div>
 													<div className='ourDirections__item_info'>
 														<h4 className='ourDirections__item_title'>
 															{`${doctor?.attributes?.surname} ${doctor?.attributes?.name} ${doctor?.attributes?.patronymic}`}
@@ -135,7 +128,7 @@ const OneDirection = () => {
 								</div>
 							</div>
 						</div>
-					)}
+					): ''}
 				</div>
 			</section>
 			<Footer />

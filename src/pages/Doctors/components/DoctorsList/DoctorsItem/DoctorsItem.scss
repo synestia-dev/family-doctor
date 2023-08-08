@@ -6,12 +6,13 @@
     width: 100%;
     margin-bottom: 0.5rem;
     border-radius: 50%;
+    background-position: center 15%;
+    background-size: cover;
   }
   &__info {
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
-
     text-align: center;
   }
   &__title {
@@ -32,22 +33,16 @@
   @media (max-width: 850px) {
     max-width: 190px;
 
-
     &__image {
       height: 190px;
-
     }
-
   }
   @media (max-width: 768px) {
     max-width: 200px;
 
-
     &__image {
       height: 200px;
-
     }
-
   }
   @media (max-width: 640px) {
     max-width: 185px;
@@ -118,6 +113,5 @@
     &__text {
       font-size: 12px;
     }
-
   }
 }
