@@ -20,7 +20,7 @@ import { useLayoutEffect, useState } from 'react'
 import { ReactComponent as RightArrow } from './../../assets/icons/arrow-icon-right.svg'
 import { ReactComponent as LeftArrow } from './../../assets/icons/arrow-icon.svg'
 
-import { useMediaQuery } from './../../../hooks/useMediaQuery'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 const About = () => {
 	const { t } = useTranslation()

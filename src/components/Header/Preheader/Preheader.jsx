@@ -17,7 +17,7 @@ const Preheader = () => {
           <div className="preheader__right">
             <div>
               <img src={phone} alt="phone" />
-              <p>+38 (073) 18 88 003</p>
+              <p>+38 (099) 18-88-003</p>
             </div>
             <div>
               <img src={mail} alt="mail" />
