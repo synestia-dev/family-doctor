@@ -66,9 +66,9 @@ const Doctor = () => {
                     {t(doctorData.attributes?.name)}{" "}
                     {t(doctorData.attributes?.patronymic)}
                   </h1>
-                  <p className="doctor__text">
+                  {/* <p className="doctor__text">
                     {doctorData.attributes?.description}
-                  </p>
+                  </p> */}
                 </div>
 
                 <div
