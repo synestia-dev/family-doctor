@@ -96,7 +96,7 @@ const OneDirection = () => {
 												))}
 										</div>
 									</div>
-									<img src={getRandomImage()} alt='about spec' />
+									{/* <img src={getRandomImage()} alt='about spec' /> */}
 								</div>
 							))}
 						</div>
