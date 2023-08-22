@@ -49,6 +49,7 @@
 		}
 		& > img {
 			flex: 1;
+			border-radius: 15px;
 		}
 		&_hours {
 			grid-template-columns: repeat(2, fit-content(100%));

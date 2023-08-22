@@ -3,60 +3,59 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 import { useTranslation } from "react-i18next";
-import contact1 from "../../assets/contact1.png";
-import contact2 from "../../assets/contact2.png";
+import contact1 from "../../assets/contact1.jpg";
+// import contact2 from "../../assets/contact2.png";
 import { ReactComponent as MetroIcon } from "../../assets/metroTablet.svg";
-import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { useLayoutEffect } from "react";
 
-import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
+// import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 
-const Map = ({ location, zoom }) => {
-  const containerStyle = {
-    width: "100%",
-    height: window.innerWidth <= 400 ? "350px" : "400px",
-  };
+// const Map = ({ location, zoom }) => {
+//   const containerStyle = {
+//     width: "100%",
+//     height: window.innerWidth <= 400 ? "350px" : "400px",
+//   };
 
-  const center = {
-    lat: location.lat,
-    lng: location.lng,
-  };
+//   const center = {
+//     lat: location.lat,
+//     lng: location.lng,
+//   };
 
-  const options = {
-    disableDefaultUI: true,
-    zoomControl: true,
-  };
+//   const options = {
+//     disableDefaultUI: true,
+//     zoomControl: true,
+//   };
 
-  const markerPosition = {
-    lat: location.lat,
-    lng: location.lng,
-  };
+//   const markerPosition = {
+//     lat: location.lat,
+//     lng: location.lng,
+//   };
 
-  return (
-    <div className="contact__map">
-      <LoadScript
-        googleMapsApiKey={import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-      >
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={zoom}
-          options={options}
-        >
-          <MarkerF position={markerPosition} />
-        </GoogleMap>
-      </LoadScript>
-    </div>
-  );
-};
+//   return (
+//     <div className="contact__map">
+//       <LoadScript
+//         googleMapsApiKey={import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+//       >
+//         <GoogleMap
+//           mapContainerStyle={containerStyle}
+//           center={center}
+//           zoom={zoom}
+//           options={options}
+//         >
+//           <MarkerF position={markerPosition} />
+//         </GoogleMap>
+//       </LoadScript>
+//     </div>
+//   );
+// };
 const Contact = () => {
   const { t } = useTranslation();
-  const location = {
-    address: "Simeynyy Likar",
-    lat: 47.862215751296155,
-    lng: 35.00840930791667,
-  };
+  // const location = {
+  //   address: "Simeynyy Likar",
+  //   lat: 47.862215751296155,
+  //   lng: 35.00840930791667,
+  // };
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -73,11 +72,11 @@ const Contact = () => {
                 <div className="contact__workhours_hours">
                   <div>
                     <span>{t("Пн.-Пт.")}</span>
-                    <span>{t("8:00-20:00")}</span>
+                    <span>08:00-20:00</span>
                   </div>
                   <div>
                     <span>{t("Сб.")}</span>
-                    <span>{t("9:00-13:00")}</span>
+                    <span>9:00-13:00</span>
                   </div>
                   <div>
                     <span>{t("Неділя")}</span>
@@ -99,9 +98,9 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <img src={contact1} alt="contact" />
+            <img src={contact1} alt="contact" width="500px" />
           </div>
-          <div className="contact__bycar">
+          {/* <div className="contact__bycar">
             <img src={contact2} alt="contact" />
             <div className="contact__bycar_info">
               <h3>{t("Маршрут машиною")}</h3>
@@ -142,9 +141,9 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="contact__map">
-            <Map location={location} zoom={17} />
+            {/* <Map location={location} zoom={17} /> */}
           </div>
           <div className="contact__bank">
             <h2>{t("Реквізити для виставлення рахунку")}:</h2>
@@ -214,20 +213,20 @@ const Contact = () => {
               </div>
               <div>
                 <h5>{t("Реєстратура")}</h5>
-                <a href="tel:+380731888103" className="contacts">
-                  <p>(073) 188-81-03</p>
+                <a href="tel:+380991888003" className="contacts">
+                  <p>(099) 18-88-003</p>
                 </a>
               </div>
               <div>
                 <h5>{t("Реєстратура")}</h5>
                 <a href="tel:+380961888003" className="contacts">
-                  <p>(096) 188-80-03</p>
+                  <p>(096) 18-88-003</p>
                 </a>
               </div>
               <div>
                 <h5>{t("Реєстратура")}</h5>
-                <a href="tel:+380991888003" className="contacts">
-                  <p>(099) 188-80-03</p>
+                <a href="tel:+380731888003" className="contacts">
+                  <p>(073) 18-88-003</p>
                 </a>
               </div>
               <div>
@@ -244,16 +243,18 @@ const Contact = () => {
               </div>
             </div>
             <div className="contact__social_links">
-              <a href="">
-                <RiInstagramFill color="#ee2922" />
-              </a>
-              <a href="">
-                <BsTelegram color="#ee2922" />
-              </a>
-              <a href="">
+              <a
+                href="https://www.facebook.com/shyroke.likar"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsFacebook color="#ee2922" />
               </a>
-              <a href="">
+              <a
+                href="https://www.instagram.com/simeynyy_likar/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsInstagram color="#ee2922" />
               </a>
             </div>
