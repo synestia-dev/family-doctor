@@ -90,7 +90,6 @@
         -webkit-appearance: none;
         min-height: 40px;
       }
-
     }
 
     &_check {
@@ -128,23 +127,23 @@
       }
     }
   }
-  //&__sumbit {
-  //  display: flex;
-  //  justify-content: center;
-  //
-  //  background: #2babe3;
-  //  border-radius: 15px;
-  //  align-items: center;
-  //  padding: 20px 55px;
-  //  border: none;
-  //  font-family: "Inter";
-  //  font-style: normal;
-  //  font-weight: 600;
-  //  font-size: 16px;
-  //  line-height: 19px;
-  //  color: #ffffff;
-  //  margin: 0 auto;
-  //}
+  &__sumbit {
+   display: flex;
+   justify-content: center;
+  
+   background: #2babe3;
+   border-radius: 15px;
+   align-items: center;
+   padding: 20px 55px;
+   border: none;
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 19px;
+   color: #ffffff;
+   margin: 0 auto;
+  }
 
   &__banner {
     background-image: url("../../assets/icons/form-background.png");
@@ -163,7 +162,9 @@
     //flex-wrap: wrap; not yet 0
     gap: 30px;
     padding-bottom: 180px;
-
+    & > div {
+      flex: 1;
+    }
     &_item {
       display: flex;
       flex-direction: column;
