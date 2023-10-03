@@ -13,6 +13,7 @@ import about2 from "../../assets/about2.jpg";
 import staff1 from "../../assets/staff1.jpg";
 import staff2 from "../../assets/staff2.jpg";
 import staff3 from "../../assets/staff3.jpg";
+import staff4 from "../../assets/staff4.jpg";
 import staff5 from "../../assets/staff5.jpg";
 import apple from "../../assets/apple.svg";
 import friends1 from "../../assets/friends1.png";
@@ -159,7 +160,7 @@ const About = () => {
                 <div>
                   <div
                     className="photo"
-                    style={{ backgroundImage: `url(${staff5})` }}
+                    style={{ backgroundImage: `url(${staff4})` }}
                   ></div>
                   <img src={apple} alt="apple" className="icon" />
                 </div>

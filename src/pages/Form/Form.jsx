@@ -3,7 +3,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
-import formDetails from "../../assets/icons/formDetails.png";
+import form1 from "../../assets/form1.jpg";
+import form2 from "../../assets/form2.jpg";
 import { useLayoutEffect } from "react";
 const Form = () => {
   const { t } = useTranslation();
@@ -74,7 +75,7 @@ const Form = () => {
           </div>
           <div className="form__details">
             <div>
-              <img src={formDetails} alt="details" />
+              <img src={form1} alt="details" />
               <div className="desciption">
                 <div className="description__title">
                   <h2>Як записатись на прийом?</h2>
@@ -105,7 +106,7 @@ const Form = () => {
 
             {/*second*/}
             <div>
-              <img src={formDetails} alt="details" />
+              <img src={form2} alt="details" />
               <div className="desciption">
                 <div className="description__title2">
                   <h2>На реєстратурі Клініки вам допоможуть:</h2>

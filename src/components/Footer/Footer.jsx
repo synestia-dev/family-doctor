@@ -3,8 +3,7 @@ import footerLogo from "../../assets/icons/footer-logo.svg";
 import geo from "../../assets/icons/geo.svg";
 import phone from "../../assets/icons/phone.svg";
 import mail from "../../assets/icons/mail.svg";
-import { BsFacebook, BsInstagram, BsTelegram } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button.jsx";
 const Footer = () => {
@@ -13,12 +12,12 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="row__item">
-            <h6 className="row__title">Час роботи</h6>
+            <h6 className="row__title">Години роботи</h6>
             <div className="schedule">
               <div>Пн-Пт:</div>
               <div>8:00-20:00</div>
-              <div>Сб-Нд:</div>
-              <div>9:00-15:00</div>
+              <div>Сб:</div>
+              <div>9:00-13:00</div>
             </div>
             <h6 className="address ">Адреса</h6>
             <div className="address__inner">
@@ -65,16 +64,26 @@ const Footer = () => {
               <span className="contacts__item">
               +38 (099) 18 88 003<br />
               </span>
-              <span className="contacts__item_mobile">+38 (061) 764-87-03</span>
+              <span className="contacts__item_mobile">+38 (099) 18 88 003</span>
             </a>
             <br />
-            <a href="tel:+38096188800" className="contacts">
+            <a href="tel:+380961888003" className="contacts">
               <img src={phone} alt={phone} />
               <p className="contacts__item">
               +38 (096) 18 88 003 <br />
               </p>
               <span className="contacts__item_mobile">
-              +38 (073) 18 88 003{" "}
+              +38 (096) 18 88 003
+              </span>
+            </a>
+            <br />
+            <a href="tel:+38073188800" className="contacts">
+              <img src={phone} alt={phone} />
+              <p className="contacts__item">
+              +38 (073) 18 88 003 <br />
+              </p>
+              <span className="contacts__item_mobile">
+              +38 (073) 18 88 003
               </span>
             </a>
             <br />
@@ -87,24 +96,6 @@ const Footer = () => {
             <h6 className="row__title socials__title">Соціальні мережі</h6>
             <nav>
               <ul className="socials">
-                <li>
-                  <a
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <RiInstagramFill size={22} />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://t.me"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <BsTelegram size={21} />
-                  </a>
-                </li>
                 <li>
                   <a
                     href="https://www.instagram.com/simeynyy_likar/"

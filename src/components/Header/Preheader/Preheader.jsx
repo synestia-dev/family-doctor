@@ -17,11 +17,15 @@ const Preheader = () => {
           <div className="preheader__right">
             <div>
               <img src={phone} alt="phone" />
-              <p>+38 (099) 18-88-003</p>
+              <a href="tel:+380991888003">+38 (099) 18 88 003</a>
+              <img src={phone} alt="phone" />
+              <a href="tel:+380961888003">+38 (096) 18 88 003</a>
+              <img src={phone} alt="phone" />
+              <a href="tel:+38073188800">+38 (073) 18 88 003</a>
             </div>
             <div>
               <img src={mail} alt="mail" />
-              <p>Shyroke_likar@ukr.net</p>
+              <a href="mailto:Shyroke_likar@ukr.net">Shyroke_likar@ukr.net</a>
             </div>
           </div>
         </div>

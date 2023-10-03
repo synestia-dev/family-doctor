@@ -2,86 +2,53 @@ import "./OneNews.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { useParams } from "react-router-dom";
-import photoNews from "../../assets/icons/news-photo.png";
 import Button from "../../components/Button/Button.jsx";
-import { useLayoutEffect } from "react";
+import { getRequest } from "../../api";
+import { useState, useEffect, useLayoutEffect } from "react";
+import Loader from "../../components/Loader/Loader";
+import Markdown from "markdown-to-jsx";
+
 const OneNews = () => {
   const { id } = useParams();
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  const [news, setNews] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getRequest(`news/${id}?populate=image`);
+        if (response && response.data) {
+          console.log(response.data);
+          return setNews(response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching directions data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
   }, []);
   return (
     <>
       <Header />
       <section className="oneNews">
         <div className="container">
-          <div className="oneNews__content">
-            <img src={photoNews} alt={photoNews} className="oneNews__image" />
-            <h1>
-              Ви страждаєте від хронічного головного болю?
-              <br /> Фізіотерапевт також може вирішити цю проблему
-            </h1>
-            <p className="oneNews__text">
-              Постійний біль голови — це дуже неприємне відчуття, якого ми
-              хочемо уникнути, наскільки це можливо. Але, на жаль, цей украй
-              неприємний досвід може почати повторюватися; на щастя, у випадках
-              може допомогти фізіотерапевт.
-            </p>
-            <h3 className="oneNews__description">
-              Що викликає хронічний головний біль?
-            </h3>
-            <p className="oneNews__text">
-              Головний біль може бути викликаний травмою голови або біохімічними
-              процесами в головному мозку або проблемами з хребтом. А проблеми з
-              шийним відділом хребта в даний час є однією з найчастіших причин
-              головного болю. Вони можуть бути спровоковані, наприклад, поганою
-              поставою при сидінні (не тільки за компютером), постійним нахилом
-              голови або неправильною поставою, слабкими мязами шиї та іншими
-              причинами.
-            </p>
-            <p className="oneNews__text">
-              Якщо ваш головний біль виникає в хребті, це часто відбувається
-              через те, що нерви в ділянці, де шия з'єднується з головою, можуть
-              посилати сигнали, які перетинаються в області перенапруги при
-              постійній напрузі. І тоді мозок може помилково оцінити джерело
-              болю як у голові.
-            </p>
-            <p className="oneNews__text">
-              Як варіант, після тривалого навантаження в м'язах шиї можуть
-              зявлятися мікроспазми, що посилають болючі імпульси в головний
-              мозок. Якщо проблема затягується, це може навіть призвести до
-              тривалих мігрень та хронічних головних болів.
-            </p>
-            <p className="oneNews__text">
-              Головні болі, що виникають в результаті травм і викликані
-              біохімічними процесами, зазвичай можна усунути тільки ліками, що
-              відпускаються за рецептом. На жаль, найчастіше це мігрені різного
-              ступеня тяжкості, з якими можна впоратися лише цілеспрямованим
-              лікуванням.
-            </p>
-            <h3 className="oneNews__description">
-              Як фізіотерапевт може допомогти при головному болі
-            </h3>
-            <p className="oneNews__text">
-              Якщо ваш головний біль спричинений напругою хребта, вам може
-              допомогти фізіотерапевт. Фізіотерапія буде використовувати
-              комплекс вправ для розслаблення заблокованих м'язів, зниження
-              тиску на перевантажені нервові сполуки та усунення самої причини
-              головного болю.
-            </p>
-            <p className="oneNews__text">
-              Якщо ви не впевнені, чи виходить ваш головний біль від хребта, все
-              ж таки варто звернутися до фізіотерапевта, щоб обговорити вашу
-              ситуацію. Це може запобігти непотрібним лікам.
-            </p>
-            <p className="oneNews__text">
-              Наші фізіотерапевти обговорять з вами вашу ситуацію та
-              порекомендують відповідне лікування. Якщо ваш біль усувається за
-              допомогою фізіотерапевтичних процедур, ви розробите план спільної
-              роботи, щоб усунути ваш біль і разом запобігти розвитку
-              рецидивуючого болю та мігрені.
-            </p>
-          </div>
+          {isLoading ? (
+            <div className="loader">
+              <Loader />
+            </div>
+          ) : (
+            <div className="oneNews__content">
+              <img src={news?.attributes.image?.data[0].attributes.url} alt={news?.attributes.image?.data[0].attributes.name} className="oneNews__image" />
+              <h1>{news?.attributes.title}</h1>
+              <div className="oneNews__text">
+                <Markdown>{news?.attributes.description}</Markdown>
+              </div>
+            </div>
+          )}
         </div>
         <Button to="/news" text="Назад до всіх статей" color="back-to" />
       </section>

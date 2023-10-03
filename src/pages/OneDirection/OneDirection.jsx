@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { getRequest } from '../../api/index.js'
-import block1 from '../../assets/icons/single-spec-image.png'
-import block2 from '../../assets/icons/single-spec-image1.png'
-import block3 from '../../assets/icons/single-spec-image2.png'
+// import block1 from '../../assets/icons/single-spec-image.png'
+// import block2 from '../../assets/icons/single-spec-image1.png'
+// import block3 from '../../assets/icons/single-spec-image2.png'
 import icon from '../../assets/icons/single-list-icon.svg'
 
 const OneDirection = () => {
