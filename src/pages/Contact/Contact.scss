@@ -1,267 +1,517 @@
 .contact {
-  min-height: 80vh;
-  padding-block: 64px 124px;
-  h1 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 48px;
-    color: #241917;
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  h3 {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    color: #241917;
-    margin-bottom: 10px;
-  }
-  &__workhours {
-    display: flex;
-    justify-content: space-between;
-    gap: 150px;
-    margin-bottom: 40px;
-    &_info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-block: 60px;
-      flex: 1;
-      h2 {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 39px;
-        color: #241917;
-        margin-bottom: 16px;
-      }
-    }
-    & > img {
-      flex: 1;
-    }
-    &_hours {
-      display: flex;
-      gap: 10px;
-      & > div {
-        display: flex;
-        gap: 16px;
-      }
-    }
-    &_transport {
-      & > p {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #241917;
-        margin-bottom: 40px;
-      }
-      &__transport {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        & > div {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          p {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 19px;
-            color: #000000;
-          }
-          span {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 19px;
-            color: #000000;
-          }
-        }
-      }
-    }
-  }
-  &__bycar {
-    display: flex;
-    justify-content: space-between;
-    gap: 150px;
-    margin-bottom: 140px;
-    &_info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-      & > p {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #241917;
-        margin-bottom: 20px;
-      }
-      &__parking {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        width: 70%;
-        & > div {
-          display: flex;
-          gap: 6px;
-          div {
-            height: 25px;
-            min-width: 25px;
-            width: 25px;
-            border-radius: 50%;
-            background: #ee2922;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 17px;
-            color: #ffffff;
-          }
-          p {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 18px;
-            color: #000000;
-            span {
-              font-weight: 600;
-            }
-          }
-        }
-      }
-    }
-    img {
-      flex: 1;
-    }
-  }
-  &__map {
-    margin-bottom: 140px;
-    img {
-      width: 100%;
-    }
-  }
-  &__bank {
-    max-width: 746px;
-    margin: 0 auto;
-    margin-bottom: 120px;
-    h2 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 300;
-      font-size: 36px;
-      line-height: 44px;
-      color: #241917;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    &_details {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      & > div {
-        display: flex;
-        gap: 20px;
-        & > p {
-          &:first-child {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 19px;
-            color: #000000;
-            flex: 1;
-            text-align: right;
-          }
-          &:last-child {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-            color: #555555;
-            flex: 2.5;
-          }
-        }
-      }
-    }
-  }
-  &__social {
-    h2 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 300;
-      font-size: 36px;
-      line-height: 44px;
-      text-transform: capitalize;
-      color: #241917;
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    &_grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 320px);
-      gap: 14px;
-      max-width: 990px;
-      margin: 0 auto;
-      margin-bottom: 60px;
-      & > div {
-        background: #ffffff;
-        border-top: 3px solid #ee2922;
-        box-shadow: 0px 4px 11px rgba(95, 95, 95, 0.06);
-        border-radius: 15px;
-        padding: 32px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        h5 {
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 24px;
-          text-transform: capitalize;
-          color: #000000;
-          text-align: center;
-        }
-        p {
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 19px;
-          color: #ee2922;
-        }
-      }
-    }
-    &_links {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      a {
-        svg {
-          width: 44px;
-          height: 44px;
-        }
-      }
-    }
-  }
+	min-height: 80vh;
+	padding-block: 64px 124px;
+	background-color: #f8f8f8;
+	a {
+		text-decoration: none;
+	}
+	h1 {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 40px;
+		line-height: 48px;
+		color: #241917;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	h3 {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 29px;
+		color: #241917;
+		margin-bottom: 10px;
+	}
+	&__workhours {
+		display: flex;
+		justify-content: space-between;
+		gap: 150px;
+		margin-bottom: 40px;
+		&_info {
+			display: flex;
+			flex-direction: column;
+			padding-block: 60px;
+			flex: 1;
+			& > div:first-child {
+				margin-bottom: 57px;
+			}
+			h2 {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 32px;
+				line-height: 39px;
+				color: #241917;
+				margin-bottom: 16px;
+			}
+		}
+		& > img {
+			flex: 1;
+			border-radius: 15px;
+		}
+		&_hours {
+			grid-template-columns: repeat(2, fit-content(100%));
+			gap: 10px;
+			& > div {
+				display: flex;
+				gap: 16px;
+			}
+		}
+		&_transport {
+			.mobile {
+				display: none;
+			}
+			& > p {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				color: #241917;
+				margin-bottom: 40px;
+			}
+			&__transport {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				& > div {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+					p {
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 500;
+						font-size: 16px;
+						line-height: 19px;
+						color: #000000;
+					}
+					span {
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 300;
+						font-size: 16px;
+						line-height: 19px;
+						color: #000000;
+					}
+				}
+			}
+		}
+	}
+	&__bycar {
+		display: flex;
+		justify-content: space-between;
+		gap: 150px;
+		margin-bottom: 140px;
+		&_info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex: 1;
+			& > p {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 19px;
+				color: #241917;
+				margin-bottom: 20px;
+			}
+			&__parking {
+				display: flex;
+				flex-direction: column;
+				gap: 14px;
+				width: 70%;
+				& > div {
+					display: flex;
+					gap: 6px;
+					div:first-child {
+						height: 25px;
+						min-width: 25px;
+						width: 25px;
+						border-radius: 50%;
+						background: #ee2922;
+						color: #fff;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 14px;
+						line-height: 17px;
+						color: #ffffff;
+					}
+					& > div {
+						display: flex;
+						align-items: center;
+						& > p {
+							font-family: 'Inter';
+							font-style: normal;
+							font-weight: 400;
+							font-size: 15px;
+							line-height: 18px;
+							color: #000000;
+							span {
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+		img {
+			flex: 1;
+		}
+	}
+	&__map {
+		margin-bottom: 140px;
+	}
+	&__bank {
+		max-width: 746px;
+		margin: 0 auto;
+		margin-bottom: 120px;
+		.mobile {
+			display: none;
+		}
+		h2 {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 44px;
+			color: #241917;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		&_details {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			& > div {
+				display: flex;
+				gap: 20px;
+				& > p {
+					&:first-child {
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 600;
+						font-size: 16px;
+						line-height: 19px;
+						color: #000000;
+						flex: 1;
+						text-align: right;
+					}
+					&:last-child {
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 16px;
+						line-height: 19px;
+						color: #555555;
+						flex: 2.5;
+					}
+				}
+			}
+		}
+	}
+	&__social {
+		h2 {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 300;
+			font-size: 36px;
+			line-height: 44px;
+			text-transform: capitalize;
+			color: #241917;
+			text-align: center;
+			margin-bottom: 60px;
+		}
+		&_grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, 320px);
+			gap: 14px;
+			max-width: 990px;
+			margin: 0 auto;
+			margin-bottom: 60px;
+			justify-content: center;
+			& > div {
+				background: #ffffff;
+				border-top: 3px solid #ee2922;
+				box-shadow: 0px 4px 11px rgba(95, 95, 95, 0.06);
+				border-radius: 15px;
+				padding: 32px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				h5 {
+					font-family: 'Inter';
+					font-style: normal;
+					font-weight: 500;
+					font-size: 20px;
+					line-height: 24px;
+					text-transform: capitalize;
+					color: #000000;
+					text-align: center;
+				}
+				p {
+					font-family: 'Inter';
+					font-style: normal;
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 19px;
+					color: #ee2922;
+				}
+			}
+		}
+		&_links {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			a {
+				svg {
+					width: 44px;
+					height: 44px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1260px) {
+	.contact {
+		&__workhours {
+			&_hours {
+				margin-bottom: 57px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.contact {
+		padding-top: 11px;
+		background-color: #fff;
+		&__workhours {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+			gap: 50px;
+			margin-bottom: 55px;
+			&_info {
+				padding: 0;
+				& > div:first-child {
+					margin-bottom: 0;
+				}
+				& > div > h2 {
+					font-size: 28px;
+					text-transform: uppercase;
+				}
+			}
+			&_hours {
+				display: grid;
+				grid-template-columns: 1fr;
+				margin-bottom: 30px;
+				& > div {
+					display: grid;
+					grid-template-columns: 57.2px 1fr;
+				}
+			}
+			&_transport {
+				.mobile {
+					display: grid;
+					grid-template-columns: 18px max-content;
+					gap: 8px;
+					& > span {
+						font-family: 'Inter';
+						font-style: normal;
+						font-weight: 300;
+						font-size: 15px;
+						line-height: 19px;
+						color: #000000;
+					}
+				}
+				& > p {
+					margin-bottom: 18.5px;
+				}
+				&__transport {
+					& > div {
+						display: flex;
+
+						& > div {
+							// display: grid;
+							// grid-template-columns: 18px max-content auto;
+							align-items: center;
+							display: flex;
+							flex-wrap: wrap;
+							column-gap: 8px;
+							& > p {
+								font-size: 15px;
+							}
+							& > span {
+								& > span {
+									display: none;
+								}
+								font-size: 14px;
+							}
+						}
+						& > svg {
+							flex-shrink: 0;
+							width: 18px;
+						}
+					}
+				}
+			}
+			& > img {
+				width: 100%;
+				height: auto;
+				min-width: 310px;
+				min-height: 310px;
+			}
+		}
+		&__bycar {
+			gap: 40px;
+			margin-bottom: 60px;
+			align-items: center;
+			& > img {
+				max-width: 500px;
+				max-height: 463px;
+				height: 100%;
+				min-width: 310px;
+				min-height: 310px;
+			}
+			&_info {
+				&__parking {
+					width: 100%;
+				}
+			}
+		}
+		&__map {
+			margin-bottom: 60px;
+		}
+		&__bank {
+			& > h2 {
+				font-weight: 300;
+				font-size: 22px;
+				line-height: 27px;
+				color: #241917;
+			}
+			.mobile {
+				display: block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.contact {
+		&__workhours {
+			gap: 25px;
+		}
+		&__bycar {
+			gap: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 634px) {
+	.contact {
+		&__workhours {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 50px;
+			gap: 30px;
+			&_info {
+				& > div {
+					& > h2 {
+						font-size: 25px;
+						line-height: 29px;
+					}
+				}
+			}
+			&_hours {
+				& > div {
+					grid-template-columns: 66px 1fr;
+					& > span {
+						font-size: 18px;
+						line-height: 22px;
+					}
+				}
+			}
+			&_transport {
+				& > h3 {
+					font-size: 20px;
+					line-height: 24px;
+				}
+				& > p {
+					font-size: 15px;
+					line-height: 18px;
+				}
+				&__transport > div {
+					& > div > p {
+						font-size: 14px;
+					}
+					& > svg {
+						width: 16px;
+					}
+				}
+			}
+		}
+		&__bycar {
+			gap: 30px;
+			margin-bottom: 30px;
+			& > img {
+				order: 2;
+				width: 100%;
+				max-width: 100%;
+			}
+			& > div {
+				order: 1;
+			}
+			flex-direction: column;
+		}
+		&__bank {
+			margin-bottom: 70px;
+			& > h2 {
+				font-size: 19px;
+				margin-bottom: 20px;
+				line-height: 24px;
+			}
+			&_details {
+				& > div {
+					& > p:first-child {
+						font-size: 14px;
+						text-align: left;
+					}
+					& > p:last-child {
+						font-size: 15px;
+						word-wrap: anywhere;
+					}
+				}
+			}
+		}
+		&__social h2 {
+			font-size: 26px;
+			line-height: 31px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media screen and (max-width: 391px) {
+	.contact {
+		&__bank {
+			&_details {
+				& > div {
+					&:nth-child(7) > p {
+						word-wrap: anywhere;
+					}
+				}
+			}
+		}
+	}
 }

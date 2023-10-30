@@ -3,7 +3,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
-import formDetails from "../../assets/icons/formDetails.png";
+import form1 from "../../assets/form1.jpg";
+import form2 from "../../assets/form2.jpg";
 import { useLayoutEffect } from "react";
 const Form = () => {
   const { t } = useTranslation();
@@ -74,14 +75,11 @@ const Form = () => {
           </div>
           <div className="form__details">
             <div>
-              <img src={formDetails} alt="details" />
+              <img src={form1} alt="details" />
               <div className="desciption">
                 <div className="description__title">
                   <h2>Як записатись на прийом?</h2>
-                  <p>
-                    Якщо ви хочете записатися на прийом, у вас є кілька
-                    варіантів:
-                  </p>
+                  <p>Приймаємо за попереднім записом</p>
                 </div>
                 <div className="description__steps">
                   <div>
@@ -94,49 +92,33 @@ const Form = () => {
                   <div>
                     <div>2</div>
                     <p>
-                      <span> Зателефонуйте</span>{" "}
-                      <a href="">+420 235 356 553</a> і запишіться на прийом за
-                      телефоном
+                      <span> Зателефонуйте</span> <br />
+                      <a href="tel:+380991888003">+38 099 18 88 003</a> <br />
+                      <a href="tel:+380961888003">+38 096 18 88 003</a> <br />
+                      <a href="tel:+380731888003">+38 073 18 88 003</a> <br />і
+                      запишіться на прийом за телефоном
                     </p>
                   </div>
-                  <div>
-                    <div>3</div>
-                    <p>
-                      <span>Надішліть нам електронний лист</span> за адресою
-                      {"  "}
-                      <a>reception@unicare.cz</a> і ми звяжемося з вами, щоб
-                      повідомити найближчі вільні дати.
-                    </p>
-                  </div>
+                  <div></div>
                 </div>
               </div>
             </div>
 
             {/*second*/}
             <div>
-              <img src={formDetails} alt="details" />
+              <img src={form2} alt="details" />
               <div className="desciption">
                 <div className="description__title2">
-                  <h2>Зробіть замовлення через нашу стійку реєстрації</h2>
-                  <p>
-                    Всі прийоми здійснюються централізовано через нашу
-                    приймальню, яка порекомендує лікаря, що найбільше підходить
-                    для вирішення вашої поточної проблеми, і запишеться на
-                    прийом до лікаря. На рецепції вам допоможуть:
-                  </p>
+                  <h2>На реєстратурі Клініки вам допоможуть:</h2>
                 </div>
                 <div className="description__steps2">
                   <div>
                     <div>1</div>
-                    <p>Бронювання / Зміни / Скасування зустрічей</p>
+                    <p>Бронювання / Зміни / Скасування записів</p>
                   </div>
                   <div>
                     <div>2</div>
-                    <p>Усі супутні медичні адміністративні</p>
-                  </div>
-                  <div>
-                    <div>3</div>
-                    <p>Платежі за медичні послуги</p>
+                    <p>Платежі медичних послуг</p>
                   </div>
                 </div>
               </div>

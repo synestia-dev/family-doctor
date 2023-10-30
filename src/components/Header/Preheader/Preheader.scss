@@ -3,8 +3,10 @@
   color: #ffffff;
   background: #222222;
   padding-block: 20px;
-  p{
+  p, a{
     font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
   }
   &__inner {
     display: flex;

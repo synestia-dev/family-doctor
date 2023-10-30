@@ -5,10 +5,14 @@ import ua from "../../assets/ua.svg";
 import de from "../../assets/de.svg";
 import en from "../../assets/en.svg";
 import { useTranslation } from "react-i18next";
-const LangSwitcher = () => {
-  const [lang, setLang] = useState({ code: "ua", label: "UA", flag: ua });
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import PropTypes from "prop-types";
+
+const LangSwitcher = ({ lang, setLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
+  const tabletMobileMatches = useMediaQuery("(max-width:1080px)");
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -22,7 +26,8 @@ const LangSwitcher = () => {
       if (storedLanguage === "EN")
         setLang({ code: "en", label: "EN", flag: en });
       i18n.changeLanguage(storedLanguage);
-    } 
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLanguageChange = (language) => {
@@ -45,14 +50,27 @@ const LangSwitcher = () => {
     languageOptions.unshift(selectedOption[0]);
   }
   return (
-    <div className="langSwitcher">
-      <div className="langSwitcher__button" onClick={toggleDropdown}>
+    <div
+      className={
+        "langSwitcher " + (tabletMobileMatches ? "langSwitcherMobile" : "")
+      }
+    >
+      <div
+        className={
+          "langSwitcher__button " + (tabletMobileMatches ? "hidden" : "")
+        }
+        onClick={toggleDropdown}
+      >
         <img src={lang.flag} alt={lang.code} />
         <span className="langSwitcher__label">{lang.label}</span>
         <Arrow />
       </div>
-      {isOpen && (
-        <ul className="langSwitcher__menu">
+      {(isOpen || tabletMobileMatches) && (
+        <ul
+          className={
+            "langSwitcher__menu " + (tabletMobileMatches ? "mobile" : "")
+          }
+        >
           {languageOptions.map((option) => (
             <li
               key={option.code}
@@ -66,6 +84,15 @@ const LangSwitcher = () => {
       )}
     </div>
   );
+};
+
+LangSwitcher.propTypes = {
+  lang: PropTypes.exact({
+    code: PropTypes.oneOf(["ua", "en", "de"]),
+    label: PropTypes.oneOf(["UA", "EN", "DE"]),
+    flag: PropTypes.string,
+  }),
+  setLang: PropTypes.func,
 };
 
 export default LangSwitcher;

@@ -1,6 +1,7 @@
 .photogallery {
   padding-block: 64px 120px;
   background: #f8f8f8;
+  min-height: 80vh;
   &__title {
     margin-bottom: 3.5rem;
     text-align: center;
@@ -13,12 +14,20 @@
     margin-bottom: 60px;
     padding-inline: 35px;
     justify-items: center;
+    justify-content: center;
   }
 
   .picture {
     cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     &__image {
-      width: 270px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-width: 100%; /* Change this line */
+      max-height: 100%; /* Add this line */
       &:hover {
         filter: brightness(80%);
         transition: filter 0.3s ease-in;
@@ -61,3 +70,121 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 995px) {
+  .photogallery {
+    &__list {
+      margin-bottom: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+  }
+  .overlay {
+    &__image {
+      max-width: 720px;
+      height: 520px;
+    }
+  }
+}
+
+@media (max-width: 872px) {
+  .photogallery {
+    padding-block: 44px 100px;
+    &__list {
+      margin-bottom: 60px;
+      padding-inline: 0;
+    }
+    .picture {
+    }
+  }
+  .overlay {
+    &__image {
+      max-width: 680px;
+      height: 500px;
+    }
+  }
+}
+@media (max-width: 802px) {
+  .photogallery {
+    background: #f5f5f5;
+    padding-block: 20px 80px;
+    &__list {
+      margin-bottom: 60px;
+      padding-inline: 0;
+      grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
+    }
+    .picture {
+    }
+  }
+  .overlay {
+    &__image {
+      max-width: 630px;
+      height: 460px;
+    }
+    .arrow-left {
+     width: 15px;
+    }
+    .arrow-right {
+      width: 15px;
+    }
+  }
+}
+@media (max-width: 760px) {
+  .overlay {
+    &__image {
+      max-width: 570px;
+      height: 420px;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .overlay {
+    &__image {
+      max-width: 500px;
+      height: 400px;
+    }
+    .cross {
+      margin-bottom: -15px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .overlay {
+    &__image {
+      max-width: 400px;
+      height: 300px;
+    }
+    .cross {
+      margin-bottom: -5px;
+    }
+
+  }
+}
+@media (max-width: 500px) {
+  .overlay {
+    &__image {
+      max-width: 300px;
+      height: 240px;
+    }
+    .cross {
+      margin-bottom: -10px;
+    }
+    .arrow-left {
+      width: 17px;
+    }
+    .arrow-right {
+      width: 17px;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .overlay {
+    &__image {
+      max-width: 230px;
+      height: 190px;
+    }
+    .cross {
+     margin-bottom: -15px;
+    }
+  }
+}
+

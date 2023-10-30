@@ -9,6 +9,13 @@
 	}
 	&__navigation {
 		display: none;
+		&_icons > a {
+			display: flex;
+			align-items: center;
+		}
+		.hidden {
+			display: none;
+		}
 	}
 
 	&__logo {
@@ -20,6 +27,11 @@
 		display: flex;
 		gap: 24px;
 		align-items: center;
+		.underlineLinks {
+			.active {
+				color: #ee2922;
+			}
+		}
 		&_list {
 			list-style-type: none;
 			display: flex;
@@ -63,8 +75,7 @@
 			align-items: center;
 		}
 		&__navigation {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			display: flex;
 			align-items: center;
 			gap: 47.42px;
 			&_icons {
@@ -79,5 +90,52 @@
 	}
 	.btn-remove {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.header {
+		&__logo img {
+			height: 41px;
+		}
+		&__navigation {
+			grid-template-columns: 1fr auto;
+			gap: 22px;
+		}
+		&__burger {
+			width: 30px;
+			height: 30px;
+			& > svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 340px) {
+	.header {
+		padding: 22px 0 22.7px 0;
+		&__logo img {
+			height: 32px;
+			width: 130px;
+		}
+		&__navigation {
+			grid-template-columns: 1fr auto;
+			gap: 10px;
+			&_icons {
+				gap: 10px;
+				svg {
+					width: 20px;
+				}
+			}
+		}
+		&__burger {
+			width: 25px;
+			height: 25px;
+			& > svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
 	}
 }

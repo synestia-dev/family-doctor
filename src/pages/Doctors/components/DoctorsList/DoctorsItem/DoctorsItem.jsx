@@ -1,26 +1,27 @@
+import { useTranslation } from "react-i18next";
 import "./DoctorsItem.scss";
 import PropTypes from "prop-types";
 
 const DoctorsItem = ({ itemData }) => {
-
   const positionText = itemData.head
     ? "завідувач відділення, " + itemData.position
     : itemData.position + (itemData.childrens ? ", дитячий" : "");
 
+  const { t } = useTranslation();
+
   return (
     <div className="person">
-      <img
+      <div
         className="person__image"
-
-        src={itemData.photo.data[0].attributes.url}
-
-        alt="icon"
-      />
+        style={{
+          backgroundImage: `url(${itemData.photo.data[0].attributes.url})`,
+        }}
+      ></div>
       <div className="person__info">
         <h4 className="person__title">
-        {itemData.surname} {itemData.name} {itemData.patronymic}
+          {t(itemData.surname)} {t(itemData.name)} {t(itemData.patronymic)}
         </h4>
-        <p className="person__text">{positionText}</p>
+        <p className="person__text">{t(positionText)}</p>
       </div>
     </div>
   );

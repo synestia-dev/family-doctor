@@ -2,26 +2,38 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import "./Photogallery.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import photogalleryItem from "../../assets/icons/photogallery-item.png";
-import photogalleryItem2 from "../../assets/icons/photogallery-item2.png";
-import photogalleryItem3 from "../../assets/icons/photogallery-item3.png";
-import photogalleryItem4 from "../../assets/icons/photogallery-item4.png";
 import arrowLeft from "../../assets/icons/arrow-icon.svg";
 import arrowRight from "../../assets/icons/arrow-icon-right.svg";
+import Loader from "../../components/Loader/Loader";
+import { getRequest } from "../../api/index.js";
 import { RxCross1 } from "react-icons/rx";
-const images = [
-  photogalleryItem,
-  photogalleryItem2,
-  photogalleryItem3,
-  photogalleryItem4,
-  photogalleryItem,
-  photogalleryItem2,
-  photogalleryItem3,
-  photogalleryItem4,
-];
+import { useMediaQuery } from "../../hooks/useMediaQuery.jsx";
+import { useTranslation } from "react-i18next";
 const Photogallery = () => {
   const [openedModal, setOpenedModal] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
+  const matches768 = useMediaQuery("(max-width: 768px)");
+  const matches500 = useMediaQuery("(max-width: 500px)");
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getRequest("photos?populate=src");
+        if (response && response.data) {
+          console.log(response.data);
+          return setImages(response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching directions data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleImageClick = (i) => {
     setOpenedModal(true);
@@ -56,23 +68,30 @@ const Photogallery = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const crossSize = matches500 ? 24 : matches768 ? 30 : 36;
 
   return (
     <>
       <Header />
       <div className="photogallery">
         <div className="container">
-          <h2 className="photogallery__title">Фотогалерея</h2>
+          <h2 className="photogallery__title">{t("Фотогалерея")}</h2>
           <div className="photogallery__list">
-            {images.map((item, index) => (
-              <div
-                className="picture"
-                key={index}
-                onClick={() => handleImageClick(index)}
-              >
-                <img src={item} alt={item} className="picture__image" />
+            {isLoading ? (
+              <div className="loader">
+                <Loader />
               </div>
-            ))}
+            ) : (
+              images.map((item, index) => (
+                <div
+                  className="picture"
+                  key={index}
+                  onClick={() => handleImageClick(index)}
+                >
+                  <img src={item.attributes.src?.data?.attributes.url} alt={item} className="picture__image" />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -91,11 +110,11 @@ const Photogallery = () => {
               className="cross"
               onClick={() => setOpenedModal((prev) => !prev)}
             >
-              <RxCross1 size={36} color={"#F8F8F8"} />
+              <RxCross1 size={crossSize} color={"#F8F8F8"} />
             </div>
 
             <img
-              src={images[currentImage]}
+              src={images[currentImage].attributes.src?.data?.attributes.url}
               alt={`img-${currentImage}`}
               className="overlay__image"
             />

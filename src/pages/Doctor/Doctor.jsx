@@ -18,7 +18,9 @@ const Doctor = () => {
     const fetchData = async () => {
       try {
         const response1 = await getRequest(`doctors/${id}/?populate=photo`);
-        const response2 = await getRequest(`directions?populate=icon&sort=id`);
+        const response2 = await getRequest(
+          `doctors/${id}/?populate=specializations`
+        );
 
         if (response1 && response1.data) {
           console.log(response1.data);
@@ -26,8 +28,8 @@ const Doctor = () => {
         }
 
         if (response2 && response2.data) {
-          console.log(response2.data);
-          setSpecializations(response2.data);
+          console.log(response2.data.attributes.specializations.data);
+          setSpecializations(response2.data.attributes.specializations.data);
         }
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -60,35 +62,39 @@ const Doctor = () => {
               <div className="doctor__info">
                 <div className="doctor__desc">
                   <h1 className="doctor__fullname">
-                    {doctorData.attributes?.surname}{" "}
-                    {doctorData.attributes?.name}{" "}
-                    {doctorData.attributes?.patronymic}
+                    {t(doctorData.attributes?.surname)}{" "}
+                    {t(doctorData.attributes?.name)}{" "}
+                    {t(doctorData.attributes?.patronymic)}
                   </h1>
-                  <p className="doctor__text">
+                  {/* <p className="doctor__text">
                     {doctorData.attributes?.description}
-                  </p>
+                  </p> */}
                 </div>
 
-                <img
+                <div
                   className="doctor__image"
-                  src={doctorData?.attributes?.photo?.data[0].attributes?.url}
-                  alt="Image"
-                />
+                  style={{
+                    backgroundImage: `url(${doctorData?.attributes?.photo?.data[0].attributes?.url})`,
+                  }}
+                ></div>
               </div>
               <div className="specialization">
-                <h3 className="specialization__title">Медична спеціалізація</h3>
+                <h3 className="specialization__title">
+                  {t("Медична спеціалізація")}
+                </h3>
                 <div className="specialization__list">
-                  {specializations.map(({ attributes, id }) => (
-                    <Link to="/" key={id} className="specialization__list_item">
-                      <div>
-                        <img
-                          src={attributes.icon.data?.attributes.url}
-                          alt="icon"
-                        />
+                  {specializations.map((s) => {
+                    const { id, attributes } = s;
+                    return (
+                      <Link
+                        to="/doctors"
+                        key={id}
+                        className="specialization__list_item"
+                      >
                         <span>{t(attributes.title)}</span>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </>
