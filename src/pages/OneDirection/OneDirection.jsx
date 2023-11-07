@@ -1,7 +1,7 @@
 import './OneDirection.scss'
 import { useEffect, useLayoutEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { getRequest } from '../../api/index.js'
@@ -11,7 +11,7 @@ import { getRequest } from '../../api/index.js'
 import icon from '../../assets/icons/single-list-icon.svg'
 
 const OneDirection = () => {
-	const { t } = useTranslation()
+	// const { t } = useTranslation()
 	const { id } = useParams()
 	const [directionData, setDirectionData] = useState([])
 	const [doctorsData, setDoctorsData] = useState([])
@@ -55,11 +55,11 @@ const OneDirection = () => {
 
 	const blockArray = [...Array(blockCount)]
 
-	const images = [block1, block2, block3]
-	const getRandomImage = () => {
-		const randomImageIndex = Math.floor(Math.random() * images.length)
-		return images[randomImageIndex]
-	}
+	// const images = [block1, block2, block3]
+	// const getRandomImage = () => {
+	// 	const randomImageIndex = Math.floor(Math.random() * images.length)
+	// 	return images[randomImageIndex]
+	// }
 
 	return (
 		<>

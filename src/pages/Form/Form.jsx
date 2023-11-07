@@ -10,6 +10,7 @@ const Form = () => {
   const { t } = useTranslation();
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    console.log('submited');
   };
 
   useLayoutEffect(() => {
@@ -50,27 +51,24 @@ const Form = () => {
               </div>
 
               <div className="form__block_field">
-                <label htmlFor="date">{t("Переважний термін")}</label>
-                <input type="date" id="date" />
+                <label htmlFor="message">{t("Ваше повідомлення")}</label>
+                <textarea type="date" id="message" />
               </div>
 
               <div className="form__block_check">
-                <input type="checkbox" name="privacy" className="checkbox" />
-                <label htmlFor="">
+                <input type="checkbox" name="privacy" id="privacy" className="checkbox" />
+                <label htmlFor="privacy">
                   Я згоден на відправку комерційного повідомлення Сімейному
-                  Лікарю, sro <br /> електронною поштою / смс. Детальні умови
-                  обробки персональних даних доступні{" "}
-                  <a href="" target="_blank" className="">
-                    здесь
-                  </a>
-                  .
-                </label>{" "}
+                  Лікарю, <br /> електронною поштою / смс. Детальні умови
+                  обробки персональних даних доступні здесь
+                </label>
               </div>
             </div>
             <input
               type="submit"
               className="form__sumbit"
               value={t("Відправити")}
+              onClick={handleFormSubmit}
             />
           </div>
           <div className="form__details">
