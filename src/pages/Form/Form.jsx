@@ -1,17 +1,104 @@
+import { useState, useEffect, useLayoutEffect } from "react";
 import "./Form.scss";
+import emailjs from "@emailjs/browser";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { useTranslation } from "react-i18next";
 // import FormBanner from "./FormBanner/FormBanner.jsx";
 import form1 from "../../assets/form1.jpg";
 import form2 from "../../assets/form2.jpg";
-import { useLayoutEffect } from "react";
+import {
+  validateEmail,
+  validateName,
+  validatePhone,
+  validateMessage,
+} from "../../helpers/validate";
 const Form = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [isChecked, setIsChecked] = useState(false);
+  const [isCheckErr, setIsCheckErr] = useState(false);
+  const [isFormFilled, setIsFormFilled] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
+
+  const {
+    name: name,
+    surname: surname,
+    phone: phone,
+    email: email,
+    message: message,
+  } = formData;
+
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      setIsFormFilled(
+        validateName(name) &&
+          validateName(surname) &&
+          validateEmail(email) &&
+          validatePhone(phone) &&
+          validateMessage(message)
+      );
+    }, 500);
+
+    return () => {
+      clearTimeout(identifier);
+    };
+  }, [validateName, validateEmail, validatePhone, validateMessage]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('submited');
+    if (
+      !validateName(formData.name) ||
+      !validateName(formData.surname) ||
+      !validateEmail(formData.email) ||
+      !validatePhone(formData.phone) ||
+      !validateMessage(formData.message)
+    ) {
+      setIsFormFilled(true);
+      return;
+    }
+    if (!isChecked) {
+      console.log("you need to check");
+      setIsCheckErr(true);
+      return;
+    }
+    emailjs
+      .sendForm(
+        "service_h54rlqs",
+        "template_jtpi4vy",
+        e.currentTarget,
+        "b3g5Tk4p--UIVDoEL"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+    setIsFormFilled(false);
+    // setIsModalOpen(true);
+    e.currentTarget.reset();
   };
+
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -32,44 +119,123 @@ const Form = () => {
                     Як тільки ми отримаємо ваші дані, зв'яжемося з вами надалі.`)}
               </p>
             </div>
-            <div className="form__block">
+            <form className="form__block" onSubmit={handleFormSubmit}>
               <div className="form__block_field">
                 <label htmlFor="name">{t("Ім'я")}</label>
-                <input type="text" id="name" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={t("Ім'я")}
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className={
+                    !validateName(formData.name) && isFormFilled
+                      ? "invalid-input"
+                      : ""
+                  }
+                />
               </div>
               <div className="form__block_field">
                 <label htmlFor="surname">{t("Прізвище")}</label>
-                <input type="text" id="surname" />
+                <input
+                  type="text"
+                  id="surname"
+                  name="surname"
+                  placeholder={t("Прізвище")}
+                  value={formData.surname}
+                  onChange={(e) =>
+                    setFormData({ ...formData, surname: e.target.value })
+                  }
+                  className={
+                    !validateName(formData.surname) && isFormFilled
+                      ? "invalid-input"
+                      : ""
+                  }
+                />
               </div>
               <div className="form__block_field">
                 <label htmlFor="phone">{t("Номер телефону")}</label>
-                <input type="tel" id="phone" />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="0123456789"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                  className={
+                    !validatePhone(formData.phone) && isFormFilled
+                      ? "invalid-input"
+                      : ""
+                  }
+                />
               </div>
               <div className="form__block_field">
                 <label htmlFor="email">{t("Електронна пошта")}</label>
-                <input type="email" id="email" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={t("Електронна пошта")}
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className={
+                    !validateEmail(formData.email) && isFormFilled
+                      ? "invalid-input"
+                      : ""
+                  }
+                />
               </div>
 
               <div className="form__block_field">
                 <label htmlFor="message">{t("Ваше повідомлення")}</label>
-                <textarea type="date" id="message" />
+                <textarea
+                  type="date"
+                  id="message"
+                  name="message"
+                  placeholder={t("Ваше повідомлення")}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  className={
+                    !validateMessage(formData.message) && isFormFilled
+                      ? "invalid-input"
+                      : ""
+                  }
+                />
               </div>
 
               <div className="form__block_check">
-                <input type="checkbox" name="privacy" id="privacy" className="checkbox" />
+                <input
+                  type="checkbox"
+                  name="privacy"
+                  id="privacy"
+                  value={isChecked}
+                  onChange={() => {
+                    setIsCheckErr(false);
+                    setIsChecked((prev) => !prev);
+                  }}
+                  className={isCheckErr ? "checkbox invalid-input" : "checkbox"}
+                />
                 <label htmlFor="privacy">
                   Я згоден на відправку комерційного повідомлення Сімейному
                   Лікарю, <br /> електронною поштою / смс. Детальні умови
                   обробки персональних даних доступні здесь
                 </label>
               </div>
-            </div>
-            <input
-              type="submit"
-              className="form__sumbit"
-              value={t("Відправити")}
-              onClick={handleFormSubmit}
-            />
+              <input
+                type="submit"
+                className="form__sumbit"
+                value={t("Відправити")}
+              />
+            </form>
           </div>
           <div className="form__details">
             <div>

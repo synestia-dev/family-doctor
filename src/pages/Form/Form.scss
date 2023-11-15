@@ -143,6 +143,10 @@
     line-height: 19px;
     color: #ffffff;
     margin: 0 auto;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.7;
+    }
   }
 
   &__banner {
@@ -339,6 +343,9 @@
         }
       }
     }
+  }
+  .invalid-input{
+    border: 1px solid #fc1919 !important;
   }
   @media (max-width: 1250px) {
     &__title {
