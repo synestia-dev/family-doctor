@@ -130,7 +130,6 @@
   &__sumbit {
     display: flex;
     justify-content: center;
-
     background: #2babe3;
     border-radius: 15px;
     align-items: center;
@@ -144,6 +143,7 @@
     color: #ffffff;
     margin: 0 auto;
     cursor: pointer;
+    margin-top: 2rem;
     &:hover{
       opacity: 0.7;
     }
