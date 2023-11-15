@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useLayoutEffect } from "react";
 import "./Form.scss";
 import emailjs from "@emailjs/browser";
@@ -13,6 +14,32 @@ import {
   validatePhone,
   validateMessage,
 } from "../../helpers/validate";
+
+const Modal = ({ children, onClose }) => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      onClose();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  if (!isVisible) {
+    return null;
+  }
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,7 +51,7 @@ const Form = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [isCheckErr, setIsCheckErr] = useState(false);
   const [isFormFilled, setIsFormFilled] = useState(false);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
 
   const {
@@ -64,7 +91,6 @@ const Form = () => {
       return;
     }
     if (!isChecked) {
-      console.log("you need to check");
       setIsCheckErr(true);
       return;
     }
@@ -92,13 +118,15 @@ const Form = () => {
       message: "",
     });
     setIsFormFilled(false);
-    // setIsModalOpen(true);
+    setIsModalOpen(true);
+    setIsChecked(false);
+
     e.currentTarget.reset();
   };
 
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false);
-  // };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -290,6 +318,13 @@ const Form = () => {
           </div>
         </div>
         <div className="form__banner" />
+
+        {isModalOpen && (
+        <Modal onClose={handleCloseModal}>
+          <h3>{t("Дякуємо за ваше повідомлення!")}</h3>
+          <p>{t("Ми скоро з вами зв'яжемося")}</p>
+        </Modal>
+      )}
       </section>
 
       <Footer />
