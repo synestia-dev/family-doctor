@@ -28,58 +28,115 @@ const PublicInfo = () => {
               <hr />
               <div className="info">
                 <div className="info__links">
-                  <a href="#" className="">
+                  <a
+                    href="https://zakon.rada.gov.ua/laws/show/2801-12#Text"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img src={arrowRight} alt={arrowRight} />
                     <p className="">
                       {t(
-                        "База даних «Законодавство України» на веб-сайті Верховної Ради України."
+                        'Закон України "Основи законодавства України про охорону здоров\'я" '
                       )}
                     </p>
                   </a>
-                  <a href="#" className="">
+                  <a
+                    href="https://zakon.rada.gov.ua/laws/show/2939-17#Text"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img src={arrowRight} alt={arrowRight} />
                     <p className="">
-                      {t(
-                        "Нормативно-правові акти з питань охорони здоров’я МОЗ України."
-                      )}
+                      {t('Закон України "Про доступ до публічної інформації"')}
+                    </p>
+                  </a>
+                  <a
+                    href="https://zakon.rada.gov.ua/laws/show/393/96-%D0%B2%D1%80#Text"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={arrowRight} alt={arrowRight} />
+                    <p className="">
+                      {t('Закон України "Про звернення громадян"')}
+                    </p>
+                  </a>
+                  <a
+                    href="https://moz.gov.ua/gromadjanam"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={arrowRight} alt={arrowRight} />
+                    <p className="">
+                      {t("Сайт Міністерства охорони здоров'я України")}
+                    </p>
+                  </a>
+                  <a
+                    href="https://service.e-health.gov.ua/gromadyanam"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={arrowRight} alt={arrowRight} />
+                    <p className="">
+                      {t("Сайт Національної служби здоров'я України")}
+                    </p>
+                  </a>
+                  <a
+                    href="https://ombudsman.gov.ua/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={arrowRight} alt={arrowRight} />
+                    <p className="">
+                      {t("Уповноважений Верховної Ради України з прав людини")}
                     </p>
                   </a>
                 </div>
                 <p className="info__text">
                   {t(
-                    "Надання публічної інформації Запорізькою обласною клінічною лікарнею здійснюється у відповідь на"
-                  )}
-                  <span>&nbsp;{t("інформаційний")}&nbsp;</span>
-                  {t("запит.")} {t("Електронна адреса:")}{" "}
-                  <span>cancelariya.zokb@gmail.com.</span>
-                </p>
-                <p className="info__text">
-                  {t(
-                    "Згідно з законом, публічною є відображена та задокументована будь-якими засобами та на будь-яких носіях інформація, що була отримана або створена в процесі виконання суб’єктами владних повноважень своїх обов’язків, передбачених чинним законодавством, або яка знаходиться у володінні суб’єктів владних повноважень."
+                    "Порядок складання та подання запиту на інформацію Відповідно до статті 19 Закону України «Про доступ до публічної інформації» запит на інформацію може подаватися усно, письмово або в іншому вигляді на вибір запитувача."
                   )}
                 </p>
                 <p className="info__text bold">
-                  {t(
-                    "Запит від особи на отримання інформації складається у довільній формі."
-                  )}
-                  <br />
-                  {t("При цьому необхідно вказати:")}
+                  {t("Запит складається в довільній формі і має містити:")}
                 </p>
                 <p className="info__rules">
                   1){" "}
                   {t(
-                    "ім’я та прізвище запитувача, поштову адресу або адресу електронної пошти, а також номер телефону;"
+                    "ім'я (найменування) запитувача, поштову адресу або адресу електронної пошти, а також номер засобу зв'язку, якщо такий є;"
                   )}
                 </p>
                 <p className="info__rules">
                   2){" "}
                   {t(
-                    "опис інформації, яку запитувач хотів би отримати. (Вид, назву, реквізити чи зміст документа, щодо якого зроблено запит)"
+                    "загальний опис інформації або вид, назву, реквізити чи зміст документа, щодо якого зроблено запит, якщо запитувачу це відомо;"
                   )}
                 </p>
-                <p className="info__rules">3) {t("підпис і дату.")}</p>
+                <p className="info__rules">
+                  3){" "}
+                  {t(
+                    "підпис і дату за умови подання запиту в письмовій формі."
+                  )}
+                </p>
+                <p className="info__text bold" style={{ paddingTop: "20px" }}>
+                  {t("До Клініки запит на інформацію може бути поданий:")}
+                </p>
+                <p className="info__rules">
+                  -{" "}
+                  {t(
+                    "на поштову адресу: вул. Лікарняна 18, м. Запоріжжя, 69089;"
+                  )}
+                </p>
+                <p className="info__rules">
+                  - {t("на електронну адресу: ")}
+                  <a
+                    href="mailto:shyroke_likar@ukr.net"
+                    style={{ display: "inline-flex" }}
+                  >
+                    shyroke_likar@ukr.net
+                  </a>
+                </p>
               </div>
-              <div className="info__details">
+              {/* <div className="info__details">
                 <p className="info__text bold">
                   {t("Лікарські засоби та вироби")}
                 </p>
@@ -124,7 +181,7 @@ const PublicInfo = () => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
   flex-direction: column;
   //justify-content: center;
   align-items: center;
-  padding-block: 4rem 12rem;
+  padding-block: 4rem;
   background: #f3f3f3;
 
   &__content {
@@ -122,7 +122,7 @@
   }
   @media only screen and (max-width: 768px) {
     padding-block: 1rem 8rem;
-    background: #FFFFFF;
+    background: #ffffff;
 
     &__content {
       margin-bottom: 5rem;
@@ -151,7 +151,6 @@
     }
   }
   @media only screen and (max-width: 550px) {
-
     &__content {
       gap: 3.5rem;
 
@@ -159,17 +158,17 @@
         font-size: 28px;
         line-height: 35px;
       }
-        &__details {
-          margin-bottom: 45px;
-        }
-      }
-      .bold {
-        padding-bottom: 15px;
+      &__details {
+        margin-bottom: 45px;
       }
     }
+    .bold {
+      padding-bottom: 15px;
+    }
+  }
   @media only screen and (max-width: 450px) {
     padding-block: 3rem 8rem;
-    background: #FFFFFF;
+    background: #ffffff;
 
     &__content {
       margin-bottom: 5rem;
