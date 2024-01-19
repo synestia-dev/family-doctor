@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
+
 import { useTranslation } from "react-i18next";
 import "./DoctorsItem.scss";
-import PropTypes from "prop-types";
 
 const DoctorsItem = ({ itemData }) => {
   const positionText = itemData.head
@@ -14,7 +15,11 @@ const DoctorsItem = ({ itemData }) => {
       <div
         className="person__image"
         style={{
-          backgroundImage: `url(${itemData.photo.data[0].attributes.url})`,
+          backgroundImage: `url(${
+            itemData.photo.data
+              ? itemData.photo.data[0].attributes.url
+              : "https://familydoctor.fra1.digitaloceanspaces.com/a79fc36534d9eae235c6078d6fd29f09.png"
+          })`,
         }}
       ></div>
       <div className="person__info">
@@ -26,24 +31,4 @@ const DoctorsItem = ({ itemData }) => {
     </div>
   );
 };
-DoctorsItem.propTypes = {
-  itemData: PropTypes.shape({
-    photo: PropTypes.shape({
-      data: PropTypes.arrayOf(
-        PropTypes.shape({
-          attributes: PropTypes.shape({
-            url: PropTypes.string.isRequired,
-          }).isRequired,
-        })
-      ).isRequired,
-    }).isRequired,
-    name: PropTypes.string.isRequired,
-    surname: PropTypes.string.isRequired,
-    patronymic: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    head: PropTypes.bool.isRequired,
-    childrens: PropTypes.bool.isRequired,
-  }).isRequired,
-};
-
 export default DoctorsItem;

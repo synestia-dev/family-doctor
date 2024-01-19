@@ -1,47 +1,26 @@
-import './DoctorsList.scss'
-import { Link } from 'react-router-dom'
-import DoctorsItem from './DoctorsItem/DoctorsItem.jsx'
-import PropTypes from 'prop-types'
-import { useTranslation } from 'react-i18next'
+/* eslint-disable react/prop-types */
+
+import "./DoctorsList.scss";
+import { Link } from "react-router-dom";
+import DoctorsItem from "./DoctorsItem/DoctorsItem.jsx";
+import { useTranslation } from "react-i18next";
 
 const DoctorsList = ({ title, doctorsList }) => {
-	const { t } = useTranslation()
-	return (
-		<>
-			<section className='list'>
-				<h3>{t(title)}</h3>
-				<div className='list__items'>
-					{doctorsList.map((item, index) => (
-						<Link to={`/doctors/${item.id}`} key={index}>
-							<DoctorsItem itemData={item.attributes} />
-						</Link>
-					))}
-				</div>
-			</section>
-		</>
-	)
-}
-DoctorsList.propTypes = {
-	title: PropTypes.string.isRequired,
-	doctorsList: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.number.isRequired,
-			attributes: PropTypes.shape({
-				name: PropTypes.string.isRequired,
-				surname: PropTypes.string.isRequired,
-				patronymic: PropTypes.string.isRequired,
-				photo: PropTypes.shape({
-					data: PropTypes.arrayOf(
-						PropTypes.shape({
-							attributes: PropTypes.shape({
-								url: PropTypes.string.isRequired,
-							}).isRequired,
-						})
-					).isRequired,
-				}).isRequired,
-				position: PropTypes.string.isRequired,
-			}).isRequired,
-		})
-	).isRequired,
-}
-export default DoctorsList
+  const { t } = useTranslation();
+  return (
+    <>
+      <section className="list">
+        <h3>{t(title)}</h3>
+        <div className="list__items">
+          {doctorsList.map((item, index) => (
+            <Link to={`/doctors/${item.id}`} key={index}>
+              <DoctorsItem itemData={item.attributes} />
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default DoctorsList;

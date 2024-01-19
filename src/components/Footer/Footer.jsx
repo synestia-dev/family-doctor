@@ -6,6 +6,7 @@ import mail from "../../assets/icons/mail.svg";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button.jsx";
+import { BsArrowDown } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="footer">
@@ -62,7 +63,8 @@ const Footer = () => {
             <a href="tel:+380991888003" className="contacts">
               <img src={phone} alt={phone} />
               <span className="contacts__item">
-              +38 (099) 18 88 003<br />
+                +38 (099) 18 88 003
+                <br />
               </span>
               <span className="contacts__item_mobile">+38 (099) 18 88 003</span>
             </a>
@@ -70,21 +72,17 @@ const Footer = () => {
             <a href="tel:+380961888003" className="contacts">
               <img src={phone} alt={phone} />
               <p className="contacts__item">
-              +38 (096) 18 88 003 <br />
+                +38 (096) 18 88 003 <br />
               </p>
-              <span className="contacts__item_mobile">
-              +38 (096) 18 88 003
-              </span>
+              <span className="contacts__item_mobile">+38 (096) 18 88 003</span>
             </a>
             <br />
             <a href="tel:+38073188800" className="contacts">
               <img src={phone} alt={phone} />
               <p className="contacts__item">
-              +38 (073) 18 88 003 <br />
+                +38 (073) 18 88 003 <br />
               </p>
-              <span className="contacts__item_mobile">
-              +38 (073) 18 88 003
-              </span>
+              <span className="contacts__item_mobile">+38 (073) 18 88 003</span>
             </a>
             <br />
             <a href="mailto:Shyroke_likar@ukr.net" className="contacts">
@@ -122,6 +120,30 @@ const Footer = () => {
                 </h6>
                 <div>
                   <Button text="Читати" color="read" to="/public-info" />
+                </div>
+              </div>
+              <div className="public" style={{ marginTop: "1rem" }}>
+                <h6 className="row__title public__title">
+                  Опитувальник
+                  <br /> оцінювання закладу
+                </h6>
+                <div>
+                  <a
+                    href="/files/Клініка_Анкета.docx"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      border: "1px solid #fff",
+                      width: "102px",
+                      height: "24px",
+                      borderRadius: "100px",
+                    }}
+                  >
+                    Скачати
+                    <BsArrowDown />
+                  </a>
                 </div>
               </div>
             </nav>
