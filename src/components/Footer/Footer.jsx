@@ -6,7 +6,6 @@ import mail from "../../assets/icons/mail.svg";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button.jsx";
-import { BsArrowDown } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="footer">
@@ -129,7 +128,7 @@ const Footer = () => {
                 </h6>
                 <div>
                   <a
-                    href="/files/Клініка_Анкета.docx"
+                    href="https://forms.gle/CozWPoo9SaKfZAQH6"
                     style={{
                       display: "flex",
                       justifyContent: "center",
@@ -140,9 +139,10 @@ const Footer = () => {
                       height: "24px",
                       borderRadius: "100px",
                     }}
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    Скачати
-                    <BsArrowDown />
+                    Перейти
                   </a>
                 </div>
               </div>
